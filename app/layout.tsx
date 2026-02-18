@@ -17,8 +17,9 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'GLA Advogados | Especialistas em Direito Trabalhista Empresarial',
+  title: 'GLA Advogados | Direito Trabalhista Empresarial',
   description: 'Escritório de advocacia especializado na defesa de empresas em processos trabalhistas e consultoria preventiva para organizações de médio e grande porte.',
+  keywords: ['advocacia trabalhista', 'direito empresarial', 'consultoria jurídica', 'compliance trabalhista', 'São Paulo'],
 }
 
 export default function RootLayout({
@@ -28,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${playfair.variable}`}>
-      <body className={`${inter.className} min-h-screen flex flex-col bg-white`}>
+      <body className={`${inter.className} min-h-screen flex flex-col bg-white antialiased`}>
         <Header />
         <main className="flex-grow">
           {children}
