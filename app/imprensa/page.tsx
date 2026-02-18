@@ -1,153 +1,124 @@
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 
-export default function ImprensaPage() {
-  const newsItems = [
-    {
-      id: 1,
-      title: 'Reforma trabalhista: especialistas analisam impactos na gestão de passivo das empresas',
-      excerpt: 'Wagner Gusmão foi convidado a analisar os efeitos da reforma trabalhista no cenário corporativo atual, destacando pontos sobre segurança jurídica e gestão de risco.',
-      date: '15 Jan 2024',
-      source: 'Valor Econômico',
-      category: 'Artigo',
-    },
-    {
-      id: 2,
-      title: 'GLA Advogados lança programa de compliance trabalhista para empresas de grande porte',
-      excerpt: 'O escritório desenvolveu metodologia exclusiva para implementação de programas de compliance trabalhista, reduzindo riscos jurídicos e otimizando a gestão do quadro de colaboradores.',
-      date: '22 Mar 2024',
-      source: 'Portal Jurídico',
-      category: 'Notícia',
-    },
-    {
-      id: 3,
-      title: 'Home office permanente: implicações jurídicas no quadro de colaboradores',
-      excerpt: 'Larissa de Oliveira Lima foi entrevistada sobre os aspectos jurídicos do trabalho remoto permanente e compartilhou insights sobre os principais pontos de atenção.',
-      date: '05 Mai 2024',
-      source: 'Exame',
-      category: 'Entrevista',
-    },
-    {
-      id: 4,
-      title: 'ESG e passivo trabalhista: o impacto nas relações de trabalho corporativas',
-      excerpt: 'Wagner Gusmão participou de webinar sobre como as práticas ESG estão transformando o direito trabalhista e criando novos desafios para departamentos jurídicos.',
-      date: '18 Jun 2024',
-      source: 'Webinar GLA',
-      category: 'Evento',
-    },
-    {
-      id: 5,
-      title: 'Inteligência artificial e automação: desafios legais para o futuro do trabalho',
-      excerpt: 'Larissa de Oliveira Lima publicou artigo sobre as implicações jurídicas da implementação de IA nos ambientes corporativos e os desafios para compliance trabalhista.',
-      date: '09 Ago 2024',
-      source: 'Revista Jurídica',
-      category: 'Artigo',
-    },
-    {
-      id: 6,
-      title: 'GLA Advogados amplia atuação com novo núcleo de direito digital do trabalho',
-      excerpt: 'Escritório inaugurou departamento especializado em questões trabalhistas relacionadas à transformação digital e gestão de colaboradores em modelos híbridos.',
-      date: '23 Out 2024',
-      source: 'Conjur',
-      category: 'Notícia',
-    },
-  ];
+const newsItems = [
+  {
+    id: 1,
+    title: 'Reforma trabalhista: especialistas analisam impactos na gestão de passivo das empresas',
+    excerpt: 'Wagner Gusmão foi convidado a analisar os efeitos da reforma trabalhista no cenário corporativo, destacando pontos sobre segurança jurídica e gestão de risco.',
+    date: '15 Jan 2024',
+    source: 'Valor Econômico',
+    category: 'Artigo',
+  },
+  {
+    id: 2,
+    title: 'GLA Advogados lança programa de compliance trabalhista para empresas de grande porte',
+    excerpt: 'O escritório desenvolveu metodologia exclusiva para programas de compliance trabalhista, reduzindo riscos jurídicos e otimizando a gestão do quadro de colaboradores.',
+    date: '22 Mar 2024',
+    source: 'Portal Jurídico',
+    category: 'Notícia',
+  },
+  {
+    id: 3,
+    title: 'Home office permanente: implicações jurídicas no quadro de colaboradores',
+    excerpt: 'Larissa de Oliveira Lima compartilhou insights sobre os aspectos jurídicos do trabalho remoto permanente e os principais pontos de atenção.',
+    date: '05 Mai 2024',
+    source: 'Exame',
+    category: 'Entrevista',
+  },
+  {
+    id: 4,
+    title: 'ESG e passivo trabalhista: o impacto nas relações de trabalho corporativas',
+    excerpt: 'Wagner Gusmão participou de webinar sobre como as práticas ESG estão transformando o direito trabalhista e criando novos desafios para departamentos jurídicos.',
+    date: '18 Jun 2024',
+    source: 'Webinar GLA',
+    category: 'Evento',
+  },
+  {
+    id: 5,
+    title: 'Inteligência artificial e automação: desafios legais para o futuro do trabalho',
+    excerpt: 'Larissa de Oliveira Lima publicou artigo sobre as implicações jurídicas da IA nos ambientes corporativos e os desafios para compliance.',
+    date: '09 Ago 2024',
+    source: 'Revista Jurídica',
+    category: 'Artigo',
+  },
+  {
+    id: 6,
+    title: 'GLA Advogados amplia atuação com novo núcleo de direito digital do trabalho',
+    excerpt: 'Escritório inaugurou departamento especializado em questões trabalhistas relacionadas à transformação digital e modelos híbridos.',
+    date: '23 Out 2024',
+    source: 'Conjur',
+    category: 'Notícia',
+  },
+];
 
+export default function ImprensaPage() {
   return (
     <>
       {/* ===== HERO INTERNO ===== */}
-      <section
-        className="relative flex items-end overflow-hidden"
-        style={{ minHeight: '40vh', background: 'linear-gradient(135deg, #F5F5F7 0%, #FFFFFF 50%, #F0F0F3 100%)' }}
-      >
-        <div className="container-main relative z-10 pb-16 pt-40">
-          <span className="label-section mb-4 block">Imprensa</span>
-          <h1
-            className="font-extrabold max-w-3xl"
-            style={{
-              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-              lineHeight: 1.08,
-              letterSpacing: '-0.03em',
-              color: '#1A1A1A',
-            }}
-          >
+      <section className="noise" style={{ background: '#FAFAF9', minHeight: '40vh', display: 'flex', alignItems: 'flex-end' }}>
+        <div className="container-gla relative z-10" style={{ paddingBottom: '64px', paddingTop: '200px' }}>
+          <span className="label-section mb-6" style={{ display: 'flex' }}>Imprensa</span>
+          <h1 style={{
+            fontSize: 'clamp(2rem, 4.5vw, 3.5rem)',
+            fontWeight: 800,
+            lineHeight: 1.05,
+            letterSpacing: '-0.03em',
+            color: '#1A1714',
+            maxWidth: '480px',
+          }}>
             GLA na mídia
           </h1>
-          <div className="mt-4" style={{ width: '60px', height: '3px', background: '#C0272D', borderRadius: '2px' }} />
-          <p className="mt-6 max-w-xl text-lg leading-relaxed" style={{ color: '#6B7280' }}>
-            Acompanhe nossa participação nos principais veículos de comunicação sobre direito trabalhista empresarial.
+          <div className="line-reveal mt-6" style={{ animationDelay: '0.3s' }} />
+          <p style={{ marginTop: '20px', fontSize: '17px', lineHeight: 1.7, color: '#78716C', maxWidth: '480px' }}>
+            Acompanhe nossa participação nos principais veículos de comunicação.
           </p>
         </div>
       </section>
 
-      {/* ===== GRID DE ARTIGOS — Glass cards ===== */}
-      <section className="section-gradient">
-        {/* Decorative blobs */}
-        <div
-          className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(192,39,45,0.08) 0%, transparent 70%)',
-            borderRadius: '50%',
-          }}
-        />
-        <div
-          className="absolute bottom-[-50px] left-[-50px] w-[300px] h-[300px] pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(192,39,45,0.05) 0%, transparent 70%)',
-            borderRadius: '50%',
-          }}
-        />
+      {/* ===== GRID DE ARTIGOS ===== */}
+      <section className="noise" style={{ background: '#FFFFFF', padding: '100px 0' }}>
+        <div className="container-gla relative z-10">
+          {/* Decorative number */}
+          <span
+            className="hidden md:block absolute select-none pointer-events-none"
+            style={{ top: '-20px', right: '0', fontSize: '200px', fontWeight: 800, color: '#1A1714', opacity: 0.03, lineHeight: 1, letterSpacing: '-0.04em' }}
+            aria-hidden="true"
+          >
+            N
+          </span>
 
-        <div className="container-main relative z-10">
-          <ScrollReveal>
-            <span className="label-section mb-4 block">Notícias e publicações</span>
-            <h2
-              className="font-extrabold mb-12 md:mb-16"
-              style={{
-                fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
-                lineHeight: 1.1,
-                letterSpacing: '-0.02em',
-                color: '#1A1A1A',
-              }}
-            >
-              Reconhecimento na mídia
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {newsItems.map((item, index) => (
-              <ScrollReveal key={item.id} delay={index * 80}>
-                <div className="glass-card p-8 h-full flex flex-col">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span
-                      className="text-xs px-3 py-1 rounded-full font-semibold"
-                      style={{ background: 'rgba(192,39,45,0.08)', color: '#C0272D' }}
-                    >
+              <ScrollReveal key={item.id} delay={index * 60}>
+                <div
+                  className="h-full flex flex-col transition-all duration-400 hover:-translate-y-1"
+                  style={{
+                    padding: '36px',
+                    border: '1px solid #E7E5E4',
+                    borderRadius: '16px',
+                  }}
+                >
+                  <div className="flex items-center gap-3 mb-5">
+                    <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.08em', color: '#C0272D' }}>
                       {item.category}
                     </span>
-                    <span
-                      className="text-xs px-3 py-1 rounded-full font-medium"
-                      style={{ background: 'rgba(0,0,0,0.04)', color: '#6B7280' }}
-                    >
+                    <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#E7E5E4', display: 'block' }} />
+                    <span style={{ fontSize: '11px', fontWeight: 500, color: '#78716C' }}>
                       {item.source}
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold mb-3 leading-snug" style={{ color: '#1A1A1A', letterSpacing: '-0.01em' }}>
+                  <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#1A1714', lineHeight: 1.35, letterSpacing: '-0.01em', marginBottom: '12px' }}>
                     {item.title}
                   </h3>
-
-                  <p className="text-sm leading-relaxed flex-grow mb-4" style={{ color: '#6B7280' }}>
+                  <p style={{ fontSize: '14px', lineHeight: 1.7, color: '#78716C', flexGrow: 1, marginBottom: '20px' }}>
                     {item.excerpt}
                   </p>
 
-                  <div className="flex justify-between items-center pt-4" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                    <span className="text-xs font-medium" style={{ color: '#9CA3AF' }}>{item.date}</span>
-                    <Link
-                      href="#"
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold transition-all duration-300 hover:gap-2.5"
-                      style={{ color: '#C0272D' }}
-                    >
+                  <div className="flex justify-between items-center" style={{ paddingTop: '16px', borderTop: '1px solid #E7E5E4' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 500, color: '#78716C' }}>{item.date}</span>
+                    <Link href="#" className="inline-flex items-center gap-1.5 transition-all duration-300 hover:gap-2.5" style={{ fontSize: '13px', fontWeight: 600, color: '#C0272D' }}>
                       Ler matéria →
                     </Link>
                   </div>
@@ -158,80 +129,71 @@ export default function ImprensaPage() {
         </div>
       </section>
 
-      {/* ===== APARIÇÕES NA MÍDIA ===== */}
-      <section className="section-white">
-        <div className="container-main">
+      {/* ===== VEÍCULOS ===== */}
+      <section className="noise" style={{ background: '#FAFAF9', padding: '100px 0' }}>
+        <div className="container-gla relative z-10">
           <ScrollReveal>
-            <span className="label-section mb-4 block">Aparições na Mídia</span>
-            <h2
-              className="font-extrabold mb-12 md:mb-16"
-              style={{
-                fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
-                lineHeight: 1.1,
-                letterSpacing: '-0.02em',
-                color: '#1A1A1A',
-              }}
-            >
+            <span className="label-section mb-6" style={{ display: 'flex' }}>Aparições</span>
+            <h2 style={{
+              fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
+              fontWeight: 700,
+              lineHeight: 1.1,
+              letterSpacing: '-0.03em',
+              color: '#1A1714',
+              marginBottom: '48px',
+            }}>
               Onde somos citados
             </h2>
           </ScrollReveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              'Valor Econômico',
-              'Exame',
-              'Conjur',
-              'Folha de S.Paulo',
-              'O Globo',
-              'Portal Jurídico',
-              'Revista Jurídica',
-              'JOTA',
-            ].map((outlet, i) => (
-              <ScrollReveal key={i} delay={i * 60}>
+          <ScrollReveal stagger>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                'Valor Econômico',
+                'Exame',
+                'Conjur',
+                'Folha de S.Paulo',
+                'O Globo',
+                'Portal Jurídico',
+                'Revista Jurídica',
+                'JOTA',
+              ].map((outlet) => (
                 <div
-                  className="flex items-center justify-center p-6 h-20 transition-all duration-300 hover:-translate-y-1"
+                  key={outlet}
+                  className="flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
                   style={{
-                    background: '#F5F5F7',
+                    padding: '24px 16px',
+                    background: '#FFFFFF',
                     borderRadius: '12px',
-                    border: '1px solid rgba(0,0,0,0.06)',
+                    border: '1px solid #E7E5E4',
                   }}
                 >
-                  <span className="text-sm font-bold" style={{ color: '#6B7280' }}>{outlet}</span>
+                  <span style={{ fontSize: '14px', fontWeight: 700, color: '#78716C', letterSpacing: '-0.01em' }}>{outlet}</span>
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* ===== ARTIGOS CIENTÍFICOS — Glass cards ===== */}
-      <section className="section-gradient">
-        {/* Decorative blobs */}
-        <div
-          className="absolute top-[-80px] left-[-80px] w-[350px] h-[350px] pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(192,39,45,0.06) 0%, transparent 70%)',
-            borderRadius: '50%',
-          }}
-        />
-
-        <div className="container-main relative z-10">
+      {/* ===== PRODUÇÃO ACADÊMICA ===== */}
+      <section style={{ background: '#FFFFFF', padding: '100px 0' }}>
+        <div className="container-gla">
           <ScrollReveal>
-            <span className="label-section mb-4 block">Produção Acadêmica</span>
-            <h2
-              className="font-extrabold mb-12 md:mb-16"
-              style={{
-                fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
-                lineHeight: 1.1,
-                letterSpacing: '-0.02em',
-                color: '#1A1A1A',
-              }}
-            >
+            <span className="label-section mb-6" style={{ display: 'flex' }}>Produção Acadêmica</span>
+            <h2 style={{
+              fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
+              fontWeight: 700,
+              lineHeight: 1.1,
+              letterSpacing: '-0.03em',
+              color: '#1A1714',
+              marginBottom: '48px',
+            }}>
               Artigos científicos
             </h2>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 title: 'A eficácia dos programas de compliance trabalhista na redução do passivo judicial',
@@ -247,21 +209,30 @@ export default function ImprensaPage() {
               },
             ].map((pub, i) => (
               <ScrollReveal key={i} delay={i * 100}>
-                <div className="glass-card p-8 h-full flex flex-col">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: 'rgba(192,39,45,0.06)' }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.2} stroke="#C0272D" className="w-6 h-6">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                <div
+                  className="h-full flex flex-col"
+                  style={{ padding: '36px', border: '1px solid #E7E5E4', borderRadius: '16px' }}
+                >
+                  <div style={{
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '12px',
+                    background: 'rgba(192,39,45,0.06)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '24px',
+                  }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C0272D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
                     </svg>
                   </div>
-                  <h3 className="text-base font-bold mb-4 leading-snug flex-grow" style={{ color: '#1A1A1A', letterSpacing: '-0.01em' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#1A1714', lineHeight: 1.4, letterSpacing: '-0.01em', flexGrow: 1, marginBottom: '20px' }}>
                     {pub.title}
                   </h3>
-                  <div className="flex justify-between items-center pt-4" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                    <span className="text-xs font-medium" style={{ color: '#9CA3AF' }}>{pub.author}</span>
-                    <Link href="#" className="text-sm font-semibold" style={{ color: '#C0272D' }}>
+                  <div className="flex justify-between items-center" style={{ paddingTop: '16px', borderTop: '1px solid #E7E5E4' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 500, color: '#78716C' }}>{pub.author}</span>
+                    <Link href="#" style={{ fontSize: '13px', fontWeight: 600, color: '#C0272D' }}>
                       Baixar PDF
                     </Link>
                   </div>
@@ -273,31 +244,39 @@ export default function ImprensaPage() {
       </section>
 
       {/* ===== CTA ===== */}
-      <section style={{ background: '#C0272D', padding: '80px 0' }}>
-        <div className="container-main">
+      <section className="noise noise-dark" style={{ background: '#1A1714', padding: '100px 0' }}>
+        <div className="container-gla relative z-10">
           <ScrollReveal>
-            <div className="text-center max-w-2xl mx-auto">
-              <h2
-                className="text-white font-extrabold mb-4"
-                style={{
-                  fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)',
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.02em',
-                }}
-              >
+            <div className="text-center" style={{ maxWidth: '520px', margin: '0 auto' }}>
+              <h2 style={{
+                fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)',
+                fontWeight: 700,
+                lineHeight: 1.12,
+                letterSpacing: '-0.03em',
+                color: '#FFFFFF',
+                marginBottom: '16px',
+              }}>
                 Inscreva-se em nossa newsletter
               </h2>
-              <p className="text-sm mb-8 max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                Receba nossos artigos, análises e notícias sobre gestão de risco jurídico trabalhista diretamente no seu email.
+              <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.45)', marginBottom: '32px' }}>
+                Receba artigos e análises sobre gestão de risco jurídico trabalhista.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="email"
                   placeholder="Seu email corporativo"
-                  className="flex-grow px-5 py-3 rounded-xl text-sm focus:outline-none"
-                  style={{ background: '#FFFFFF', color: '#1A1A1A' }}
+                  style={{
+                    flexGrow: 1,
+                    padding: '14px 20px',
+                    borderRadius: '12px',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    background: 'rgba(255,255,255,0.06)',
+                    color: '#FFFFFF',
+                    fontSize: '14px',
+                    outline: 'none',
+                  }}
                 />
-                <button className="btn-white whitespace-nowrap text-sm">
+                <button className="btn-red" style={{ whiteSpace: 'nowrap' }}>
                   Inscrever-se →
                 </button>
               </div>

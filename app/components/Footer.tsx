@@ -2,31 +2,31 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#1A1A1A' }}>
-      <div className="container-main py-20">
-        {/* 4 Column Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-16">
-          {/* Col 1: Escritório */}
+    <footer style={{ backgroundColor: '#1A1714' }}>
+      <div className="container-gla" style={{ paddingTop: '80px', paddingBottom: '60px' }}>
+        {/* 4-column grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20">
+          {/* Col 1: Logo + description */}
           <div>
-            {/* Logo */}
-            <div className="flex items-center gap-2 mb-6">
-              <span style={{ fontWeight: 900, fontSize: '24px', color: '#C0272D' }}>GLa</span>
-              <span style={{ color: '#C0272D', fontSize: '30px', fontWeight: 100 }}>|</span>
-              <span style={{ fontSize: '9px', lineHeight: 1.3, fontWeight: 500, color: 'rgba(255,255,255,0.6)' }}
-                dangerouslySetInnerHTML={{ __html: 'gusmão<br>& lima<br>advogados' }}
+            <div className="flex items-center gap-3 mb-8">
+              <span style={{ fontWeight: 900, fontSize: '28px', color: '#C0272D', letterSpacing: '-0.03em', lineHeight: 1 }}>GLa</span>
+              <span style={{ color: '#C0272D', fontSize: '34px', fontWeight: 100, lineHeight: 1, opacity: 0.6 }}>|</span>
+              <span
+                style={{ fontSize: '9.5px', lineHeight: 1.4, fontWeight: 600, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.03em' }}
+                dangerouslySetInnerHTML={{ __html: 'gusmão<br/>& lima<br/>advogados' }}
               />
             </div>
-            <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.4)' }}>
-              Especialistas em Direito Trabalhista Empresarial. Protegendo empresas com estratégia e excelência desde 2010.
+            <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '14px', lineHeight: 1.7, maxWidth: '260px' }}>
+              Especialistas em Direito Trabalhista Empresarial. Protegendo o patrimônio de empresas com estratégia e excelência desde 2010.
             </p>
           </div>
 
           {/* Col 2: Serviços */}
           <div>
-            <h4 className="text-white font-bold text-base mb-6 tracking-tight">
+            <h4 style={{ color: '#FFFFFF', fontWeight: 700, fontSize: '13px', letterSpacing: '0.05em', textTransform: 'uppercase' as const, marginBottom: '28px' }}>
               Serviços
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {[
                 'Consultoria Preventiva',
                 'Defesa Processual',
@@ -34,7 +34,7 @@ export default function Footer() {
                 'Due Diligence',
               ].map((item) => (
                 <li key={item}>
-                  <Link href="/servicos" className="text-sm transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                  <Link href="/servicos" className="transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.35)', fontSize: '14px' }}>
                     {item}
                   </Link>
                 </li>
@@ -44,10 +44,10 @@ export default function Footer() {
 
           {/* Col 3: Institucional */}
           <div>
-            <h4 className="text-white font-bold text-base mb-6 tracking-tight">
+            <h4 style={{ color: '#FFFFFF', fontWeight: 700, fontSize: '13px', letterSpacing: '0.05em', textTransform: 'uppercase' as const, marginBottom: '28px' }}>
               Institucional
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {[
                 { label: 'Sobre nós', href: '/sobre' },
                 { label: 'Equipe', href: '/sobre' },
@@ -55,7 +55,7 @@ export default function Footer() {
                 { label: 'Contato', href: '/contato' },
               ].map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="text-sm transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                  <Link href={item.href} className="transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.35)', fontSize: '14px' }}>
                     {item.label}
                   </Link>
                 </li>
@@ -65,26 +65,26 @@ export default function Footer() {
 
           {/* Col 4: Contato */}
           <div>
-            <h4 className="text-white font-bold text-base mb-6 tracking-tight">
+            <h4 style={{ color: '#FFFFFF', fontWeight: 700, fontSize: '13px', letterSpacing: '0.05em', textTransform: 'uppercase' as const, marginBottom: '28px' }}>
               Contato
             </h4>
-            <ul className="space-y-3">
-              <li className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>
+            <ul className="space-y-4">
+              <li style={{ color: 'rgba(255,255,255,0.35)', fontSize: '14px', lineHeight: 1.6 }}>
                 Av. Franklin Roosevelt, 84 - GR 301<br />
                 Centro, Rio de Janeiro - 20021-120
               </li>
               <li>
-                <a href="tel:+552138835652" className="text-sm transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                <a href="tel:+552138835652" className="transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.35)', fontSize: '14px' }}>
                   (21) 3883-5652
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/5521994053121" target="_blank" rel="noopener noreferrer" className="text-sm transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                <a href="https://wa.me/5521994053121" target="_blank" rel="noopener noreferrer" className="transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.35)', fontSize: '14px' }}>
                   WhatsApp: (21) 99405-3121
                 </a>
               </li>
               <li>
-                <a href="mailto:wagner.gusmao@glaadvogados.com.br" className="text-sm transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                <a href="mailto:wagner.gusmao@glaadvogados.com.br" className="transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.35)', fontSize: '14px' }}>
                   wagner.gusmao@glaadvogados.com.br
                 </a>
               </li>
@@ -94,15 +94,14 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
-          className="pt-8 flex flex-col md:flex-row justify-between items-center gap-6"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+          className="flex flex-col md:flex-row justify-between items-center gap-4"
+          style={{ paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,0.06)' }}
         >
-          <p className="text-sm" style={{ color: 'rgba(255,255,255,0.25)' }}>
-            &copy; {new Date().getFullYear()} GLA | gusmão &amp; lima advogados. Todos os direitos reservados.
+          <p style={{ color: 'rgba(255,255,255,0.2)', fontSize: '13px' }}>
+            © 2026 GLA | gusmão &amp; lima advogados. Todos os direitos reservados.
           </p>
-
-          <p className="text-sm" style={{ color: 'rgba(255,255,255,0.25)' }}>
-            www.glaadvogados.com.br
+          <p style={{ color: 'rgba(255,255,255,0.2)', fontSize: '13px' }}>
+            OAB/RJ
           </p>
         </div>
       </div>

@@ -5,9 +5,9 @@ import Link from 'next/link';
 export default function SobrePage() {
   return (
     <>
-      {/* ===== HERO INTERNO — Branco overlay ===== */}
+      {/* ===== HERO INTERNO ===== */}
       <section
-        className="relative flex items-end overflow-hidden"
+        className="noise relative flex items-end"
         style={{ minHeight: '50vh' }}
       >
         <Image
@@ -20,149 +20,131 @@ export default function SobrePage() {
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.9) 100%)',
+            background: 'linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.65) 50%, rgba(255,255,255,0.92) 100%)',
           }}
         />
-        <div className="container-main relative z-10 pb-16 pt-40">
-          <span className="label-section mb-4 block">Sobre Nós</span>
-          <h1
-            className="font-extrabold max-w-3xl"
-            style={{
-              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-              lineHeight: 1.08,
-              letterSpacing: '-0.03em',
-              color: '#1A1A1A',
-            }}
-          >
-            Sobre a GLA Advogados
+        <div className="container-gla relative z-10" style={{ paddingBottom: '64px', paddingTop: '200px' }}>
+          <span className="label-section mb-6" style={{ display: 'flex' }}>Sobre nós</span>
+          <h1 style={{
+            fontSize: 'clamp(2rem, 4.5vw, 3.5rem)',
+            fontWeight: 800,
+            lineHeight: 1.05,
+            letterSpacing: '-0.03em',
+            color: '#1A1714',
+            maxWidth: '640px',
+          }}>
+            Uma trajetória construída com resultados
           </h1>
-          <div className="mt-4" style={{ width: '60px', height: '3px', background: '#C0272D', borderRadius: '2px' }} />
+          <div className="line-reveal mt-6" style={{ animationDelay: '0.3s' }} />
         </div>
       </section>
 
       {/* ===== HISTÓRIA ===== */}
-      <section className="section-white">
-        <div className="container-main">
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+      <section className="noise" style={{ background: '#FFFFFF', padding: '120px 0' }}>
+        <div className="container-gla relative z-10">
+          {/* Decorative number */}
+          <span
+            className="hidden md:block absolute select-none pointer-events-none"
+            style={{ top: '-20px', right: '0', fontSize: '200px', fontWeight: 800, color: '#1A1714', opacity: 0.03, lineHeight: 1, letterSpacing: '-0.04em' }}
+            aria-hidden="true"
+          >
+            01
+          </span>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <ScrollReveal>
               <div>
-                <span className="label-section mb-4 block">Nossa História</span>
-                <h2
-                  className="font-extrabold mb-6"
-                  style={{
-                    fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
-                    lineHeight: 1.1,
-                    letterSpacing: '-0.02em',
-                    color: '#1A1A1A',
-                  }}
-                >
-                  Uma trajetória construída com resultados
+                <span className="label-section mb-6" style={{ display: 'flex' }}>Nossa história</span>
+                <h2 style={{
+                  fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
+                  fontWeight: 700,
+                  lineHeight: 1.1,
+                  letterSpacing: '-0.03em',
+                  color: '#1A1714',
+                  marginBottom: '24px',
+                }}>
+                  15+ anos redefinindo a advocacia empresarial
                 </h2>
-                <div className="space-y-4 text-base leading-relaxed" style={{ color: '#6B7280' }}>
-                  <p>
-                    Fundada por Wagner Gusmão e Larissa de Oliveira Lima, a GLA Advogados nasceu da necessidade de
-                    um escritório que entendesse profundamente os desafios de compliance trabalhista das organizações
-                    no Rio de Janeiro e em todo o Brasil.
+                <div className="space-y-5" style={{ maxWidth: '520px' }}>
+                  <p style={{ fontSize: '17px', lineHeight: 1.75, color: '#78716C' }}>
+                    Fundada por Wagner Gusmão e Larissa de Oliveira Lima, a GLA Advogados nasceu da
+                    necessidade de um escritório que entendesse profundamente os desafios de compliance
+                    trabalhista das organizações no Rio de Janeiro e em todo o Brasil.
                   </p>
-                  <p>
-                    Com mais de 15 anos de atuação exclusiva em Direito Trabalhista Empresarial, consolidamos nossa
-                    posição como referência na defesa de empresas, combinando rigor técnico com visão de negócios.
+                  <p style={{ fontSize: '17px', lineHeight: 1.75, color: '#78716C' }}>
+                    Com mais de 15 anos de atuação exclusiva em Direito Trabalhista Empresarial,
+                    consolidamos nossa posição como referência na defesa de empresas, atendendo
+                    clientes como a NISSAN e combinando rigor técnico com visão de negócios.
                   </p>
-                  <p>
-                    Cada estratégia é desenhada para proteger o patrimônio da empresa e otimizar a gestão do
-                    quadro de colaboradores, sempre com transparência e resultados mensuráveis.
+                  <p style={{ fontSize: '17px', lineHeight: 1.75, color: '#78716C' }}>
+                    Cada estratégia é desenhada para proteger o patrimônio da empresa e otimizar a
+                    gestão do quadro de colaboradores, sempre com transparência e resultados mensuráveis.
                   </p>
                 </div>
               </div>
-              <div className="relative overflow-hidden" style={{ borderRadius: '20px' }}>
+            </ScrollReveal>
+
+            <ScrollReveal delay={120}>
+              <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 24px 64px rgba(0,0,0,0.08)' }}>
                 <Image
                   src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&q=80"
-                  alt="Equipe em reunião"
-                  width={600}
-                  height={400}
-                  className="w-full h-[350px] md:h-[420px] object-cover"
+                  alt="Equipe em reunião estratégica"
+                  width={640}
+                  height={480}
+                  className="w-full object-cover"
+                  style={{ height: '420px' }}
                 />
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
-      {/* ===== MISSÃO, VISÃO, VALORES — Glass cards ===== */}
-      <section className="section-gradient">
-        {/* Decorative blobs */}
-        <div
-          className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(192,39,45,0.08) 0%, transparent 70%)',
-            borderRadius: '50%',
-          }}
-        />
-        <div
-          className="absolute bottom-[-50px] left-[-50px] w-[300px] h-[300px] pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(192,39,45,0.05) 0%, transparent 70%)',
-            borderRadius: '50%',
-          }}
-        />
-
-        <div className="container-main relative z-10">
+      {/* ===== VALORES ===== */}
+      <section className="noise" style={{ background: '#FAFAF9', padding: '120px 0' }}>
+        <div className="container-gla relative z-10">
           <ScrollReveal>
-            <div className="text-center mb-12 md:mb-16">
-              <span className="label-section mb-4 block">Valores</span>
-              <h2
-                className="font-extrabold"
-                style={{
-                  fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.02em',
-                  color: '#1A1A1A',
-                }}
-              >
+            <div className="text-center mb-16">
+              <span className="label-section mb-6 justify-center" style={{ display: 'flex' }}>Valores</span>
+              <h2 style={{
+                fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
+                fontWeight: 700,
+                lineHeight: 1.1,
+                letterSpacing: '-0.03em',
+                color: '#1A1714',
+              }}>
                 Princípios que nos guiam
               </h2>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
+                num: '01',
                 title: 'Excelência Técnica',
-                desc: 'Buscamos a excelência em todas as nossas ações, desde a análise de compliance até a representação em audiências e tribunais.',
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.2} stroke="currentColor" className="w-7 h-7">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
-                  </svg>
-                ),
+                desc: 'Buscamos a excelência em cada ação — da análise de compliance à representação em tribunais superiores.',
               },
               {
+                num: '02',
                 title: 'Parceria Estratégica',
-                desc: 'Trabalhamos em conjunto com nossos clientes, construindo relações de parceria baseadas em comunicação clara e resultados.',
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.2} stroke="currentColor" className="w-7 h-7">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
-                  </svg>
-                ),
+                desc: 'Construímos relações de longo prazo baseadas em comunicação clara e resultados concretos.',
               },
               {
+                num: '03',
                 title: 'Ética e Transparência',
-                desc: 'Atuamos com integridade, mantendo os mais altos padrões éticos e deontológicos da advocacia em todas as nossas relações.',
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.2} stroke="currentColor" className="w-7 h-7">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" />
-                  </svg>
-                ),
+                desc: 'Atuamos com integridade, mantendo os mais altos padrões éticos e deontológicos da advocacia.',
               },
             ].map((valor, i) => (
               <ScrollReveal key={i} delay={i * 100}>
-                <div className="glass-card p-8 h-full">
-                  <div className="mb-5" style={{ color: '#C0272D' }}>
-                    {valor.icon}
-                  </div>
-                  <h3 className="text-lg font-bold mb-3" style={{ color: '#1A1A1A', letterSpacing: '-0.01em' }}>
+                <div className="service-card" style={{ padding: '40px 36px' }}>
+                  <span style={{ fontSize: '13px', fontWeight: 700, color: '#C0272D', display: 'block', marginBottom: '24px' }}>
+                    {valor.num}
+                  </span>
+                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#1A1714', letterSpacing: '-0.02em', marginBottom: '12px' }}>
                     {valor.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: '#6B7280' }}>
+                  <p style={{ fontSize: '15px', lineHeight: 1.7, color: '#78716C' }}>
                     {valor.desc}
                   </p>
                 </div>
@@ -172,50 +154,49 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* ===== SÓCIOS EXPANDIDOS ===== */}
-      <section className="section-white">
-        <div className="container-main">
+      {/* ===== EQUIPE EXPANDIDA ===== */}
+      <section style={{ background: '#FFFFFF', padding: '120px 0' }}>
+        <div className="container-gla">
           <ScrollReveal>
-            <span className="label-section mb-4 block">Liderança</span>
-            <h2
-              className="font-extrabold mb-16 max-w-2xl"
-              style={{
-                fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
-                lineHeight: 1.1,
-                letterSpacing: '-0.02em',
-                color: '#1A1A1A',
-              }}
-            >
+            <span className="label-section mb-6" style={{ display: 'flex' }}>Liderança</span>
+            <h2 style={{
+              fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
+              fontWeight: 700,
+              lineHeight: 1.1,
+              letterSpacing: '-0.03em',
+              color: '#1A1714',
+              marginBottom: '64px',
+            }}>
               Conheça nossos sócios
             </h2>
           </ScrollReveal>
 
           {/* Wagner */}
           <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-              <div className="relative overflow-hidden" style={{ borderRadius: '20px' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center mb-24">
+              <div style={{ borderRadius: '16px', overflow: 'hidden' }}>
                 <Image
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80"
                   alt="Wagner Gusmão"
                   width={600}
                   height={500}
-                  className="w-full h-[400px] object-cover"
+                  className="w-full object-cover"
+                  style={{ height: '420px' }}
                 />
               </div>
               <div>
-                <h3 className="text-2xl font-extrabold mb-1" style={{ color: '#1A1A1A', letterSpacing: '-0.02em' }}>
+                <h3 style={{ fontSize: '28px', fontWeight: 800, color: '#1A1714', letterSpacing: '-0.03em', marginBottom: '4px' }}>
                   Wagner Gusmão
                 </h3>
-                <p className="text-sm font-semibold mb-6" style={{ color: '#C0272D' }}>Sócio Fundador</p>
-                <div className="space-y-4 text-base leading-relaxed" style={{ color: '#6B7280' }}>
-                  <p>
-                    Especialista em Direito do Trabalho com mais de 20 anos de experiência em advocacia
-                    trabalhista empresarial. Atua na defesa de empresas de médio e grande porte em
-                    processos trabalhistas de alta complexidade.
+                <p style={{ fontSize: '14px', fontWeight: 600, color: '#C0272D', marginBottom: '24px' }}>Sócio Fundador</p>
+                <div className="space-y-4">
+                  <p style={{ fontSize: '16px', lineHeight: 1.75, color: '#78716C' }}>
+                    Especialista em Direito do Trabalho com mais de 20 anos de experiência na
+                    defesa de empresas de médio e grande porte em processos de alta complexidade.
                   </p>
-                  <p>
+                  <p style={{ fontSize: '16px', lineHeight: 1.75, color: '#78716C' }}>
                     Antes de fundar a GLA, atuou como gerente jurídico em empresas de grande porte.
-                    Presença constante na mídia como referência em legislação trabalhista e gestão de risco jurídico.
+                    Presença constante na mídia como referência em legislação trabalhista e gestão de risco.
                   </p>
                 </div>
               </div>
@@ -224,115 +205,104 @@ export default function SobrePage() {
 
           {/* Larissa */}
           <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center mb-24">
               <div className="order-2 md:order-1">
-                <h3 className="text-2xl font-extrabold mb-1" style={{ color: '#1A1A1A', letterSpacing: '-0.02em' }}>
+                <h3 style={{ fontSize: '28px', fontWeight: 800, color: '#1A1714', letterSpacing: '-0.03em', marginBottom: '4px' }}>
                   Larissa de Oliveira Lima
                 </h3>
-                <p className="text-sm font-semibold mb-6" style={{ color: '#C0272D' }}>Sócia</p>
-                <div className="space-y-4 text-base leading-relaxed" style={{ color: '#6B7280' }}>
-                  <p>
+                <p style={{ fontSize: '14px', fontWeight: 600, color: '#C0272D', marginBottom: '24px' }}>Sócia</p>
+                <div className="space-y-4">
+                  <p style={{ fontSize: '16px', lineHeight: 1.75, color: '#78716C' }}>
                     Especialista em consultoria trabalhista preventiva e compliance para grandes organizações.
-                    Desenvolveu metodologia própria para implementação de protocolos de conformidade
-                    adaptados à realidade do quadro de colaboradores de cada setor econômico.
+                    Desenvolveu metodologia própria para implementação de protocolos de conformidade.
                   </p>
-                  <p>
+                  <p style={{ fontSize: '16px', lineHeight: 1.75, color: '#78716C' }}>
                     Atua como palestrante em congressos nacionais sobre direito trabalhista empresarial
                     e gestão estratégica do departamento jurídico.
                   </p>
                 </div>
               </div>
-              <div className="relative overflow-hidden order-1 md:order-2" style={{ borderRadius: '20px' }}>
+              <div className="order-1 md:order-2" style={{ borderRadius: '16px', overflow: 'hidden' }}>
                 <Image
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80"
                   alt="Larissa de Oliveira Lima"
                   width={600}
                   height={500}
-                  className="w-full h-[400px] object-cover"
+                  className="w-full object-cover"
+                  style={{ height: '420px' }}
                 />
               </div>
             </div>
           </ScrollReveal>
 
           {/* Marcella & Giselle */}
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-              <div className="relative overflow-hidden" style={{ borderRadius: '20px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+            <ScrollReveal>
+              <div style={{ borderRadius: '16px', overflow: 'hidden', marginBottom: '20px' }}>
                 <Image
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80"
+                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"
                   alt="Marcella Marinho"
                   width={600}
-                  height={500}
-                  className="w-full h-[400px] object-cover"
+                  height={400}
+                  className="w-full object-cover"
+                  style={{ height: '360px' }}
                 />
               </div>
-              <div>
-                <h3 className="text-2xl font-extrabold mb-1" style={{ color: '#1A1A1A', letterSpacing: '-0.02em' }}>
-                  Marcella Marinho
-                </h3>
-                <p className="text-sm font-semibold mb-6" style={{ color: '#C0272D' }}>Advogada</p>
-                <div className="space-y-4 text-base leading-relaxed" style={{ color: '#6B7280' }}>
-                  <p>
-                    Especialista em defesa processual trabalhista, com atuação em todas as instâncias judiciais.
-                    Responsável por estratégias de litígio de alta complexidade para empresas de diversos setores.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
+              <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#1A1714', letterSpacing: '-0.02em', marginBottom: '4px' }}>
+                Marcella Marinho
+              </h3>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: '#C0272D', marginBottom: '12px' }}>Advogada</p>
+              <p style={{ fontSize: '15px', lineHeight: 1.7, color: '#78716C' }}>
+                Especialista em defesa processual trabalhista, com atuação em todas as instâncias judiciais.
+                Responsável por estratégias de litígio de alta complexidade.
+              </p>
+            </ScrollReveal>
 
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1">
-                <h3 className="text-2xl font-extrabold mb-1" style={{ color: '#1A1A1A', letterSpacing: '-0.02em' }}>
-                  Giselle
-                </h3>
-                <p className="text-sm font-semibold mb-6" style={{ color: '#C0272D' }}>Advogada</p>
-                <div className="space-y-4 text-base leading-relaxed" style={{ color: '#6B7280' }}>
-                  <p>
-                    Atua em due diligence trabalhista e gestão de passivo, com foco na identificação
-                    de contingências e quantificação de riscos para operações corporativas.
-                  </p>
-                </div>
-              </div>
-              <div className="relative overflow-hidden order-1 md:order-2" style={{ borderRadius: '20px' }}>
+            <ScrollReveal delay={100}>
+              <div style={{ borderRadius: '16px', overflow: 'hidden', marginBottom: '20px' }}>
                 <Image
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
                   alt="Giselle"
                   width={600}
-                  height={500}
-                  className="w-full h-[400px] object-cover"
+                  height={400}
+                  className="w-full object-cover"
+                  style={{ height: '360px' }}
                 />
               </div>
-            </div>
-          </ScrollReveal>
+              <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#1A1714', letterSpacing: '-0.02em', marginBottom: '4px' }}>
+                Giselle
+              </h3>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: '#C0272D', marginBottom: '12px' }}>Advogada</p>
+              <p style={{ fontSize: '15px', lineHeight: 1.7, color: '#78716C' }}>
+                Atua em due diligence trabalhista e gestão de passivo, com foco na identificação
+                de contingências e quantificação de riscos para operações corporativas.
+              </p>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
       {/* ===== CTA ===== */}
-      <section style={{ background: '#C0272D', padding: '80px 0' }}>
-        <div className="container-main">
+      <section className="noise noise-dark" style={{ background: '#1A1714', padding: '120px 0' }}>
+        <div className="container-gla relative z-10">
           <ScrollReveal>
-            <div className="text-center max-w-2xl mx-auto">
-              <h2
-                className="font-extrabold mb-6 text-white"
-                style={{
-                  fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.02em',
-                }}
-              >
+            <div style={{ maxWidth: '600px' }}>
+              <h2 style={{
+                fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
+                fontWeight: 700,
+                lineHeight: 1.12,
+                letterSpacing: '-0.03em',
+                color: '#FFFFFF',
+                marginBottom: '20px',
+              }}>
                 Conheça pessoalmente nossa equipe
               </h2>
-              <p className="text-base mb-10 leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                Agende uma visita ao nosso escritório no Centro do Rio de Janeiro e descubra como podemos
-                auxiliar sua empresa na gestão de risco jurídico trabalhista.
+              <p style={{ fontSize: '17px', lineHeight: 1.7, color: 'rgba(255,255,255,0.5)', marginBottom: '40px' }}>
+                Agende uma visita ao nosso escritório no Centro do Rio de Janeiro.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/contato" className="btn-white">
-                  Solicitar Análise Jurídica →
-                </Link>
-              </div>
+              <Link href="/contato" className="btn-outline-white">
+                Solicitar Análise Jurídica →
+              </Link>
             </div>
           </ScrollReveal>
         </div>

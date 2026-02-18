@@ -2,12 +2,79 @@ import ScrollReveal from '../components/ScrollReveal';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const services = [
+  {
+    num: '01',
+    title: 'Consultoria Trabalhista Preventiva',
+    desc: 'Nossa consultoria preventiva é focada em identificar e neutralizar potenciais riscos trabalhistas antes que se transformem em problemas concretos. Desenvolvemos protocolos, políticas e procedimentos de compliance adaptados à realidade da sua empresa.',
+    items: [
+      'Avaliação de contratos e políticas',
+      'Compliance trabalhista',
+      'Auditorias preventivas',
+      'Treinamentos para gestores',
+      'Revisão de procedimentos internos',
+      'Assessoria em negociações sindicais',
+    ],
+    img: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80',
+    imgAlt: 'Consultoria Preventiva',
+    cta: 'Solicitar Consultoria →',
+  },
+  {
+    num: '02',
+    title: 'Defesa em Processos Trabalhistas',
+    desc: 'Quando um litígio é inevitável, nossa equipe de contencioso atua com rigor técnico e estratégia personalizada para garantir a melhor defesa dos interesses da sua empresa em todas as instâncias — do primeiro grau ao TST.',
+    items: [
+      'Defesa em processos individuais',
+      'Defesa em ações coletivas',
+      'Recursos nos tribunais superiores',
+      'Negociação de acordos',
+      'Procedimentos administrativos',
+      'Acompanhamento de fiscalizações',
+    ],
+    img: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80',
+    imgAlt: 'Defesa Processual',
+    cta: 'Solicitar Defesa →',
+  },
+  {
+    num: '03',
+    title: 'Gestão de Passivo Trabalhista',
+    desc: 'Estratégias personalizadas para gestão eficiente do passivo trabalhista utilizando ferramentas de análise de dados e inteligência jurídica para otimizar resultados e reduzir custos de forma consistente.',
+    items: [
+      'Diagnóstico de contingências',
+      'Análise preditiva de riscos',
+      'Planos de redução de passivo',
+      'Dashboard de controle processual',
+      'Relatórios gerenciais',
+      'Estratégias de encerramento',
+    ],
+    img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80',
+    imgAlt: 'Gestão de Passivo',
+    cta: 'Solicitar Gestão →',
+  },
+  {
+    num: '04',
+    title: 'Due Diligence Trabalhista',
+    desc: 'Análises minuciosas para identificar contingências trabalhistas em operações de fusões e aquisições, proporcionando segurança jurídica e clareza para tomada de decisões em transações corporativas.',
+    items: [
+      'Avaliação de processos trabalhistas',
+      'Identificação de passivos ocultos',
+      'Análise de documentos e contratos',
+      'Avaliação de procedimentos internos',
+      'Quantificação de riscos',
+      'Recomendações estratégicas',
+    ],
+    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
+    imgAlt: 'Due Diligence',
+    cta: 'Solicitar Due Diligence →',
+  },
+];
+
 export default function ServicosPage() {
   return (
     <>
       {/* ===== HERO INTERNO ===== */}
       <section
-        className="relative flex items-end overflow-hidden"
+        className="noise relative flex items-end"
         style={{ minHeight: '50vh' }}
       >
         <Image
@@ -20,251 +87,123 @@ export default function ServicosPage() {
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.9) 100%)',
+            background: 'linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.65) 50%, rgba(255,255,255,0.92) 100%)',
           }}
         />
-        <div className="container-main relative z-10 pb-16 pt-40">
-          <span className="label-section mb-4 block">Nossos Serviços</span>
-          <h1
-            className="font-extrabold max-w-3xl"
-            style={{
-              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-              lineHeight: 1.08,
-              letterSpacing: '-0.03em',
-              color: '#1A1A1A',
-            }}
-          >
-            Serviços jurídicos especializados para sua empresa
+        <div className="container-gla relative z-10" style={{ paddingBottom: '64px', paddingTop: '200px' }}>
+          <span className="label-section mb-6" style={{ display: 'flex' }}>Nossos Serviços</span>
+          <h1 style={{
+            fontSize: 'clamp(2rem, 4.5vw, 3.5rem)',
+            fontWeight: 800,
+            lineHeight: 1.05,
+            letterSpacing: '-0.03em',
+            color: '#1A1714',
+            maxWidth: '640px',
+          }}>
+            Proteção jurídica sob medida para sua empresa
           </h1>
-          <div className="mt-4" style={{ width: '60px', height: '3px', background: '#C0272D', borderRadius: '2px' }} />
+          <div className="line-reveal mt-6" style={{ animationDelay: '0.3s' }} />
         </div>
       </section>
 
-      {/* ===== 4 SERVIÇOS EM GLASS CARDS ===== */}
-      <section className="section-gradient">
-        {/* Decorative blobs */}
-        <div
-          className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(192,39,45,0.08) 0%, transparent 70%)',
-            borderRadius: '50%',
-          }}
-        />
-        <div
-          className="absolute bottom-[-50px] left-[-50px] w-[300px] h-[300px] pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(192,39,45,0.05) 0%, transparent 70%)',
-            borderRadius: '50%',
-          }}
-        />
+      {/* ===== SERVIÇOS DETALHADOS ===== */}
+      <section className="noise" style={{ background: '#FFFFFF', padding: '100px 0' }}>
+        <div className="container-gla relative z-10">
+          {services.map((service, i) => {
+            const isEven = i % 2 === 1;
+            return (
+              <ScrollReveal key={service.num}>
+                <div
+                  className="service-card mb-10 last:mb-0"
+                  style={{ padding: '48px 40px', borderRadius: '20px' }}
+                >
+                  {/* Oversized decorative number */}
+                  <span
+                    className="card-number absolute select-none pointer-events-none hidden md:block"
+                    style={{
+                      top: '20px',
+                      right: '32px',
+                      fontSize: '160px',
+                      fontWeight: 800,
+                      color: '#1A1714',
+                      lineHeight: 1,
+                      letterSpacing: '-0.04em',
+                    }}
+                    aria-hidden="true"
+                  >
+                    {service.num}
+                  </span>
 
-        <div className="container-main relative z-10">
-          {/* Serviço 1 */}
-          <ScrollReveal>
-            <div className="glass-card p-8 md:p-12 mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div className="relative overflow-hidden" style={{ borderRadius: '16px' }}>
-                  <Image
-                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80"
-                    alt="Consultoria Preventiva"
-                    width={600}
-                    height={400}
-                    className="w-full h-[280px] md:h-[340px] object-cover"
-                  />
-                </div>
-                <div>
-                  <span className="text-5xl font-extralight block mb-4" style={{ color: 'rgba(192,39,45,0.15)', letterSpacing: '-0.04em' }}>01.</span>
-                  <h2 className="text-2xl md:text-3xl font-extrabold mb-4" style={{ color: '#1A1A1A', letterSpacing: '-0.02em' }}>
-                    Consultoria Trabalhista Preventiva
-                  </h2>
-                  <p className="text-base leading-relaxed mb-6" style={{ color: '#6B7280' }}>
-                    Nossa consultoria preventiva é focada em identificar e neutralizar potenciais riscos trabalhistas
-                    antes que se transformem em problemas concretos. Desenvolvemos protocolos, políticas e
-                    procedimentos de compliance adaptados à realidade da sua empresa e seu quadro de colaboradores.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                    {[
-                      'Avaliação de contratos e políticas',
-                      'Compliance trabalhista',
-                      'Auditorias preventivas',
-                      'Treinamentos para gestores',
-                      'Revisão de procedimentos internos',
-                      'Assessoria em negociações sindicais',
-                    ].map((item) => (
-                      <div key={item} className="flex items-center gap-2 text-sm" style={{ color: '#6B7280' }}>
-                        <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#C0272D' }} />
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                  <Link href="/contato" className="btn-red-sm">
-                    Solicitar Consultoria →
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
+                  <div className={`grid grid-cols-1 md:grid-cols-2 gap-10 items-center ${isEven ? 'md:direction-rtl' : ''}`}>
+                    <div className={isEven ? 'md:order-2' : ''} style={{ borderRadius: '14px', overflow: 'hidden' }}>
+                      <Image
+                        src={service.img}
+                        alt={service.imgAlt}
+                        width={600}
+                        height={400}
+                        className="w-full object-cover"
+                        style={{ height: '340px' }}
+                      />
+                    </div>
+                    <div className={isEven ? 'md:order-1' : ''} style={{ position: 'relative', zIndex: 2 }}>
+                      <span style={{ fontSize: '14px', fontWeight: 700, color: '#C0272D', display: 'block', marginBottom: '12px' }}>
+                        {service.num}
+                      </span>
+                      <h2 style={{
+                        fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
+                        fontWeight: 800,
+                        color: '#1A1714',
+                        letterSpacing: '-0.02em',
+                        marginBottom: '16px',
+                        lineHeight: 1.15,
+                      }}>
+                        {service.title}
+                      </h2>
+                      <p style={{ fontSize: '15px', lineHeight: 1.75, color: '#78716C', marginBottom: '24px' }}>
+                        {service.desc}
+                      </p>
 
-          {/* Serviço 2 */}
-          <ScrollReveal>
-            <div className="glass-card p-8 md:p-12 mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div className="order-2 md:order-1">
-                  <span className="text-5xl font-extralight block mb-4" style={{ color: 'rgba(192,39,45,0.15)', letterSpacing: '-0.04em' }}>02.</span>
-                  <h2 className="text-2xl md:text-3xl font-extrabold mb-4" style={{ color: '#1A1A1A', letterSpacing: '-0.02em' }}>
-                    Defesa em Processos Trabalhistas
-                  </h2>
-                  <p className="text-base leading-relaxed mb-6" style={{ color: '#6B7280' }}>
-                    Quando um litígio é inevitável, nossa equipe especializada em contencioso trabalhista atua com
-                    rigor técnico e estratégia personalizada para garantir a melhor defesa dos interesses da sua
-                    empresa em todas as instâncias.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                    {[
-                      'Defesa em processos individuais',
-                      'Defesa em ações coletivas',
-                      'Recursos nos tribunais superiores',
-                      'Negociação de acordos',
-                      'Procedimentos administrativos',
-                      'Acompanhamento de fiscalizações',
-                    ].map((item) => (
-                      <div key={item} className="flex items-center gap-2 text-sm" style={{ color: '#6B7280' }}>
-                        <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#C0272D' }} />
-                        {item}
+                      {/* Items grid */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                        {service.items.map((item) => (
+                          <div key={item} className="flex items-center gap-2">
+                            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#C0272D', flexShrink: 0, display: 'block', opacity: 0.6 }} />
+                            <span style={{ fontSize: '13px', color: '#78716C' }}>{item}</span>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                  <Link href="/contato" className="btn-red-sm">
-                    Solicitar Defesa →
-                  </Link>
-                </div>
-                <div className="relative overflow-hidden order-1 md:order-2" style={{ borderRadius: '16px' }}>
-                  <Image
-                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80"
-                    alt="Defesa Processual"
-                    width={600}
-                    height={400}
-                    className="w-full h-[280px] md:h-[340px] object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
 
-          {/* Serviço 3 */}
-          <ScrollReveal>
-            <div className="glass-card p-8 md:p-12 mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div className="relative overflow-hidden" style={{ borderRadius: '16px' }}>
-                  <Image
-                    src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80"
-                    alt="Gestão de Passivo"
-                    width={600}
-                    height={400}
-                    className="w-full h-[280px] md:h-[340px] object-cover"
-                  />
-                </div>
-                <div>
-                  <span className="text-5xl font-extralight block mb-4" style={{ color: 'rgba(192,39,45,0.15)', letterSpacing: '-0.04em' }}>03.</span>
-                  <h2 className="text-2xl md:text-3xl font-extrabold mb-4" style={{ color: '#1A1A1A', letterSpacing: '-0.02em' }}>
-                    Gestão de Passivo Trabalhista
-                  </h2>
-                  <p className="text-base leading-relaxed mb-6" style={{ color: '#6B7280' }}>
-                    Desenvolvemos estratégias personalizadas para gestão eficiente do passivo trabalhista da
-                    sua empresa, utilizando ferramentas de análise de dados e inteligência jurídica para otimizar
-                    resultados e reduzir custos.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                    {[
-                      'Diagnóstico de contingências',
-                      'Análise preditiva de riscos',
-                      'Planos de redução de passivo',
-                      'Dashboard de controle processual',
-                      'Relatórios gerenciais',
-                      'Estratégias de encerramento',
-                    ].map((item) => (
-                      <div key={item} className="flex items-center gap-2 text-sm" style={{ color: '#6B7280' }}>
-                        <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#C0272D' }} />
-                        {item}
-                      </div>
-                    ))}
+                      <Link href="/contato" className="btn-red-sm">
+                        {service.cta}
+                      </Link>
+                    </div>
                   </div>
-                  <Link href="/contato" className="btn-red-sm">
-                    Solicitar Gestão →
-                  </Link>
                 </div>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Serviço 4 */}
-          <ScrollReveal>
-            <div className="glass-card p-8 md:p-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div className="order-2 md:order-1">
-                  <span className="text-5xl font-extralight block mb-4" style={{ color: 'rgba(192,39,45,0.15)', letterSpacing: '-0.04em' }}>04.</span>
-                  <h2 className="text-2xl md:text-3xl font-extrabold mb-4" style={{ color: '#1A1A1A', letterSpacing: '-0.02em' }}>
-                    Due Diligence Trabalhista
-                  </h2>
-                  <p className="text-base leading-relaxed mb-6" style={{ color: '#6B7280' }}>
-                    Realizamos análises minuciosas para identificar contingências trabalhistas em operações de
-                    fusões e aquisições, proporcionando segurança jurídica e clareza para tomada de decisões
-                    em transações corporativas.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                    {[
-                      'Avaliação de processos trabalhistas',
-                      'Identificação de passivos ocultos',
-                      'Análise de documentos e contratos',
-                      'Avaliação de procedimentos internos',
-                      'Quantificação de riscos',
-                      'Recomendações estratégicas',
-                    ].map((item) => (
-                      <div key={item} className="flex items-center gap-2 text-sm" style={{ color: '#6B7280' }}>
-                        <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#C0272D' }} />
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                  <Link href="/contato" className="btn-red-sm">
-                    Solicitar Due Diligence →
-                  </Link>
-                </div>
-                <div className="relative overflow-hidden order-1 md:order-2" style={{ borderRadius: '16px' }}>
-                  <Image
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
-                    alt="Due Diligence"
-                    width={600}
-                    height={400}
-                    className="w-full h-[280px] md:h-[340px] object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </section>
 
       {/* ===== CTA ===== */}
-      <section style={{ background: '#C0272D', padding: '80px 0' }}>
-        <div className="container-main">
+      <section className="noise noise-dark" style={{ background: '#1A1714', padding: '120px 0' }}>
+        <div className="container-gla relative z-10">
           <ScrollReveal>
-            <div className="text-center max-w-2xl mx-auto">
-              <h2
-                className="font-extrabold mb-6 text-white"
-                style={{
-                  fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)',
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.02em',
-                }}
-              >
+            <div style={{ maxWidth: '600px' }}>
+              <h2 style={{
+                fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
+                fontWeight: 700,
+                lineHeight: 1.12,
+                letterSpacing: '-0.03em',
+                color: '#FFFFFF',
+                marginBottom: '20px',
+              }}>
                 Precisando de soluções personalizadas?
               </h2>
-              <p className="text-base leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                Solicite uma análise personalizada das necessidades jurídicas da sua organização e descubra
-                como otimizar a gestão de risco trabalhista.
+              <p style={{ fontSize: '17px', lineHeight: 1.7, color: 'rgba(255,255,255,0.5)', marginBottom: '40px' }}>
+                Solicite uma análise personalizada das necessidades jurídicas da sua organização.
               </p>
-              <Link href="/contato" className="btn-white">
+              <Link href="/contato" className="btn-outline-white">
                 Solicitar Análise Jurídica →
               </Link>
             </div>

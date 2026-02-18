@@ -6,9 +6,10 @@ interface ScrollRevealProps {
   children: ReactNode;
   delay?: number;
   className?: string;
+  stagger?: boolean;
 }
 
-export default function ScrollReveal({ children, delay = 0, className = '' }: ScrollRevealProps) {
+export default function ScrollReveal({ children, delay = 0, className = '', stagger = false }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export default function ScrollReveal({ children, delay = 0, className = '' }: Sc
       },
       {
         root: null,
-        rootMargin: '0px 0px -40px 0px',
+        rootMargin: '0px 0px -60px 0px',
         threshold: 0.1,
       }
     );
@@ -38,8 +39,10 @@ export default function ScrollReveal({ children, delay = 0, className = '' }: Sc
     };
   }, [delay]);
 
+  const baseClass = stagger ? 'stagger-reveal' : 'fade-in';
+
   return (
-    <div ref={ref} className={`fade-in ${className}`}>
+    <div ref={ref} className={`${baseClass} ${className}`}>
       {children}
     </div>
   );
