@@ -11,9 +11,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'GLA Advogados | Direito Trabalhista Empresarial',
-  description: 'Escritório de advocacia especializado na defesa de empresas em processos trabalhistas e consultoria preventiva para organizações de médio e grande porte.',
-  keywords: ['advocacia trabalhista', 'direito empresarial', 'consultoria jurídica', 'compliance trabalhista', 'São Paulo'],
+  title: 'GLA Advogados | Direito Trabalhista Empresarial — Rio de Janeiro',
+  description: 'Escritório de advocacia especializado na defesa de empresas em processos trabalhistas, consultoria preventiva e gestão de passivo trabalhista. Mais de 15 anos de experiência no Rio de Janeiro.',
+  keywords: ['advocacia trabalhista', 'direito trabalhista empresarial', 'consultoria jurídica', 'compliance trabalhista', 'Rio de Janeiro', 'defesa de empresas'],
 }
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={inter.variable}>
-      <body className={`${inter.className} min-h-screen flex flex-col bg-off-white antialiased`}>
+      <body className={`${inter.className} min-h-screen flex flex-col bg-gla-bg antialiased`}>
         <Header />
         <main className="flex-grow">
           {children}

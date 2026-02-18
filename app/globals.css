@@ -1,26 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-dark: #0C1220;
-  --color-dark-light: #151D2E;
-  --color-card: #FFFFFF;
-  --color-wine: #7B1535;
-  --color-wine-light: #9B1D44;
-  --color-gold: #B8962E;
-  --color-gold-light: #D4B04A;
-  --color-muted: #5C6B84;
-  --color-off-white: #FAFAFA;
-  --color-border-subtle: #E5E7EB;
-  --color-text-secondary: #5C6B84;
+  --color-gla-red: #C0272D;
+  --color-gla-red-dark: #8B1A20;
+  --color-gla-red-light: #E8353C;
+  --color-gla-bg: #FFFFFF;
+  --color-gla-bg-alt: #F5F5F7;
+  --color-gla-text: #1A1A1A;
+  --color-gla-text-secondary: #6B7280;
+  --color-gla-text-muted: #9CA3AF;
+  --color-gla-border: rgba(0,0,0,0.06);
+  --color-gla-dark: #1A1A1A;
 }
 
 /* ==========================================
-   BASE — Light theme (Valerón style)
+   BASE
    ========================================== */
 
 body {
-  background-color: #FAFAFA;
-  color: #0C1220;
+  background-color: #FFFFFF;
+  color: #1A1A1A;
   font-family: 'Inter', -apple-system, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,116 +27,6 @@ body {
 
 html {
   scroll-behavior: smooth;
-}
-
-/* ==========================================
-   BUTTONS
-   ========================================== */
-
-.btn-wine {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #7B1535;
-  color: #fff;
-  font-weight: 600;
-  padding: 16px 32px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-wine:hover {
-  background: #9B1D44;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(123, 21, 53, 0.35);
-}
-
-.btn-wine-sm {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #7B1535;
-  color: #fff;
-  font-weight: 600;
-  padding: 10px 20px;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-wine-sm:hover {
-  background: #9B1D44;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(123, 21, 53, 0.35);
-}
-
-.btn-outline-dark {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #0C1220;
-  font-weight: 500;
-  padding: 16px 32px;
-  border-radius: 12px;
-  border: 1.5px solid #E5E7EB;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  font-size: 15px;
-  background: transparent;
-}
-
-.btn-outline-dark:hover {
-  background: rgba(12, 18, 32, 0.04);
-  border-color: #0C1220;
-}
-
-.btn-outline-light {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #fff;
-  font-weight: 500;
-  padding: 16px 32px;
-  border-radius: 12px;
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
-  transition: all 0.3s ease;
-  text-decoration: none;
-  font-size: 15px;
-  background: transparent;
-}
-
-.btn-outline-light:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-.btn-white {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #FFFFFF;
-  color: #0C1220;
-  font-weight: 600;
-  padding: 16px 32px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-white:hover {
-  background: #F0F0F0;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* ==========================================
@@ -160,84 +49,180 @@ html {
 }
 
 /* ==========================================
-   SECTION SPACING — generous whitespace
+   BUTTONS
    ========================================== */
 
-.section-light {
-  padding: 80px 0;
-  background-color: #FAFAFA;
+.btn-red {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #C0272D;
+  color: #fff;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
 }
+
+.btn-red:hover {
+  background: #8B1A20;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(192, 39, 45, 0.3);
+}
+
+.btn-red-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #C0272D;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-red-sm:hover {
+  background: #8B1A20;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(192, 39, 45, 0.3);
+}
+
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1A1A1A;
+  font-weight: 500;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 15px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-outline-dark:hover {
+  background: #1A1A1A;
+  color: #fff;
+}
+
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  color: #1A1A1A;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-white:hover {
+  background: #F0F0F0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================
+   GLASSMORPHISM
+   ========================================== */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.04),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+}
+
+.glass-dark {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+}
+
+.glass-header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================
+   SECTION SPACING
+   ========================================== */
 
 .section-white {
   padding: 80px 0;
   background-color: #FFFFFF;
 }
 
-.section-dark {
+.section-gradient {
   padding: 80px 0;
-  background-color: #0C1220;
-  color: #FFFFFF;
+  background: linear-gradient(135deg, #F5F5F7 0%, #FFFFFF 50%, #F0F0F3 100%);
+  position: relative;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
-  .section-light,
   .section-white,
-  .section-dark {
+  .section-gradient {
     padding: 120px 0;
   }
 }
 
 /* ==========================================
-   LABEL STYLE — Ref 3 italic underline
+   LABEL
    ========================================== */
 
 .label-section {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #7B1535;
-  font-style: italic;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-color: rgba(123, 21, 53, 0.3);
+  color: #C0272D;
 }
 
 /* ==========================================
-   TEXT MASK — The signature element (Valerón Ref 4)
-   ========================================== */
-
-.text-mask {
-  font-size: 18vw;
-  font-weight: 900;
-  line-height: 0.85;
-  letter-spacing: -0.03em;
-  background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80');
-  background-size: cover;
-  background-position: center;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-@media (min-width: 768px) {
-  .text-mask {
-    font-size: 15vw;
-  }
-}
-
-/* ==========================================
-   FORM CONTROLS — Minimal border-bottom style (Apple/Valerón)
+   FORM CONTROLS
    ========================================== */
 
 .form-field {
   width: 100%;
   padding: 14px 0;
   border: none;
-  border-bottom: 1.5px solid #E5E7EB;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.1);
   background-color: transparent;
-  color: #0C1220;
+  color: #1A1A1A;
   font-size: 1rem;
   outline: none;
   transition: border-color 0.3s ease;
@@ -245,7 +230,7 @@ html {
 }
 
 .form-field:focus {
-  border-color: #7B1535;
+  border-color: #C0272D;
 }
 
 .form-field::placeholder {
@@ -277,16 +262,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAFAFA;
+  background: #FFFFFF;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(12, 18, 32, 0.15);
+  background: rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(12, 18, 32, 0.3);
+  background: rgba(0, 0, 0, 0.25);
 }
 
 /* ==========================================
@@ -294,32 +279,19 @@ html {
    ========================================== */
 
 ::selection {
-  background: rgba(123, 21, 53, 0.15);
-  color: #0C1220;
+  background: rgba(192, 39, 45, 0.12);
+  color: #1A1A1A;
 }
 
 /* ==========================================
-   SERVICE ITEM — Ref 3 style numbered + separator
-   ========================================== */
-
-.service-item {
-  padding: 48px 0;
-  border-bottom: 1px solid #E5E7EB;
-}
-
-.service-item:first-child {
-  border-top: 1px solid #E5E7EB;
-}
-
-/* ==========================================
-   DIFFERENTIAL ITEM — Valerón style numbered + lines
+   DIFF ITEM
    ========================================== */
 
 .diff-item {
   padding: 24px 0;
-  border-bottom: 1px solid #E5E7EB;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .diff-item:first-child {
-  border-top: 1px solid #E5E7EB;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }

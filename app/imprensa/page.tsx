@@ -58,32 +58,57 @@ export default function ImprensaPage() {
       {/* ===== HERO INTERNO ===== */}
       <section
         className="relative flex items-end overflow-hidden"
-        style={{ minHeight: '40vh', borderRadius: '0 0 24px 24px', background: '#0C1220' }}
+        style={{ minHeight: '40vh', background: 'linear-gradient(135deg, #F5F5F7 0%, #FFFFFF 50%, #F0F0F3 100%)' }}
       >
         <div className="container-main relative z-10 pb-16 pt-40">
-          <span className="text-sm font-medium uppercase tracking-widest mb-4 block" style={{ color: '#B8962E', letterSpacing: '0.08em' }}>
-            Imprensa
-          </span>
+          <span className="label-section mb-4 block">Imprensa</span>
           <h1
-            className="text-white font-extrabold max-w-3xl"
-            style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', lineHeight: 1.08, letterSpacing: '-0.03em' }}
+            className="font-extrabold max-w-3xl"
+            style={{
+              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+              lineHeight: 1.08,
+              letterSpacing: '-0.03em',
+              color: '#1A1A1A',
+            }}
           >
             GLA na mídia
           </h1>
-          <p className="mt-4 max-w-xl" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.125rem', lineHeight: 1.6 }}>
+          <div className="mt-4" style={{ width: '60px', height: '3px', background: '#C0272D', borderRadius: '2px' }} />
+          <p className="mt-6 max-w-xl text-lg leading-relaxed" style={{ color: '#6B7280' }}>
             Acompanhe nossa participação nos principais veículos de comunicação sobre direito trabalhista empresarial.
           </p>
         </div>
       </section>
 
-      {/* ===== GRID DE ARTIGOS ===== */}
-      <section className="section-light">
-        <div className="container-main">
+      {/* ===== GRID DE ARTIGOS — Glass cards ===== */}
+      <section className="section-gradient">
+        {/* Decorative blobs */}
+        <div
+          className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(192,39,45,0.08) 0%, transparent 70%)',
+            borderRadius: '50%',
+          }}
+        />
+        <div
+          className="absolute bottom-[-50px] left-[-50px] w-[300px] h-[300px] pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(192,39,45,0.05) 0%, transparent 70%)',
+            borderRadius: '50%',
+          }}
+        />
+
+        <div className="container-main relative z-10">
           <ScrollReveal>
-            <span className="label-section mb-4 block">Notícias e publicações.</span>
+            <span className="label-section mb-4 block">Notícias e publicações</span>
             <h2
               className="font-extrabold mb-12 md:mb-16"
-              style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', lineHeight: 1.1, letterSpacing: '-0.02em', color: '#0C1220' }}
+              style={{
+                fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
+                lineHeight: 1.1,
+                letterSpacing: '-0.02em',
+                color: '#1A1A1A',
+              }}
             >
               Reconhecimento na mídia
             </h2>
@@ -92,39 +117,36 @@ export default function ImprensaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {newsItems.map((item, index) => (
               <ScrollReveal key={item.id} delay={index * 80}>
-                <div
-                  className="p-8 h-full flex flex-col"
-                  style={{ background: '#FFFFFF', borderRadius: '16px', border: '1px solid #E5E7EB' }}
-                >
+                <div className="glass-card p-8 h-full flex flex-col">
                   <div className="flex items-center gap-2 mb-4">
                     <span
                       className="text-xs px-3 py-1 rounded-full font-semibold"
-                      style={{ background: 'rgba(123,21,53,0.08)', color: '#7B1535' }}
+                      style={{ background: 'rgba(192,39,45,0.08)', color: '#C0272D' }}
                     >
                       {item.category}
                     </span>
                     <span
                       className="text-xs px-3 py-1 rounded-full font-medium"
-                      style={{ background: 'rgba(12,18,32,0.04)', color: '#5C6B84' }}
+                      style={{ background: 'rgba(0,0,0,0.04)', color: '#6B7280' }}
                     >
                       {item.source}
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold mb-3 leading-snug" style={{ color: '#0C1220', letterSpacing: '-0.01em' }}>
+                  <h3 className="text-lg font-bold mb-3 leading-snug" style={{ color: '#1A1A1A', letterSpacing: '-0.01em' }}>
                     {item.title}
                   </h3>
 
-                  <p className="text-sm leading-relaxed flex-grow mb-4" style={{ color: '#5C6B84' }}>
+                  <p className="text-sm leading-relaxed flex-grow mb-4" style={{ color: '#6B7280' }}>
                     {item.excerpt}
                   </p>
 
-                  <div className="flex justify-between items-center pt-4" style={{ borderTop: '1px solid #E5E7EB' }}>
+                  <div className="flex justify-between items-center pt-4" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
                     <span className="text-xs font-medium" style={{ color: '#9CA3AF' }}>{item.date}</span>
                     <Link
                       href="#"
                       className="inline-flex items-center gap-1.5 text-sm font-semibold transition-all duration-300 hover:gap-2.5"
-                      style={{ color: '#7B1535' }}
+                      style={{ color: '#C0272D' }}
                     >
                       Ler matéria →
                     </Link>
@@ -140,10 +162,15 @@ export default function ImprensaPage() {
       <section className="section-white">
         <div className="container-main">
           <ScrollReveal>
-            <span className="label-section mb-4 block">Aparições na Mídia.</span>
+            <span className="label-section mb-4 block">Aparições na Mídia</span>
             <h2
               className="font-extrabold mb-12 md:mb-16"
-              style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', lineHeight: 1.1, letterSpacing: '-0.02em', color: '#0C1220' }}
+              style={{
+                fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
+                lineHeight: 1.1,
+                letterSpacing: '-0.02em',
+                color: '#1A1A1A',
+              }}
             >
               Onde somos citados
             </h2>
@@ -162,10 +189,14 @@ export default function ImprensaPage() {
             ].map((outlet, i) => (
               <ScrollReveal key={i} delay={i * 60}>
                 <div
-                  className="flex items-center justify-center p-6 h-20"
-                  style={{ background: '#FAFAFA', borderRadius: '12px', border: '1px solid #E5E7EB' }}
+                  className="flex items-center justify-center p-6 h-20 transition-all duration-300 hover:-translate-y-1"
+                  style={{
+                    background: '#F5F5F7',
+                    borderRadius: '12px',
+                    border: '1px solid rgba(0,0,0,0.06)',
+                  }}
                 >
-                  <span className="text-sm font-bold" style={{ color: '#5C6B84' }}>{outlet}</span>
+                  <span className="text-sm font-bold" style={{ color: '#6B7280' }}>{outlet}</span>
                 </div>
               </ScrollReveal>
             ))}
@@ -173,14 +204,28 @@ export default function ImprensaPage() {
         </div>
       </section>
 
-      {/* ===== ARTIGOS CIENTÍFICOS ===== */}
-      <section className="section-light">
-        <div className="container-main">
+      {/* ===== ARTIGOS CIENTÍFICOS — Glass cards ===== */}
+      <section className="section-gradient">
+        {/* Decorative blobs */}
+        <div
+          className="absolute top-[-80px] left-[-80px] w-[350px] h-[350px] pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(192,39,45,0.06) 0%, transparent 70%)',
+            borderRadius: '50%',
+          }}
+        />
+
+        <div className="container-main relative z-10">
           <ScrollReveal>
-            <span className="label-section mb-4 block">Produção Acadêmica.</span>
+            <span className="label-section mb-4 block">Produção Acadêmica</span>
             <h2
               className="font-extrabold mb-12 md:mb-16"
-              style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', lineHeight: 1.1, letterSpacing: '-0.02em', color: '#0C1220' }}
+              style={{
+                fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
+                lineHeight: 1.1,
+                letterSpacing: '-0.02em',
+                color: '#1A1A1A',
+              }}
             >
               Artigos científicos
             </h2>
@@ -198,28 +243,25 @@ export default function ImprensaPage() {
               },
               {
                 title: 'Inteligência artificial e relações de trabalho: implicações para gestão de risco',
-                author: 'Wagner e Larissa',
+                author: 'Wagner Gusmão e Larissa de O. Lima',
               },
             ].map((pub, i) => (
               <ScrollReveal key={i} delay={i * 100}>
-                <div
-                  className="p-8 h-full flex flex-col"
-                  style={{ background: '#FFFFFF', borderRadius: '16px', border: '1px solid #E5E7EB' }}
-                >
+                <div className="glass-card p-8 h-full flex flex-col">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: 'rgba(12,18,32,0.04)' }}
+                    style={{ background: 'rgba(192,39,45,0.06)' }}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="#0C1220" className="w-6 h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.2} stroke="#C0272D" className="w-6 h-6">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
                     </svg>
                   </div>
-                  <h3 className="text-base font-bold mb-4 leading-snug flex-grow" style={{ color: '#0C1220', letterSpacing: '-0.01em' }}>
+                  <h3 className="text-base font-bold mb-4 leading-snug flex-grow" style={{ color: '#1A1A1A', letterSpacing: '-0.01em' }}>
                     {pub.title}
                   </h3>
-                  <div className="flex justify-between items-center pt-4" style={{ borderTop: '1px solid #E5E7EB' }}>
+                  <div className="flex justify-between items-center pt-4" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
                     <span className="text-xs font-medium" style={{ color: '#9CA3AF' }}>{pub.author}</span>
-                    <Link href="#" className="text-sm font-semibold" style={{ color: '#7B1535' }}>
+                    <Link href="#" className="text-sm font-semibold" style={{ color: '#C0272D' }}>
                       Baixar PDF
                     </Link>
                   </div>
@@ -230,21 +272,22 @@ export default function ImprensaPage() {
         </div>
       </section>
 
-      {/* ===== NEWSLETTER CTA ===== */}
-      <section className="section-white">
+      {/* ===== CTA ===== */}
+      <section style={{ background: '#C0272D', padding: '80px 0' }}>
         <div className="container-main">
           <ScrollReveal>
-            <div
-              className="text-center py-16 px-8 md:px-16"
-              style={{ background: '#0C1220', borderRadius: '20px' }}
-            >
+            <div className="text-center max-w-2xl mx-auto">
               <h2
                 className="text-white font-extrabold mb-4"
-                style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)', lineHeight: 1.1, letterSpacing: '-0.02em' }}
+                style={{
+                  fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)',
+                  lineHeight: 1.1,
+                  letterSpacing: '-0.02em',
+                }}
               >
                 Inscreva-se em nossa newsletter
               </h2>
-              <p className="text-sm mb-8 max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              <p className="text-sm mb-8 max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
                 Receba nossos artigos, análises e notícias sobre gestão de risco jurídico trabalhista diretamente no seu email.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -252,9 +295,9 @@ export default function ImprensaPage() {
                   type="email"
                   placeholder="Seu email corporativo"
                   className="flex-grow px-5 py-3 rounded-xl text-sm focus:outline-none"
-                  style={{ background: '#FFFFFF', color: '#0C1220' }}
+                  style={{ background: '#FFFFFF', color: '#1A1A1A' }}
                 />
-                <button className="btn-wine whitespace-nowrap text-sm">
+                <button className="btn-white whitespace-nowrap text-sm">
                   Inscrever-se →
                 </button>
               </div>

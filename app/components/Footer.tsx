@@ -2,24 +2,39 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#0C1220', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+    <footer style={{ backgroundColor: '#1A1A1A' }}>
       <div className="container-main py-20">
         {/* 4 Column Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-16">
-          {/* Col 1: Consultoria */}
+          {/* Col 1: Escritório */}
+          <div>
+            {/* Logo */}
+            <div className="flex items-center gap-2 mb-6">
+              <span style={{ fontWeight: 900, fontSize: '24px', color: '#C0272D' }}>GLa</span>
+              <span style={{ color: '#C0272D', fontSize: '30px', fontWeight: 100 }}>|</span>
+              <span style={{ fontSize: '9px', lineHeight: 1.3, fontWeight: 500, color: 'rgba(255,255,255,0.6)' }}
+                dangerouslySetInnerHTML={{ __html: 'gusmão<br>& lima<br>advogados' }}
+              />
+            </div>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.4)' }}>
+              Especialistas em Direito Trabalhista Empresarial. Protegendo empresas com estratégia e excelência desde 2010.
+            </p>
+          </div>
+
+          {/* Col 2: Serviços */}
           <div>
             <h4 className="text-white font-bold text-base mb-6 tracking-tight">
-              Consultoria Preventiva
+              Serviços
             </h4>
             <ul className="space-y-3">
               {[
-                'Compliance Trabalhista',
-                'Auditoria de Processos',
-                'Políticas Internas',
-                'Treinamentos',
+                'Consultoria Preventiva',
+                'Defesa Processual',
+                'Gestão de Passivo',
+                'Due Diligence',
               ].map((item) => (
                 <li key={item}>
-                  <Link href="/servicos" className="text-sm transition-colors duration-300" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                  <Link href="/servicos" className="text-sm transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.4)' }}>
                     {item}
                   </Link>
                 </li>
@@ -27,66 +42,52 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 2: Defesa */}
+          {/* Col 3: Institucional */}
           <div>
             <h4 className="text-white font-bold text-base mb-6 tracking-tight">
-              Defesa Processual
+              Institucional
             </h4>
             <ul className="space-y-3">
               {[
-                'Processos Individuais',
-                'Ações Coletivas',
-                'Recursos Superiores',
-                'Negociação de Acordos',
+                { label: 'Sobre nós', href: '/sobre' },
+                { label: 'Equipe', href: '/sobre' },
+                { label: 'Imprensa', href: '/imprensa' },
+                { label: 'Contato', href: '/contato' },
               ].map((item) => (
-                <li key={item}>
-                  <Link href="/servicos" className="text-sm transition-colors duration-300" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                    {item}
+                <li key={item.label}>
+                  <Link href={item.href} className="text-sm transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                    {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Col 3: Gestão */}
+          {/* Col 4: Contato */}
           <div>
             <h4 className="text-white font-bold text-base mb-6 tracking-tight">
-              Gestão de Passivo
+              Contato
             </h4>
             <ul className="space-y-3">
-              {[
-                'Análise Preditiva',
-                'Redução de Passivo',
-                'Dashboard Processual',
-                'Relatórios Gerenciais',
-              ].map((item) => (
-                <li key={item}>
-                  <Link href="/servicos" className="text-sm transition-colors duration-300" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Col 4: Due Diligence */}
-          <div>
-            <h4 className="text-white font-bold text-base mb-6 tracking-tight">
-              Due Diligence
-            </h4>
-            <ul className="space-y-3">
-              {[
-                'Passivos Ocultos',
-                'Quantificação de Riscos',
-                'M&A Trabalhista',
-                'Recomendações Estratégicas',
-              ].map((item) => (
-                <li key={item}>
-                  <Link href="/servicos" className="text-sm transition-colors duration-300" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              <li className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                Av. Franklin Roosevelt, 84 - GR 301<br />
+                Centro, Rio de Janeiro - 20021-120
+              </li>
+              <li>
+                <a href="tel:+552138835652" className="text-sm transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                  (21) 3883-5652
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/5521994053121" target="_blank" rel="noopener noreferrer" className="text-sm transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                  WhatsApp: (21) 99405-3121
+                </a>
+              </li>
+              <li>
+                <a href="mailto:wagner.gusmao@glaadvogados.com.br" className="text-sm transition-colors duration-300 hover:text-white" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                  wagner.gusmao@glaadvogados.com.br
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -96,43 +97,13 @@ export default function Footer() {
           className="pt-8 flex flex-col md:flex-row justify-between items-center gap-6"
           style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
         >
-          <div className="flex items-baseline gap-1.5">
-            <span className="text-lg font-extrabold text-white">GLA</span>
-            <span className="text-xs font-light tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.4)' }}>Advogados</span>
-          </div>
-
           <p className="text-sm" style={{ color: 'rgba(255,255,255,0.25)' }}>
-            &copy; {new Date().getFullYear()} GLA Advogados. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} GLA | gusmão &amp; lima advogados. Todos os direitos reservados.
           </p>
 
-          <div className="flex gap-4">
-            <a
-              href="#"
-              aria-label="LinkedIn"
-              className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-              style={{
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.08)',
-              }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667h-3.554v-11.452h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zm-15.11-13.019c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019h-3.564v-11.452h3.564v11.452zm15.106-20.452h-20.45c-.979 0-1.775.8-1.775 1.774v20.451c0 .975.796 1.774 1.774 1.774h20.451c.979 0 1.778-.799 1.778-1.774v-20.451c0-.974-.8-1.774-1.778-1.774z" />
-              </svg>
-            </a>
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-              style={{
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.08)',
-              }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-            </a>
-          </div>
+          <p className="text-sm" style={{ color: 'rgba(255,255,255,0.25)' }}>
+            www.glaadvogados.com.br
+          </p>
         </div>
       </div>
     </footer>

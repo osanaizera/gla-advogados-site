@@ -31,7 +31,7 @@ export default function Header() {
   }, [pathname]);
 
   const navLinks = [
-    { href: '/', label: 'Home' },
+    { href: '/', label: 'Início' },
     { href: '/sobre', label: 'Sobre' },
     { href: '/servicos', label: 'Serviços' },
     { href: '/imprensa', label: 'Imprensa' },
@@ -44,26 +44,54 @@ export default function Header() {
       style={{
         backdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
-        backgroundColor: scrolled ? 'rgba(250,250,250,0.85)' : 'transparent',
-        borderBottom: scrolled ? '1px solid rgba(12,18,32,0.06)' : '1px solid transparent',
-        padding: scrolled ? '0.75rem 0' : '1.25rem 0',
+        backgroundColor: scrolled ? 'rgba(255,255,255,0.8)' : 'transparent',
+        borderBottom: scrolled ? '1px solid rgba(0,0,0,0.06)' : '1px solid transparent',
+        padding: scrolled ? '0.5rem 0' : '1rem 0',
       }}
     >
       <div className="container-main flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-baseline gap-1.5 group">
+        <Link
+          href="/"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            textDecoration: 'none',
+          }}
+        >
           <span
-            className="text-2xl font-extrabold tracking-tight transition-colors duration-300"
-            style={{ color: '#0C1220' }}
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 900,
+              fontSize: '32px',
+              color: '#C0272D',
+              letterSpacing: '-0.02em',
+              lineHeight: 1,
+            }}
           >
-            GLA
+            GLa
           </span>
           <span
-            className="text-sm font-light tracking-widest uppercase transition-opacity duration-300"
-            style={{ color: '#5C6B84' }}
+            style={{
+              color: '#C0272D',
+              fontSize: '40px',
+              fontWeight: 100,
+              lineHeight: 1,
+            }}
           >
-            Advogados
+            |
           </span>
+          <span
+            style={{
+              fontSize: '11px',
+              lineHeight: 1.3,
+              fontWeight: 500,
+              color: '#1a1a1a',
+              letterSpacing: '0.01em',
+            }}
+            dangerouslySetInnerHTML={{ __html: 'gusmão<br>& lima<br>advogados' }}
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -74,19 +102,19 @@ export default function Header() {
               href={link.href}
               className="text-sm font-medium relative transition-colors duration-300"
               style={{
-                color: pathname === link.href ? '#0C1220' : '#5C6B84',
+                color: pathname === link.href ? '#1A1A1A' : '#6B7280',
               }}
             >
               {link.label}
               {pathname === link.href && (
                 <span
                   className="absolute -bottom-1 left-0 w-full h-[2px]"
-                  style={{ background: '#7B1535' }}
+                  style={{ background: '#C0272D' }}
                 />
               )}
             </Link>
           ))}
-          <Link href="/contato" className="btn-wine-sm ml-4">
+          <Link href="/contato" className="btn-red-sm ml-4">
             Solicitar Consulta →
           </Link>
         </nav>
@@ -101,7 +129,7 @@ export default function Header() {
             <span
               className="absolute left-0 w-6 h-[2px] transition-all duration-300"
               style={{
-                background: mobileMenuOpen ? '#fff' : '#0C1220',
+                background: mobileMenuOpen ? '#fff' : '#1A1A1A',
                 top: mobileMenuOpen ? '50%' : '0',
                 transform: mobileMenuOpen ? 'rotate(45deg) translateY(-50%)' : 'none',
               }}
@@ -109,7 +137,7 @@ export default function Header() {
             <span
               className="absolute left-0 top-1/2 w-6 h-[2px] transition-all duration-300"
               style={{
-                background: mobileMenuOpen ? '#fff' : '#0C1220',
+                background: mobileMenuOpen ? '#fff' : '#1A1A1A',
                 transform: 'translateY(-50%)',
                 opacity: mobileMenuOpen ? 0 : 1,
               }}
@@ -117,7 +145,7 @@ export default function Header() {
             <span
               className="absolute left-0 w-6 h-[2px] transition-all duration-300"
               style={{
-                background: mobileMenuOpen ? '#fff' : '#0C1220',
+                background: mobileMenuOpen ? '#fff' : '#1A1A1A',
                 bottom: mobileMenuOpen ? 'auto' : '0',
                 top: mobileMenuOpen ? '50%' : 'auto',
                 transform: mobileMenuOpen ? 'rotate(-45deg) translateY(-50%)' : 'none',
@@ -142,18 +170,20 @@ export default function Header() {
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           style={{
-            background: 'rgba(12,18,32,0.97)',
+            background: 'rgba(26,26,26,0.97)',
             backdropFilter: 'blur(32px)',
             WebkitBackdropFilter: 'blur(32px)',
             borderLeft: '1px solid rgba(255,255,255,0.08)',
           }}
         >
           <div className="flex flex-col justify-center h-full px-10">
-            <div className="mb-12">
-              <span className="text-2xl font-extrabold text-white">GLA</span>
-              <span className="text-white/40 text-xs font-light tracking-widest uppercase ml-2">
-                Advogados
-              </span>
+            {/* Mobile Logo */}
+            <div className="mb-12 flex items-center gap-2">
+              <span style={{ fontWeight: 900, fontSize: '28px', color: '#C0272D' }}>GLa</span>
+              <span style={{ color: '#C0272D', fontSize: '32px', fontWeight: 100 }}>|</span>
+              <span style={{ fontSize: '10px', lineHeight: 1.3, fontWeight: 500, color: 'rgba(255,255,255,0.6)' }}
+                dangerouslySetInnerHTML={{ __html: 'gusmão<br>& lima<br>advogados' }}
+              />
             </div>
 
             <nav className="flex flex-col gap-6">
@@ -164,7 +194,7 @@ export default function Header() {
                   className="text-2xl font-bold transition-colors duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                   style={{
-                    color: pathname === link.href ? '#B8962E' : '#FFFFFF',
+                    color: pathname === link.href ? '#C0272D' : '#FFFFFF',
                   }}
                 >
                   {link.label}
@@ -175,7 +205,7 @@ export default function Header() {
             <div className="mt-12 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
               <Link
                 href="/contato"
-                className="btn-wine w-full text-center justify-center"
+                className="btn-red w-full text-center justify-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Solicitar Consulta →
@@ -183,8 +213,8 @@ export default function Header() {
             </div>
 
             <div className="mt-10 space-y-3">
-              <p className="text-white/30 text-sm">(11) 3000-5000</p>
-              <p className="text-white/30 text-sm">contato@glaadvogados.com.br</p>
+              <p className="text-white/30 text-sm">(21) 3883-5652</p>
+              <p className="text-white/30 text-sm">wagner.gusmao@glaadvogados.com.br</p>
             </div>
           </div>
         </div>
