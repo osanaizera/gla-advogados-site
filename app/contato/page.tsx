@@ -19,12 +19,16 @@ export default function ContatoPage() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
     setTimeout(() => {
       setIsSubmitting(false);
       setFormSubmitted(true);
@@ -36,130 +40,188 @@ export default function ContatoPage() {
         colaboradores: '',
         mensagem: '',
       });
-      setTimeout(() => setFormSubmitted(false), 5000);
+      setTimeout(() => {
+        setFormSubmitted(false);
+      }, 5000);
     }, 1500);
   };
 
   return (
     <>
       <Hero
-        title="Entre em contato"
-        subtitle="Estamos à disposição para entender as necessidades jurídicas específicas da sua empresa."
+        title="Solicitar Análise Jurídica"
+        subtitle="Estamos à disposição para entender as necessidades jurídicas específicas da sua empresa e propor soluções estratégicas."
         height="medium"
         showBadge={false}
         ctaText=""
+        backgroundImage="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80"
       />
 
       <section className="section-premium bg-white">
         <div className="container-premium mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
-            {/* Contact Info */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            {/* Informações de Contato */}
             <ScrollReveal>
               <div>
                 <h2 className="heading-lg text-navy-dark mb-4">Como podemos ajudar?</h2>
-                <span className="gold-line" />
+                <span className="gold-line"></span>
+                <p className="text-text-secondary text-lg mb-10 leading-relaxed">
+                  Preencha o formulário com as informações da sua empresa e nossa equipe entrará em contato para agendar uma análise jurídica personalizada.
+                </p>
 
-                <div className="mt-10 space-y-8">
-                  {[
-                    {
-                      title: 'Localização',
-                      lines: ['Av. Paulista, 1000, Conj. 401', 'Bela Vista, São Paulo - SP', 'CEP: 01310-100'],
-                      icon: (
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      title: 'Telefone',
-                      lines: ['(11) 3000-5000', '(11) 99000-5000 (WhatsApp)'],
-                      icon: (
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      title: 'Email',
-                      lines: ['contato@glaadvogados.com.br', 'atendimento@glaadvogados.com.br'],
-                      icon: (
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      title: 'Horário de Atendimento',
-                      lines: ['Segunda a Sexta: 9h às 18h', 'Sábados: Somente com agendamento'],
-                      icon: (
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                        </svg>
-                      ),
-                    },
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-5">
-                      <div
-                        className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                        style={{
-                          background: 'linear-gradient(135deg, rgba(184,150,46,0.1) 0%, rgba(184,150,46,0.05) 100%)',
-                          border: '1px solid rgba(184,150,46,0.15)',
-                          color: '#B8962E',
-                        }}
-                      >
-                        {item.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-navy-dark font-semibold text-lg mb-1">{item.title}</h3>
-                        {item.lines.map((line, j) => (
-                          <p key={j} className="text-text-secondary text-sm leading-relaxed">{line}</p>
-                        ))}
-                      </div>
+                <div className="space-y-8">
+                  <div className="flex items-start">
+                    <div
+                      className="p-4 rounded-2xl mr-6 flex-shrink-0"
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(184,150,46,0.1) 0%, rgba(184,150,46,0.05) 100%)',
+                        border: '1px solid rgba(184,150,46,0.15)',
+                      }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#B8962E" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                      </svg>
                     </div>
-                  ))}
+                    <div>
+                      <h3 className="text-navy-dark font-semibold text-xl mb-2">Localização</h3>
+                      <p className="text-text-secondary leading-relaxed">
+                        Av. Paulista, 1000, Conj. 401<br />
+                        Bela Vista, São Paulo — SP<br />
+                        CEP: 01310-100
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <div
+                      className="p-4 rounded-2xl mr-6 flex-shrink-0"
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(184,150,46,0.1) 0%, rgba(184,150,46,0.05) 100%)',
+                        border: '1px solid rgba(184,150,46,0.15)',
+                      }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#B8962E" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-navy-dark font-semibold text-xl mb-2">Telefone</h3>
+                      <p className="text-text-secondary">(11) 3000-5000</p>
+                      <p className="text-text-secondary">(11) 99000-5000 (WhatsApp)</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <div
+                      className="p-4 rounded-2xl mr-6 flex-shrink-0"
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(184,150,46,0.1) 0%, rgba(184,150,46,0.05) 100%)',
+                        border: '1px solid rgba(184,150,46,0.15)',
+                      }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#B8962E" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-navy-dark font-semibold text-xl mb-2">Email</h3>
+                      <p className="text-text-secondary">contato@glaadvogados.com.br</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <div
+                      className="p-4 rounded-2xl mr-6 flex-shrink-0"
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(184,150,46,0.1) 0%, rgba(184,150,46,0.05) 100%)',
+                        border: '1px solid rgba(184,150,46,0.15)',
+                      }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#B8962E" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-navy-dark font-semibold text-xl mb-2">Horário de Atendimento</h3>
+                      <p className="text-text-secondary leading-relaxed">
+                        Segunda a Sexta: 9h às 18h<br />
+                        Sábados: Somente com agendamento
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
 
-            {/* Form */}
-            <ScrollReveal delay={200}>
-              <div className="glass-light p-8 md:p-10" style={{ borderRadius: '20px' }}>
-                <h2 className="heading-md text-navy-dark mb-8">Envie uma mensagem</h2>
+            {/* Formulário de Contato — Apple style */}
+            <ScrollReveal delay={300}>
+              <div className="premium-card p-10">
+                <h2 className="heading-md text-navy-dark mb-2">Solicitar Análise Jurídica</h2>
+                <p className="text-text-secondary mb-8">Preencha os dados abaixo e retornaremos em até 24h úteis.</p>
 
                 {formSubmitted ? (
-                  <div className="text-center py-12">
-                    <div
-                      className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
-                      style={{ background: 'rgba(34,197,94,0.1)' }}
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#22C55E" className="w-8 h-8">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl text-navy-dark font-semibold mb-2">Mensagem enviada!</h3>
-                    <p className="text-text-secondary">Retornaremos em breve. Obrigado pelo contato.</p>
+                  <div className="rounded-2xl p-8 text-center" style={{ background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.2)' }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 mx-auto mb-4" style={{ color: '#22c55e' }}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                    <h3 className="text-xl font-semibold text-navy-dark mb-2">Solicitação recebida!</h3>
+                    <p className="text-text-secondary">
+                      Recebemos sua solicitação de análise jurídica. Nossa equipe entrará em contato em breve.
+                    </p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      <div className="form-control">
-                        <input type="text" id="nome" name="nome" value={formData.nome} onChange={handleChange} placeholder=" " required />
-                        <label htmlFor="nome">Nome completo</label>
-                      </div>
-                      <div className="form-control">
-                        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder=" " required />
-                        <label htmlFor="email">Email corporativo</label>
-                      </div>
+                    <div className="form-control">
+                      <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        value={formData.nome}
+                        onChange={handleChange}
+                        placeholder=" "
+                        required
+                      />
+                      <label htmlFor="nome">Nome completo</label>
+                    </div>
+
+                    <div className="form-control">
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder=" "
+                        required
+                      />
+                      <label htmlFor="email">Email corporativo</label>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="form-control">
-                        <input type="text" id="empresa" name="empresa" value={formData.empresa} onChange={handleChange} placeholder=" " required />
+                        <input
+                          type="text"
+                          id="empresa"
+                          name="empresa"
+                          value={formData.empresa}
+                          onChange={handleChange}
+                          placeholder=" "
+                          required
+                        />
                         <label htmlFor="empresa">Empresa</label>
                       </div>
+
                       <div className="form-control">
-                        <input type="text" id="cargo" name="cargo" value={formData.cargo} onChange={handleChange} placeholder=" " required />
+                        <input
+                          type="text"
+                          id="cargo"
+                          name="cargo"
+                          value={formData.cargo}
+                          onChange={handleChange}
+                          placeholder=" "
+                          required
+                        />
                         <label htmlFor="cargo">Cargo</label>
                       </div>
                     </div>
@@ -173,36 +235,51 @@ export default function ContatoPage() {
                         required
                       >
                         <option value="" disabled>Selecione o nº de colaboradores</option>
-                        <option value="ate-50">Até 50 colaboradores</option>
-                        <option value="51-200">51 a 200 colaboradores</option>
-                        <option value="201-500">201 a 500 colaboradores</option>
-                        <option value="500+">Acima de 500 colaboradores</option>
+                        <option value="50-100">50 a 100 colaboradores</option>
+                        <option value="100-500">100 a 500 colaboradores</option>
+                        <option value="500-2000">500 a 2.000 colaboradores</option>
+                        <option value="2000+">Acima de 2.000 colaboradores</option>
                       </select>
                       <label
                         htmlFor="colaboradores"
                         style={formData.colaboradores ? { top: '-1.25rem', fontSize: '0.75rem', color: '#7B1535', fontWeight: 500 } : undefined}
                       >
-                        Nº de colaboradores
+                        Nº de Colaboradores
                       </label>
                     </div>
 
                     <div className="form-control">
-                      <textarea id="mensagem" name="mensagem" rows={4} value={formData.mensagem} onChange={handleChange} placeholder=" " required />
+                      <textarea
+                        id="mensagem"
+                        name="mensagem"
+                        rows={4}
+                        value={formData.mensagem}
+                        onChange={handleChange}
+                        placeholder=" "
+                        required
+                      ></textarea>
                       <label htmlFor="mensagem">Mensagem</label>
                     </div>
 
-                    <button
-                      type="submit"
-                      className={`btn-primary w-full ${isSubmitting ? 'opacity-70 cursor-wait' : ''}`}
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
-                      {!isSubmitting && (
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                        </svg>
-                      )}
-                    </button>
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        className={`btn-primary w-full ${isSubmitting ? 'opacity-70 cursor-wait' : ''}`}
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <svg className="animate-spin w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Enviando...
+                          </>
+                        ) : (
+                          'Solicitar Análise Jurídica'
+                        )}
+                      </button>
+                    </div>
                   </form>
                 )}
               </div>
@@ -211,20 +288,20 @@ export default function ContatoPage() {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Mapa Section */}
       <section className="section-premium bg-off-white pt-0">
         <div className="container-premium mx-auto">
           <ScrollReveal>
-            <div className="premium-card p-3 rounded-2xl overflow-hidden">
+            <div className="premium-card p-4 rounded-xl overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0976468987456!2d-46.65499792374856!3d-23.564059260711754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1708286612161!5m2!1spt-BR!2sbr"
                 width="100%"
-                height="450"
+                height="500"
                 style={{ border: 0, borderRadius: '16px' }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-              />
+              ></iframe>
             </div>
           </ScrollReveal>
         </div>
