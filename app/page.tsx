@@ -6,13 +6,13 @@ export default function Home() {
   return (
     <>
       {/* =====================================================
-          SECTION 1 — CINEMATIC HERO (100vh)
+          SECTION 1 — CINEMATIC HERO (Casa Flora — centralizado)
           ===================================================== */}
       <section
-        className="noise relative flex flex-col justify-center"
+        className="noise relative flex flex-col items-center justify-center"
         style={{ minHeight: '100vh' }}
       >
-        {/* Parallax background */}
+        {/* Background photo */}
         <div
           className="absolute inset-0"
           style={{
@@ -23,29 +23,27 @@ export default function Home() {
             backgroundAttachment: 'fixed',
           }}
         />
-        {/* Overlay gradient */}
+        {/* White overlay — warm, not dark */}
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(255,255,255,0.93) 0%, rgba(255,255,255,0.65) 40%, rgba(26,23,20,0.35) 100%)',
+            background: 'linear-gradient(to bottom, rgba(250,250,249,0.88) 0%, rgba(250,250,249,0.95) 100%)',
           }}
         />
 
-        {/* Hero content */}
-        <div className="relative z-10 w-full" style={{ paddingLeft: '8%', paddingRight: '6%', paddingTop: '160px', paddingBottom: '180px' }}>
-          <div style={{ maxWidth: '780px' }}>
-            {/* Eyebrow */}
+        {/* Hero content — CENTRALIZADO */}
+        <div className="relative z-10 w-full flex flex-col items-center text-center" style={{ paddingTop: '180px', paddingBottom: '200px', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
+          <div style={{ maxWidth: '900px' }}>
+            {/* Eyebrow with red line above */}
             <div
-              className="hero-fade flex items-center gap-3 mb-10"
+              className="hero-fade flex flex-col items-center gap-3 mb-12"
               style={{ animationDelay: '0s' }}
             >
               <span style={{
-                width: '3px',
-                height: '20px',
+                width: '40px',
+                height: '2px',
                 background: '#C0272D',
-                borderRadius: '2px',
                 display: 'block',
-                flexShrink: 0,
               }} />
               <span style={{
                 fontSize: '12px',
@@ -58,12 +56,12 @@ export default function Home() {
               </span>
             </div>
 
-            {/* H1 — Kinetic typography */}
+            {/* H1 — Casa Flora: font-weight 300, clamp, centered */}
             <h1 style={{
-              fontSize: 'clamp(2.75rem, 6vw, 5.5rem)',
-              lineHeight: 1.05,
-              letterSpacing: '-0.03em',
-              fontWeight: 800,
+              fontSize: 'clamp(3rem, 7vw, 5.5rem)',
+              lineHeight: 1.08,
+              letterSpacing: '-0.025em',
+              fontWeight: 300,
               color: '#1A1714',
               marginBottom: '0',
             }}>
@@ -71,35 +69,46 @@ export default function Home() {
                 Onde a precisão
               </span>
               <span className="kinetic-word" style={{ animationDelay: '0.35s' }}>
-                jurídica encontra
+                jurídica encontra a
               </span>
-              <span className="kinetic-word" style={{ animationDelay: '0.55s', color: '#C0272D' }}>
-                a visão estratégica.
+              <span className="kinetic-word" style={{ animationDelay: '0.55s', fontWeight: 400, fontStyle: 'italic' }}>
+                visão estratégica
               </span>
             </h1>
 
-            {/* Red line */}
-            <div className="line-reveal mt-8" style={{ animationDelay: '0.85s' }} />
+            {/* Red line — centered */}
+            <div className="hero-fade flex justify-center mt-10" style={{ animationDelay: '0.85s' }}>
+              <div className="line-reveal-center" style={{ animationDelay: '0.85s' }} />
+            </div>
 
             {/* Subtitle */}
             <p
-              className="hero-fade mt-8"
+              className="hero-fade"
               style={{
                 animationDelay: '1.05s',
-                fontSize: '18px',
-                lineHeight: 1.7,
+                fontSize: '1.15rem',
+                lineHeight: 1.55,
                 color: '#78716C',
-                maxWidth: '540px',
+                maxWidth: '580px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                marginTop: '32px',
+                fontWeight: 400,
               }}
             >
               Protegemos o patrimônio de empresas como a sua há mais de 15 anos.
               Do compliance à defesa em litígios complexos.
             </p>
 
-            {/* CTAs */}
-            <div className="hero-fade flex flex-wrap items-center gap-4 mt-10" style={{ animationDelay: '1.25s' }}>
-              <Link href="/contato" className="btn-red">
-                Solicitar Análise →
+            {/* CTAs — Casa Flora style */}
+            <div className="hero-fade flex flex-wrap items-center justify-center gap-4 mt-12" style={{ animationDelay: '1.25s' }}>
+              <Link href="/contato" className="btn-flora">
+                Solicitar Análise
+                <span className="btn-arrow">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </span>
               </Link>
               <Link href="/sobre" className="btn-outline">
                 Conheça o escritório
@@ -109,9 +118,9 @@ export default function Home() {
         </div>
 
         {/* Floating glass metrics */}
-        <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-10 w-full px-4" style={{ maxWidth: '960px' }}>
-          <div className="hero-fade glass" style={{ animationDelay: '1.5s', padding: '24px 32px' }}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+        <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 z-10 w-full px-6" style={{ maxWidth: '900px' }}>
+          <div className="hero-fade glass" style={{ animationDelay: '1.5s', padding: '28px 36px' }}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
               {[
                 { value: '95%', label: 'Taxa de sucesso' },
                 { value: '500+', label: 'Empresas assessoradas' },
@@ -121,8 +130,8 @@ export default function Home() {
                 <div key={metric.label} className="text-center">
                   <span style={{
                     display: 'block',
-                    fontSize: '36px',
-                    fontWeight: 800,
+                    fontSize: 'clamp(28px, 4vw, 40px)',
+                    fontWeight: 300,
                     letterSpacing: '-0.03em',
                     color: '#1A1714',
                     lineHeight: 1,
@@ -133,9 +142,10 @@ export default function Home() {
                     fontSize: '12px',
                     fontWeight: 500,
                     color: '#78716C',
-                    marginTop: '6px',
+                    marginTop: '8px',
                     display: 'block',
-                    letterSpacing: '0.01em',
+                    letterSpacing: '0.02em',
+                    textTransform: 'uppercase' as const,
                   }}>
                     {metric.label}
                   </span>
@@ -149,7 +159,7 @@ export default function Home() {
       {/* =====================================================
           SECTION 2 — ABOUT
           ===================================================== */}
-      <section className="noise" style={{ background: '#FFFFFF', padding: '120px 0 100px' }}>
+      <section className="noise" style={{ background: '#FFFFFF', padding: '120px 0' }}>
         <div className="container-gla relative z-10">
           {/* Decorative oversized number */}
           <span
@@ -158,7 +168,7 @@ export default function Home() {
               top: '-40px',
               right: '0',
               fontSize: '220px',
-              fontWeight: 800,
+              fontWeight: 300,
               color: '#1A1714',
               opacity: 0.03,
               lineHeight: 1,
@@ -169,28 +179,31 @@ export default function Home() {
             01
           </span>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 lg:gap-20 items-center">
             {/* Text: 3 of 5 cols */}
             <div className="lg:col-span-3">
               <ScrollReveal>
-                <span className="label-section mb-6" style={{ display: 'flex' }}>Sobre nós</span>
+                <span className="label-section mb-8" style={{ display: 'flex' }}>Sobre nós</span>
                 <h2 style={{
                   fontSize: 'clamp(1.75rem, 3.5vw, 3rem)',
-                  fontWeight: 700,
+                  fontWeight: 300,
                   lineHeight: 1.08,
-                  letterSpacing: '-0.03em',
+                  letterSpacing: '-0.025em',
                   color: '#1A1714',
-                  marginBottom: '24px',
+                  marginBottom: '28px',
                   maxWidth: '520px',
                 }}>
-                  Redefinimos o que significa proteger empresas
+                  Redefinimos o que significa{' '}
+                  <em style={{ fontWeight: 400, fontStyle: 'italic' }}>proteger</em>{' '}
+                  empresas
                 </h2>
                 <p style={{
-                  fontSize: '17px',
-                  lineHeight: 1.75,
+                  fontSize: '1.1rem',
+                  lineHeight: 1.6,
                   color: '#78716C',
                   maxWidth: '520px',
-                  marginBottom: '32px',
+                  marginBottom: '40px',
+                  fontWeight: 400,
                 }}>
                   Fundada por Wagner Gusmão e Larissa de Oliveira Lima, a GLA Advogados nasceu
                   da necessidade de um escritório que compreendesse profundamente os desafios de
@@ -199,16 +212,16 @@ export default function Home() {
                 </p>
 
                 {/* Bullet points */}
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {[
                     'Atuação em 5+ estados brasileiros',
                     'Mais de 500 empresas atendidas',
                     'Clientes como NISSAN e grandes corporações',
                   ].map((point) => (
-                    <div key={point} className="flex items-center gap-3">
+                    <div key={point} className="flex items-center gap-4">
                       <span style={{
-                        width: '16px',
-                        height: '2px',
+                        width: '20px',
+                        height: '1.5px',
                         background: '#C0272D',
                         flexShrink: 0,
                         display: 'block',
@@ -225,7 +238,7 @@ export default function Home() {
             {/* Image: 2 of 5 cols */}
             <div className="lg:col-span-2">
               <ScrollReveal delay={100}>
-                <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 24px 64px rgba(0,0,0,0.08)' }}>
+                <div style={{ borderRadius: '20px', overflow: 'hidden', boxShadow: '0 25px 50px rgba(0,0,0,0.08)' }}>
                   <Image
                     src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80"
                     alt="Equipe GLA Advogados em reunião estratégica"
@@ -242,109 +255,79 @@ export default function Home() {
       </section>
 
       {/* =====================================================
-          SECTION 3 — SERVIÇOS (horizontal scroll)
+          SECTION 3 — SERVIÇOS (Casa Flora photo cards)
           ===================================================== */}
-      <section className="noise" style={{ background: '#FAFAF9', padding: '120px 0' }}>
-        <div className="relative z-10">
-          <div className="container-gla mb-12">
-            <ScrollReveal>
-              <span className="label-section mb-6" style={{ display: 'flex' }}>Nossos Serviços</span>
+      <section className="noise" style={{ background: '#FAFAFA', padding: '120px 0' }}>
+        <div className="container-gla relative z-10">
+          <ScrollReveal>
+            <div className="text-center mb-16" style={{ maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto' }}>
+              <span className="label-section mb-8 justify-center" style={{ display: 'flex' }}>Nossos Serviços</span>
               <h2 style={{
                 fontSize: 'clamp(1.75rem, 3.5vw, 3rem)',
-                fontWeight: 700,
+                fontWeight: 300,
                 lineHeight: 1.08,
-                letterSpacing: '-0.03em',
+                letterSpacing: '-0.025em',
                 color: '#1A1714',
               }}>
-                Proteção jurídica sob medida
+                Proteção jurídica{' '}
+                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>sob medida</em>
               </h2>
-            </ScrollReveal>
-          </div>
+            </div>
+          </ScrollReveal>
 
-          {/* Horizontal scroll cards */}
-          <div className="horizontal-scroll" style={{ paddingLeft: 'max(1.5rem, 8%)', paddingRight: '1.5rem' }}>
+          {/* Cards grid — Casa Flora photo bg */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
                 num: '01',
                 title: 'Consultoria Preventiva',
-                desc: 'Estratégias de compliance que neutralizam riscos antes que se tornem litígios. Protocolos personalizados para empresas com grandes quadros.',
+                desc: 'Estratégias de compliance que neutralizam riscos antes que se tornem litígios.',
+                img: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80',
               },
               {
                 num: '02',
                 title: 'Defesa em Processos',
-                desc: 'Equipe especializada em contencioso trabalhista com rigor técnico e estratégia em todas as instâncias — do primeiro grau ao TST.',
+                desc: 'Rigor técnico e estratégia em todas as instâncias — do primeiro grau ao TST.',
+                img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80',
               },
               {
                 num: '03',
                 title: 'Gestão de Passivo',
-                desc: 'Inteligência jurídica e análise preditiva para otimizar resultados, reduzir custos e criar dashboards de controle processual.',
+                desc: 'Inteligência jurídica e análise preditiva para otimizar resultados e reduzir custos.',
+                img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
               },
               {
                 num: '04',
                 title: 'Due Diligence Trabalhista',
-                desc: 'Análises minuciosas para operações de M&A com quantificação precisa de contingências e riscos trabalhistas.',
+                desc: 'Análises minuciosas para operações de M&A com quantificação precisa de contingências.',
+                img: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80',
               },
             ].map((service, i) => (
-              <div
-                key={i}
-                className="service-card"
-                style={{ minWidth: '340px', maxWidth: '420px', width: '85vw' }}
-              >
-                {/* Oversized number */}
-                <span
-                  className="card-number absolute select-none pointer-events-none"
-                  style={{
-                    top: '24px',
-                    right: '28px',
-                    fontSize: '140px',
-                    fontWeight: 800,
-                    color: '#1A1714',
-                    lineHeight: 1,
-                    letterSpacing: '-0.04em',
-                  }}
-                  aria-hidden="true"
-                >
-                  {service.num}
-                </span>
-
-                <div style={{ position: 'relative', zIndex: 2 }}>
-                  <span style={{
-                    fontSize: '14px',
-                    fontWeight: 600,
-                    color: '#C0272D',
-                    display: 'block',
-                    marginBottom: '20px',
-                    letterSpacing: '0.01em',
-                  }}>
-                    {service.num}
-                  </span>
-                  <h3 style={{
-                    fontSize: '22px',
-                    fontWeight: 700,
-                    color: '#1A1714',
-                    letterSpacing: '-0.02em',
-                    marginBottom: '16px',
-                    lineHeight: 1.2,
-                  }}>
-                    {service.title}
-                  </h3>
-                  <p style={{
-                    fontSize: '15px',
-                    lineHeight: 1.7,
-                    color: '#78716C',
-                    marginBottom: '32px',
-                  }}>
-                    {service.desc}
-                  </p>
-                  <Link
-                    href="/servicos"
-                    className="inline-flex items-center gap-2 transition-all duration-300 hover:gap-3"
-                    style={{ fontSize: '14px', fontWeight: 600, color: '#C0272D' }}
-                  >
-                    Saiba mais →
-                  </Link>
-                </div>
-              </div>
+              <ScrollReveal key={i} delay={i * 100}>
+                <Link href="/servicos" className="block">
+                  <div className="service-card-flora">
+                    {/* Photo background */}
+                    <div
+                      className="service-card-flora__bg"
+                      style={{ backgroundImage: `url(${service.img})` }}
+                    />
+                    {/* Gradient overlay */}
+                    <div className="service-card-flora__overlay" />
+                    {/* Content */}
+                    <div className="service-card-flora__content">
+                      <span className="service-card-flora__number">{service.num}</span>
+                      <h3 className="service-card-flora__title">{service.title}</h3>
+                      <p className="service-card-flora__desc">{service.desc}</p>
+                      <span className="service-card-flora__link">
+                        Saiba mais
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -353,25 +336,27 @@ export default function Home() {
       {/* =====================================================
           SECTION 4 — DIFERENCIAIS
           ===================================================== */}
-      <section style={{ background: '#FFFFFF', padding: '120px 0' }}>
-        <div className="container-gla">
+      <section className="noise" style={{ background: '#FFFFFF', padding: '120px 0' }}>
+        <div className="container-gla relative z-10">
           <ScrollReveal>
             <h2 style={{
               fontSize: 'clamp(2rem, 4.5vw, 3.75rem)',
-              fontWeight: 800,
-              lineHeight: 1.05,
-              letterSpacing: '-0.03em',
+              fontWeight: 300,
+              lineHeight: 1.08,
+              letterSpacing: '-0.025em',
               color: '#1A1714',
-              marginBottom: '16px',
+              marginBottom: '20px',
             }}>
-              Não somos apenas advogados.
+              Não somos apenas{' '}
+              <span className="text-outline">advogados.</span>
             </h2>
             <p style={{
-              fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
-              lineHeight: 1.5,
+              fontSize: '1.15rem',
+              lineHeight: 1.55,
               color: '#78716C',
               maxWidth: '640px',
               marginBottom: '64px',
+              fontWeight: 400,
             }}>
               Somos o departamento jurídico que sua empresa precisa — sem o custo fixo.
             </p>
@@ -402,23 +387,24 @@ export default function Home() {
             ].map((item, i) => (
               <ScrollReveal key={item.num} delay={i * 80}>
                 <div className="diff-item">
-                  <div className="flex items-start gap-5">
+                  <div className="flex items-start gap-6">
                     <span style={{
                       fontSize: '13px',
-                      fontWeight: 700,
+                      fontWeight: 400,
                       color: '#C0272D',
-                      marginTop: '3px',
+                      marginTop: '4px',
                       flexShrink: 0,
                       fontVariantNumeric: 'tabular-nums',
+                      letterSpacing: '0.05em',
                     }}>
                       {item.num}
                     </span>
                     <div>
                       <h3 style={{
                         fontSize: '17px',
-                        fontWeight: 700,
+                        fontWeight: 600,
                         color: '#1A1714',
-                        marginBottom: '6px',
+                        marginBottom: '8px',
                         letterSpacing: '-0.01em',
                       }}>
                         {item.title}
@@ -427,6 +413,7 @@ export default function Home() {
                         fontSize: '15px',
                         lineHeight: 1.7,
                         color: '#78716C',
+                        fontWeight: 400,
                       }}>
                         {item.desc}
                       </p>
@@ -442,19 +429,20 @@ export default function Home() {
       {/* =====================================================
           SECTION 5 — EQUIPE
           ===================================================== */}
-      <section className="noise" style={{ background: '#FAFAF9', padding: '120px 0' }}>
+      <section className="noise" style={{ background: '#FAFAFA', padding: '120px 0' }}>
         <div className="container-gla relative z-10">
           <ScrollReveal>
-            <span className="label-section mb-6" style={{ display: 'flex' }}>Equipe</span>
+            <span className="label-section mb-8" style={{ display: 'flex' }}>Equipe</span>
             <h2 style={{
               fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
-              fontWeight: 700,
+              fontWeight: 300,
               lineHeight: 1.08,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.025em',
               color: '#1A1714',
-              marginBottom: '56px',
+              marginBottom: '64px',
             }}>
-              Quem protege sua empresa
+              Quem protege{' '}
+              <em style={{ fontWeight: 400, fontStyle: 'italic' }}>sua empresa</em>
             </h2>
           </ScrollReveal>
 
@@ -483,7 +471,7 @@ export default function Home() {
             ].map((member, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <div>
-                  <div style={{ borderRadius: '16px', overflow: 'hidden', marginBottom: '20px' }}>
+                  <div style={{ borderRadius: '20px', overflow: 'hidden', marginBottom: '24px' }}>
                     <Image
                       src={member.img}
                       alt={member.name}
@@ -495,7 +483,7 @@ export default function Home() {
                   </div>
                   <h3 style={{
                     fontSize: '17px',
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: '#1A1714',
                     letterSpacing: '-0.01em',
                     marginBottom: '4px',
@@ -518,40 +506,57 @@ export default function Home() {
       <section className="noise noise-dark" style={{ background: '#1A1714', padding: '120px 0' }}>
         <div className="container-gla relative z-10">
           <ScrollReveal>
-            <div style={{ maxWidth: '720px' }}>
+            <div className="text-center" style={{ maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto' }}>
               <h2 style={{
                 fontSize: 'clamp(1.75rem, 3.5vw, 3rem)',
-                fontWeight: 700,
+                fontWeight: 300,
                 lineHeight: 1.12,
-                letterSpacing: '-0.03em',
+                letterSpacing: '-0.025em',
                 color: '#FFFFFF',
-                marginBottom: '40px',
+                marginBottom: '24px',
               }}>
-                Sua empresa merece proteção jurídica à altura do seu crescimento.
+                Sua empresa merece proteção jurídica à altura do seu{' '}
+                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>crescimento.</em>
               </h2>
 
+              <p style={{
+                fontSize: '1.1rem',
+                lineHeight: 1.6,
+                color: 'rgba(255,255,255,0.45)',
+                maxWidth: '500px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                marginBottom: '48px',
+                fontWeight: 400,
+              }}>
+                Solicite uma análise personalizada das necessidades jurídicas da sua organização.
+              </p>
+
               {/* Contact info */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16 text-left" style={{ maxWidth: '560px', marginLeft: 'auto', marginRight: 'auto' }}>
                 <div>
-                  <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.15em', color: 'rgba(255,255,255,0.4)', marginBottom: '8px' }}>Telefone</p>
-                  <a href="tel:+552138835652" style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)' }}>(21) 3883-5652</a>
+                  <p style={{ fontSize: '12px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.15em', color: 'rgba(255,255,255,0.3)', marginBottom: '8px' }}>Telefone</p>
+                  <a href="tel:+552138835652" style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>(21) 3883-5652</a>
                 </div>
                 <div>
-                  <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.15em', color: 'rgba(255,255,255,0.4)', marginBottom: '8px' }}>WhatsApp</p>
-                  <a href="https://wa.me/5521994053121" target="_blank" rel="noopener noreferrer" style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)' }}>(21) 99405-3121</a>
+                  <p style={{ fontSize: '12px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.15em', color: 'rgba(255,255,255,0.3)', marginBottom: '8px' }}>WhatsApp</p>
+                  <a href="https://wa.me/5521994053121" target="_blank" rel="noopener noreferrer" style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>(21) 99405-3121</a>
                 </div>
                 <div>
-                  <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.15em', color: 'rgba(255,255,255,0.4)', marginBottom: '8px' }}>Email</p>
-                  <a href="mailto:wagner.gusmao@glaadvogados.com.br" style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)' }}>wagner.gusmao@glaadvogados.com.br</a>
+                  <p style={{ fontSize: '12px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.15em', color: 'rgba(255,255,255,0.3)', marginBottom: '8px' }}>Email</p>
+                  <a href="mailto:wagner.gusmao@glaadvogados.com.br" style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>wagner.gusmao@glaadvogados.com.br</a>
                 </div>
                 <div>
-                  <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.15em', color: 'rgba(255,255,255,0.4)', marginBottom: '8px' }}>Endereço</p>
-                  <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5 }}>Av. Franklin Roosevelt, 84 - GR 301<br />Centro, Rio de Janeiro</p>
+                  <p style={{ fontSize: '12px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.15em', color: 'rgba(255,255,255,0.3)', marginBottom: '8px' }}>Endereço</p>
+                  <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, fontWeight: 400 }}>Av. Franklin Roosevelt, 84 - GR 301<br />Centro, Rio de Janeiro</p>
                 </div>
               </div>
 
               <Link href="/contato" className="btn-outline-white">
-                Solicitar Análise →
+                Solicitar Análise
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
               </Link>
             </div>
           </ScrollReveal>

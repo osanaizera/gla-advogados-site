@@ -56,33 +56,34 @@ export default function ImprensaPage() {
   return (
     <>
       {/* ===== HERO INTERNO ===== */}
-      <section className="noise" style={{ background: '#FAFAF9', minHeight: '40vh', display: 'flex', alignItems: 'flex-end' }}>
-        <div className="container-gla relative z-10" style={{ paddingBottom: '64px', paddingTop: '200px' }}>
-          <span className="label-section mb-6" style={{ display: 'flex' }}>Imprensa</span>
+      <section className="noise" style={{ background: '#FAFAFA', minHeight: '40vh', display: 'flex', alignItems: 'flex-end' }}>
+        <div className="container-gla relative z-10" style={{ paddingBottom: '72px', paddingTop: '200px' }}>
+          <span className="label-section mb-8" style={{ display: 'flex' }}>Imprensa</span>
           <h1 style={{
             fontSize: 'clamp(2rem, 4.5vw, 3.5rem)',
-            fontWeight: 800,
-            lineHeight: 1.05,
-            letterSpacing: '-0.03em',
+            fontWeight: 300,
+            lineHeight: 1.08,
+            letterSpacing: '-0.025em',
             color: '#1A1714',
             maxWidth: '480px',
           }}>
-            GLA na mídia
+            GLA na{' '}
+            <em style={{ fontWeight: 400, fontStyle: 'italic' }}>mídia</em>
           </h1>
-          <div className="line-reveal mt-6" style={{ animationDelay: '0.3s' }} />
-          <p style={{ marginTop: '20px', fontSize: '17px', lineHeight: 1.7, color: '#78716C', maxWidth: '480px' }}>
+          <div className="line-reveal mt-8" style={{ animationDelay: '0.3s' }} />
+          <p style={{ marginTop: '24px', fontSize: '1.1rem', lineHeight: 1.6, color: '#78716C', maxWidth: '480px', fontWeight: 400 }}>
             Acompanhe nossa participação nos principais veículos de comunicação.
           </p>
         </div>
       </section>
 
       {/* ===== GRID DE ARTIGOS ===== */}
-      <section className="noise" style={{ background: '#FFFFFF', padding: '100px 0' }}>
+      <section className="noise" style={{ background: '#FFFFFF', padding: '120px 0' }}>
         <div className="container-gla relative z-10">
-          {/* Decorative number */}
+          {/* Decorative letter */}
           <span
             className="hidden md:block absolute select-none pointer-events-none"
-            style={{ top: '-20px', right: '0', fontSize: '200px', fontWeight: 800, color: '#1A1714', opacity: 0.03, lineHeight: 1, letterSpacing: '-0.04em' }}
+            style={{ top: '-20px', right: '0', fontSize: '200px', fontWeight: 300, color: '#1A1714', opacity: 0.03, lineHeight: 1, letterSpacing: '-0.04em' }}
             aria-hidden="true"
           >
             N
@@ -92,15 +93,16 @@ export default function ImprensaPage() {
             {newsItems.map((item, index) => (
               <ScrollReveal key={item.id} delay={index * 60}>
                 <div
-                  className="h-full flex flex-col transition-all duration-400 hover:-translate-y-1"
+                  className="h-full flex flex-col"
                   style={{
-                    padding: '36px',
+                    padding: '40px',
                     border: '1px solid #E7E5E4',
-                    borderRadius: '16px',
+                    borderRadius: '20px',
+                    transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                   }}
                 >
-                  <div className="flex items-center gap-3 mb-5">
-                    <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.08em', color: '#C0272D' }}>
+                  <div className="flex items-center gap-3 mb-6">
+                    <span style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.08em', color: '#C0272D' }}>
                       {item.category}
                     </span>
                     <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#E7E5E4', display: 'block' }} />
@@ -109,16 +111,16 @@ export default function ImprensaPage() {
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#1A1714', lineHeight: 1.35, letterSpacing: '-0.01em', marginBottom: '12px' }}>
+                  <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#1A1714', lineHeight: 1.35, letterSpacing: '-0.01em', marginBottom: '14px' }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: '14px', lineHeight: 1.7, color: '#78716C', flexGrow: 1, marginBottom: '20px' }}>
+                  <p style={{ fontSize: '14px', lineHeight: 1.7, color: '#78716C', flexGrow: 1, marginBottom: '24px', fontWeight: 400 }}>
                     {item.excerpt}
                   </p>
 
-                  <div className="flex justify-between items-center" style={{ paddingTop: '16px', borderTop: '1px solid #E7E5E4' }}>
+                  <div className="flex justify-between items-center" style={{ paddingTop: '18px', borderTop: '1px solid #E7E5E4' }}>
                     <span style={{ fontSize: '12px', fontWeight: 500, color: '#78716C' }}>{item.date}</span>
-                    <Link href="#" className="inline-flex items-center gap-1.5 transition-all duration-300 hover:gap-2.5" style={{ fontSize: '13px', fontWeight: 600, color: '#C0272D' }}>
+                    <Link href="#" className="inline-flex items-center gap-1.5 transition-all duration-500 hover:gap-2.5" style={{ fontSize: '13px', fontWeight: 600, color: '#C0272D' }}>
                       Ler matéria →
                     </Link>
                   </div>
@@ -130,24 +132,25 @@ export default function ImprensaPage() {
       </section>
 
       {/* ===== VEÍCULOS ===== */}
-      <section className="noise" style={{ background: '#FAFAF9', padding: '100px 0' }}>
+      <section className="noise" style={{ background: '#FAFAFA', padding: '120px 0' }}>
         <div className="container-gla relative z-10">
           <ScrollReveal>
-            <span className="label-section mb-6" style={{ display: 'flex' }}>Aparições</span>
+            <span className="label-section mb-8" style={{ display: 'flex' }}>Aparições</span>
             <h2 style={{
               fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
-              fontWeight: 700,
+              fontWeight: 300,
               lineHeight: 1.1,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.025em',
               color: '#1A1714',
-              marginBottom: '48px',
+              marginBottom: '56px',
             }}>
-              Onde somos citados
+              Onde somos{' '}
+              <em style={{ fontWeight: 400, fontStyle: 'italic' }}>citados</em>
             </h2>
           </ScrollReveal>
 
           <ScrollReveal stagger>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
               {[
                 'Valor Econômico',
                 'Exame',
@@ -160,15 +163,16 @@ export default function ImprensaPage() {
               ].map((outlet) => (
                 <div
                   key={outlet}
-                  className="flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+                  className="flex items-center justify-center"
                   style={{
-                    padding: '24px 16px',
+                    padding: '28px 16px',
                     background: '#FFFFFF',
-                    borderRadius: '12px',
+                    borderRadius: '16px',
                     border: '1px solid #E7E5E4',
+                    transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                   }}
                 >
-                  <span style={{ fontSize: '14px', fontWeight: 700, color: '#78716C', letterSpacing: '-0.01em' }}>{outlet}</span>
+                  <span style={{ fontSize: '14px', fontWeight: 600, color: '#78716C', letterSpacing: '-0.01em' }}>{outlet}</span>
                 </div>
               ))}
             </div>
@@ -177,19 +181,20 @@ export default function ImprensaPage() {
       </section>
 
       {/* ===== PRODUÇÃO ACADÊMICA ===== */}
-      <section style={{ background: '#FFFFFF', padding: '100px 0' }}>
+      <section style={{ background: '#FFFFFF', padding: '120px 0' }}>
         <div className="container-gla">
           <ScrollReveal>
-            <span className="label-section mb-6" style={{ display: 'flex' }}>Produção Acadêmica</span>
+            <span className="label-section mb-8" style={{ display: 'flex' }}>Produção Acadêmica</span>
             <h2 style={{
               fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
-              fontWeight: 700,
+              fontWeight: 300,
               lineHeight: 1.1,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.025em',
               color: '#1A1714',
-              marginBottom: '48px',
+              marginBottom: '56px',
             }}>
-              Artigos científicos
+              Artigos{' '}
+              <em style={{ fontWeight: 400, fontStyle: 'italic' }}>científicos</em>
             </h2>
           </ScrollReveal>
 
@@ -211,26 +216,26 @@ export default function ImprensaPage() {
               <ScrollReveal key={i} delay={i * 100}>
                 <div
                   className="h-full flex flex-col"
-                  style={{ padding: '36px', border: '1px solid #E7E5E4', borderRadius: '16px' }}
+                  style={{ padding: '40px', border: '1px solid #E7E5E4', borderRadius: '20px' }}
                 >
                   <div style={{
                     width: '48px',
                     height: '48px',
-                    borderRadius: '12px',
+                    borderRadius: '14px',
                     background: 'rgba(192,39,45,0.06)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginBottom: '24px',
+                    marginBottom: '28px',
                   }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C0272D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
                     </svg>
                   </div>
-                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#1A1714', lineHeight: 1.4, letterSpacing: '-0.01em', flexGrow: 1, marginBottom: '20px' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1A1714', lineHeight: 1.4, letterSpacing: '-0.01em', flexGrow: 1, marginBottom: '24px' }}>
                     {pub.title}
                   </h3>
-                  <div className="flex justify-between items-center" style={{ paddingTop: '16px', borderTop: '1px solid #E7E5E4' }}>
+                  <div className="flex justify-between items-center" style={{ paddingTop: '18px', borderTop: '1px solid #E7E5E4' }}>
                     <span style={{ fontSize: '12px', fontWeight: 500, color: '#78716C' }}>{pub.author}</span>
                     <Link href="#" style={{ fontSize: '13px', fontWeight: 600, color: '#C0272D' }}>
                       Baixar PDF
@@ -244,21 +249,22 @@ export default function ImprensaPage() {
       </section>
 
       {/* ===== CTA ===== */}
-      <section className="noise noise-dark" style={{ background: '#1A1714', padding: '100px 0' }}>
+      <section className="noise noise-dark" style={{ background: '#1A1714', padding: '120px 0' }}>
         <div className="container-gla relative z-10">
           <ScrollReveal>
             <div className="text-center" style={{ maxWidth: '520px', margin: '0 auto' }}>
               <h2 style={{
                 fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)',
-                fontWeight: 700,
+                fontWeight: 300,
                 lineHeight: 1.12,
-                letterSpacing: '-0.03em',
+                letterSpacing: '-0.025em',
                 color: '#FFFFFF',
-                marginBottom: '16px',
+                marginBottom: '18px',
               }}>
-                Inscreva-se em nossa newsletter
+                Inscreva-se em nossa{' '}
+                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>newsletter</em>
               </h2>
-              <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.45)', marginBottom: '32px' }}>
+              <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.4)', marginBottom: '36px', fontWeight: 400 }}>
                 Receba artigos e análises sobre gestão de risco jurídico trabalhista.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -267,17 +273,23 @@ export default function ImprensaPage() {
                   placeholder="Seu email corporativo"
                   style={{
                     flexGrow: 1,
-                    padding: '14px 20px',
-                    borderRadius: '12px',
+                    padding: '16px 22px',
+                    borderRadius: '16px',
                     border: '1px solid rgba(255,255,255,0.1)',
                     background: 'rgba(255,255,255,0.06)',
                     color: '#FFFFFF',
                     fontSize: '14px',
                     outline: 'none',
+                    fontWeight: 400,
                   }}
                 />
-                <button className="btn-red" style={{ whiteSpace: 'nowrap' }}>
-                  Inscrever-se →
+                <button className="btn-flora" style={{ whiteSpace: 'nowrap', background: 'rgba(255,255,255,0.12)' }}>
+                  Inscrever-se
+                  <span className="btn-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </span>
                 </button>
               </div>
             </div>

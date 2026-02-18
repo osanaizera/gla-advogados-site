@@ -17,7 +17,7 @@ const services = [
     ],
     img: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80',
     imgAlt: 'Consultoria Preventiva',
-    cta: 'Solicitar Consultoria →',
+    cta: 'Solicitar Consultoria',
   },
   {
     num: '02',
@@ -31,9 +31,9 @@ const services = [
       'Procedimentos administrativos',
       'Acompanhamento de fiscalizações',
     ],
-    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+    img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80',
     imgAlt: 'Defesa Processual',
-    cta: 'Solicitar Defesa →',
+    cta: 'Solicitar Defesa',
   },
   {
     num: '03',
@@ -47,9 +47,9 @@ const services = [
       'Relatórios gerenciais',
       'Estratégias de encerramento',
     ],
-    img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80',
+    img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
     imgAlt: 'Gestão de Passivo',
-    cta: 'Solicitar Gestão →',
+    cta: 'Solicitar Gestão',
   },
   {
     num: '04',
@@ -63,9 +63,9 @@ const services = [
       'Quantificação de riscos',
       'Recomendações estratégicas',
     ],
-    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
+    img: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80',
     imgAlt: 'Due Diligence',
-    cta: 'Solicitar Due Diligence →',
+    cta: 'Solicitar Due Diligence',
   },
 ];
 
@@ -87,34 +87,35 @@ export default function ServicosPage() {
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.65) 50%, rgba(255,255,255,0.92) 100%)',
+            background: 'linear-gradient(to bottom, rgba(250,250,249,0.9) 0%, rgba(250,250,249,0.7) 50%, rgba(250,250,249,0.95) 100%)',
           }}
         />
-        <div className="container-gla relative z-10" style={{ paddingBottom: '64px', paddingTop: '200px' }}>
-          <span className="label-section mb-6" style={{ display: 'flex' }}>Nossos Serviços</span>
+        <div className="container-gla relative z-10" style={{ paddingBottom: '72px', paddingTop: '200px' }}>
+          <span className="label-section mb-8" style={{ display: 'flex' }}>Nossos Serviços</span>
           <h1 style={{
             fontSize: 'clamp(2rem, 4.5vw, 3.5rem)',
-            fontWeight: 800,
-            lineHeight: 1.05,
-            letterSpacing: '-0.03em',
+            fontWeight: 300,
+            lineHeight: 1.08,
+            letterSpacing: '-0.025em',
             color: '#1A1714',
             maxWidth: '640px',
           }}>
-            Proteção jurídica sob medida para sua empresa
+            Proteção jurídica sob medida para{' '}
+            <em style={{ fontWeight: 400, fontStyle: 'italic' }}>sua empresa</em>
           </h1>
-          <div className="line-reveal mt-6" style={{ animationDelay: '0.3s' }} />
+          <div className="line-reveal mt-8" style={{ animationDelay: '0.3s' }} />
         </div>
       </section>
 
       {/* ===== SERVIÇOS DETALHADOS ===== */}
-      <section className="noise" style={{ background: '#FFFFFF', padding: '100px 0' }}>
+      <section className="noise" style={{ background: '#FFFFFF', padding: '120px 0' }}>
         <div className="container-gla relative z-10">
           {services.map((service, i) => {
             const isEven = i % 2 === 1;
             return (
               <ScrollReveal key={service.num}>
                 <div
-                  className="service-card mb-10 last:mb-0"
+                  className="service-card mb-12 last:mb-0"
                   style={{ padding: '48px 40px', borderRadius: '20px' }}
                 >
                   {/* Oversized decorative number */}
@@ -124,7 +125,7 @@ export default function ServicosPage() {
                       top: '20px',
                       right: '32px',
                       fontSize: '160px',
-                      fontWeight: 800,
+                      fontWeight: 300,
                       color: '#1A1714',
                       lineHeight: 1,
                       letterSpacing: '-0.04em',
@@ -134,8 +135,8 @@ export default function ServicosPage() {
                     {service.num}
                   </span>
 
-                  <div className={`grid grid-cols-1 md:grid-cols-2 gap-10 items-center ${isEven ? 'md:direction-rtl' : ''}`}>
-                    <div className={isEven ? 'md:order-2' : ''} style={{ borderRadius: '14px', overflow: 'hidden' }}>
+                  <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center ${isEven ? 'md:direction-rtl' : ''}`}>
+                    <div className={isEven ? 'md:order-2' : ''} style={{ borderRadius: '16px', overflow: 'hidden' }}>
                       <Image
                         src={service.img}
                         alt={service.imgAlt}
@@ -146,35 +147,38 @@ export default function ServicosPage() {
                       />
                     </div>
                     <div className={isEven ? 'md:order-1' : ''} style={{ position: 'relative', zIndex: 2 }}>
-                      <span style={{ fontSize: '14px', fontWeight: 700, color: '#C0272D', display: 'block', marginBottom: '12px' }}>
+                      <span style={{ fontSize: '13px', fontWeight: 400, color: '#C0272D', display: 'block', marginBottom: '16px', letterSpacing: '0.05em' }}>
                         {service.num}
                       </span>
                       <h2 style={{
                         fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
-                        fontWeight: 800,
+                        fontWeight: 300,
                         color: '#1A1714',
-                        letterSpacing: '-0.02em',
-                        marginBottom: '16px',
+                        letterSpacing: '-0.025em',
+                        marginBottom: '18px',
                         lineHeight: 1.15,
                       }}>
                         {service.title}
                       </h2>
-                      <p style={{ fontSize: '15px', lineHeight: 1.75, color: '#78716C', marginBottom: '24px' }}>
+                      <p style={{ fontSize: '15px', lineHeight: 1.75, color: '#78716C', marginBottom: '28px', fontWeight: 400 }}>
                         {service.desc}
                       </p>
 
                       {/* Items grid */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
                         {service.items.map((item) => (
-                          <div key={item} className="flex items-center gap-2">
-                            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#C0272D', flexShrink: 0, display: 'block', opacity: 0.6 }} />
-                            <span style={{ fontSize: '13px', color: '#78716C' }}>{item}</span>
+                          <div key={item} className="flex items-center gap-3">
+                            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#C0272D', flexShrink: 0, display: 'block', opacity: 0.5 }} />
+                            <span style={{ fontSize: '13px', color: '#78716C', fontWeight: 400 }}>{item}</span>
                           </div>
                         ))}
                       </div>
 
                       <Link href="/contato" className="btn-red-sm">
                         {service.cta}
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
                       </Link>
                     </div>
                   </div>
@@ -189,22 +193,26 @@ export default function ServicosPage() {
       <section className="noise noise-dark" style={{ background: '#1A1714', padding: '120px 0' }}>
         <div className="container-gla relative z-10">
           <ScrollReveal>
-            <div style={{ maxWidth: '600px' }}>
+            <div className="text-center" style={{ maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
               <h2 style={{
                 fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
-                fontWeight: 700,
+                fontWeight: 300,
                 lineHeight: 1.12,
-                letterSpacing: '-0.03em',
+                letterSpacing: '-0.025em',
                 color: '#FFFFFF',
                 marginBottom: '20px',
               }}>
-                Precisando de soluções personalizadas?
+                Precisando de soluções{' '}
+                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>personalizadas?</em>
               </h2>
-              <p style={{ fontSize: '17px', lineHeight: 1.7, color: 'rgba(255,255,255,0.5)', marginBottom: '40px' }}>
+              <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.45)', marginBottom: '40px', fontWeight: 400 }}>
                 Solicite uma análise personalizada das necessidades jurídicas da sua organização.
               </p>
               <Link href="/contato" className="btn-outline-white">
-                Solicitar Análise Jurídica →
+                Solicitar Análise Jurídica
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
               </Link>
             </div>
           </ScrollReveal>
