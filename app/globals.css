@@ -1,131 +1,140 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-dark: #0A1628;
-  --color-navy: #162040;
-  --color-navy-light: #1E3A6E;
+  --color-dark: #0C1220;
+  --color-dark-light: #151D2E;
+  --color-card: #FFFFFF;
   --color-wine: #7B1535;
   --color-wine-light: #9B1D44;
   --color-gold: #B8962E;
   --color-gold-light: #D4B04A;
+  --color-muted: #6B7280;
   --color-off-white: #F7F8FC;
-  --color-gray-soft: #E5E8EF;
-  --color-text-secondary: #5C6B84;
+  --color-border-subtle: #E5E7EB;
+  --color-text-secondary: #6B7280;
 }
 
-:root {
-  --foreground-rgb: 10, 22, 40;
-}
+/* ==========================================
+   BASE
+   ========================================== */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: #FFFFFF;
-  font-family: var(--font-inter);
+  background-color: #0C1220;
+  color: #FFFFFF;
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+html {
+  scroll-behavior: smooth;
 }
 
 /* ==========================================
-   GLASSMORPHISM
+   BENTO CARDS
    ========================================== */
 
-.glass-dark {
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(24px) saturate(200%);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 16px;
+.bento-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 32px;
+  color: #0C1220;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.glass-light {
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.6);
-  box-shadow: 0 8px 32px rgba(10,22,40,0.08), 0 1px 0 rgba(255,255,255,0.8) inset;
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.bento-card-wine {
+  background: #7B1535;
   border-radius: 20px;
+  padding: 32px;
+  color: #FFFFFF;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-card-wine:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(123, 21, 53, 0.4);
+}
+
+.bento-card-dark {
+  background: #151D2E;
+  border-radius: 20px;
+  padding: 32px;
+  color: #FFFFFF;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-card-dark:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 /* ==========================================
    BUTTONS
    ========================================== */
 
-.btn-primary {
+.btn-wine {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: #7B1535;
-  color: #FFFFFF;
+  gap: 8px;
+  background: #7B1535;
+  color: #fff;
   font-weight: 600;
-  font-size: 0.9375rem;
-  padding: 0.875rem 2rem;
-  border-radius: 8px;
-  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding: 14px 28px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
   text-decoration: none;
-  border: 1px solid #7B1535;
-  letter-spacing: 0.01em;
+  font-size: 15px;
 }
 
-.btn-primary:hover {
-  background-color: #9B1D44;
-  border-color: #9B1D44;
+.btn-wine:hover {
+  background: #9B1D44;
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(123,21,53,0.25);
+  box-shadow: 0 8px 24px rgba(123, 21, 53, 0.35);
 }
 
-.btn-outline {
+.btn-wine-sm {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: transparent;
-  color: #FFFFFF;
+  gap: 6px;
+  background: #7B1535;
+  color: #fff;
   font-weight: 600;
-  font-size: 0.9375rem;
-  padding: 0.875rem 2rem;
-  border-radius: 8px;
-  border: 1.5px solid rgba(255,255,255,0.4);
-  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
   text-decoration: none;
-  letter-spacing: 0.01em;
+  font-size: 14px;
 }
 
-.btn-outline:hover {
-  background-color: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.7);
+.btn-wine-sm:hover {
+  background: #9B1D44;
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(10,22,40,0.15);
+  box-shadow: 0 8px 24px rgba(123, 21, 53, 0.35);
 }
 
-.btn-outline-dark {
+.btn-outline-light {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: transparent;
-  color: #0A1628;
-  font-weight: 600;
-  font-size: 0.9375rem;
-  padding: 0.875rem 2rem;
-  border-radius: 8px;
-  border: 1.5px solid rgba(10,22,40,0.2);
-  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  gap: 8px;
+  color: #fff;
+  font-weight: 500;
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.3s ease;
   text-decoration: none;
-  letter-spacing: 0.01em;
+  font-size: 15px;
+  background: transparent;
 }
 
-.btn-outline-dark:hover {
-  background-color: #0A1628;
-  color: #FFFFFF;
-  border-color: #0A1628;
-  transform: translateY(-2px);
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .btn-gold {
@@ -138,40 +147,61 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   font-size: 0.9375rem;
   padding: 1rem 2.5rem;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
   border: none;
   letter-spacing: 0.02em;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .btn-gold:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(184,150,46,0.35);
+  box-shadow: 0 12px 32px rgba(184, 150, 46, 0.35);
 }
 
 /* ==========================================
-   PREMIUM CARD
+   PILL/BADGE
    ========================================== */
 
-.premium-card {
-  background: #FFFFFF;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(10,22,40,0.06), 0 1px 3px rgba(10,22,40,0.04);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
-.premium-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 32px 80px rgba(10,22,40,0.1), 0 1px 3px rgba(10,22,40,0.04);
+.pill-wine {
+  background: rgba(123, 21, 53, 0.15);
+  color: #B8962E;
+  border: 1px solid rgba(123, 21, 53, 0.25);
+}
+
+/* ==========================================
+   PHOTO CARDS
+   ========================================== */
+
+.photo-card {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ==========================================
    CONTAINER
    ========================================== */
 
-.container-premium {
+.container-bento {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
@@ -180,153 +210,49 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 768px) {
-  .container-premium {
+  .container-bento {
     padding-left: 3rem;
     padding-right: 3rem;
   }
 }
 
 /* ==========================================
-   SECTIONS
+   SECTION SPACING
    ========================================== */
 
-.section-premium {
-  padding: 6rem 0;
+.section-gap {
+  padding: 80px 0;
 }
 
 @media (min-width: 768px) {
-  .section-premium {
-    padding: 8rem 0;
+  .section-gap {
+    padding: 100px 0;
   }
 }
 
 /* ==========================================
-   TYPOGRAPHY
+   FORM CONTROLS — Minimal dark style
    ========================================== */
 
-.heading-xl {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 700;
-  font-family: var(--font-playfair), Georgia, serif;
-  letter-spacing: -0.025em;
-  line-height: 1.08;
-}
-
-.heading-lg {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 700;
-  font-family: var(--font-playfair), Georgia, serif;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
-.heading-md {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  font-weight: 700;
-  font-family: var(--font-playfair), Georgia, serif;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-}
-
-.heading-sm {
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-  font-weight: 700;
-  font-family: var(--font-playfair), Georgia, serif;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-}
-
-/* ==========================================
-   DECORATIVE
-   ========================================== */
-
-.gold-line {
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #B8962E 0%, #D4B04A 100%);
-  margin: 1.5rem 0;
-  border-radius: 2px;
-}
-
-@keyframes growLine {
-  from { width: 0; }
-  to { width: 60px; }
-}
-
-.gold-line-animated {
-  display: block;
-  height: 3px;
-  background: linear-gradient(90deg, #B8962E 0%, #D4B04A 100%);
-  margin: 1.5rem 0;
-  border-radius: 2px;
-  animation: growLine 0.8s ease-out forwards;
-}
-
-/* ==========================================
-   FORM CONTROLS — Apple style
-   ========================================== */
-
-.form-control {
-  position: relative;
-  margin-bottom: 0;
-}
-
-.form-control label {
-  position: absolute;
-  left: 0;
-  top: 0.625rem;
-  color: #5C6B84;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
-
-.form-control input,
-.form-control textarea,
-.form-control select {
+.form-field {
   width: 100%;
-  padding: 0.625rem 0;
+  padding: 14px 0;
   border: none;
-  border-bottom: 1.5px solid #E5E8EF;
+  border-bottom: 1.5px solid rgba(12, 18, 32, 0.15);
   background-color: transparent;
-  color: #0A1628;
+  color: #0C1220;
   font-size: 1rem;
   outline: none;
   transition: border-color 0.3s ease;
-  font-family: var(--font-inter);
+  font-family: 'Inter', sans-serif;
 }
 
-.form-control input:focus,
-.form-control textarea:focus,
-.form-control select:focus {
+.form-field:focus {
   border-color: #7B1535;
 }
 
-.form-control input:focus + label,
-.form-control textarea:focus + label,
-.form-control select:focus + label,
-.form-control input:not(:placeholder-shown) + label,
-.form-control textarea:not(:placeholder-shown) + label,
-.form-control select:valid + label {
-  top: -1.25rem;
-  font-size: 0.75rem;
-  color: #7B1535;
-  font-weight: 500;
-}
-
-/* ==========================================
-   MEDIA CARD
-   ========================================== */
-
-.media-card {
-  border-left: 4px solid #7B1535;
-  padding-left: 1.5rem;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.media-card:hover {
-  transform: translateX(4px);
+.form-field::placeholder {
+  color: #6B7280;
 }
 
 /* ==========================================
@@ -335,8 +261,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .fade-in {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .fade-in.visible {
@@ -354,16 +280,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F7F8FC;
+  background: #0C1220;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(10,22,40,0.15);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(10,22,40,0.3);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* ==========================================
@@ -371,14 +297,18 @@ h1, h2, h3, h4, h5, h6 {
    ========================================== */
 
 ::selection {
-  background: rgba(123,21,53,0.15);
-  color: #0A1628;
+  background: rgba(123, 21, 53, 0.3);
+  color: #FFFFFF;
 }
 
 /* ==========================================
-   SMOOTH SCROLL
+   LABEL STYLE
    ========================================== */
 
-html {
-  scroll-behavior: smooth;
+.label-tag {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #B8962E;
 }

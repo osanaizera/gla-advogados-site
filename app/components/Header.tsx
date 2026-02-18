@@ -11,7 +11,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
+      setScrolled(window.scrollY > 60);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -26,7 +26,6 @@ export default function Header() {
     return () => { document.body.style.overflow = ''; };
   }, [mobileMenuOpen]);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
@@ -45,21 +44,21 @@ export default function Header() {
       style={{
         backdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
-        backgroundColor: scrolled ? 'rgba(10,22,40,0.92)' : 'transparent',
+        backgroundColor: scrolled ? 'rgba(12,18,32,0.85)' : 'transparent',
         borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
         padding: scrolled ? '0.75rem 0' : '1.25rem 0',
       }}
     >
-      <div className="container-premium mx-auto flex justify-between items-center">
+      <div className="container-bento flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-baseline gap-1.5 group">
+        <Link href="/" className="flex items-center gap-2 group">
           <span
-            className="font-playfair text-3xl font-bold tracking-tight transition-colors duration-300"
-            style={{ color: '#B8962E' }}
+            className="text-2xl font-bold tracking-tight transition-colors duration-300"
+            style={{ color: '#B8962E', fontFamily: 'Inter, sans-serif' }}
           >
             GLA
           </span>
-          <span className="text-white text-sm font-medium tracking-widest uppercase opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+          <span className="text-white/70 text-sm font-medium tracking-widest uppercase group-hover:text-white/90 transition-opacity duration-300">
             Advogados
           </span>
         </Link>
@@ -70,39 +69,22 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-white/80 hover:text-white text-sm font-medium relative group transition-colors duration-300"
+              className="text-sm font-medium relative transition-colors duration-300"
+              style={{
+                color: pathname === link.href ? '#FFFFFF' : 'rgba(255,255,255,0.6)',
+              }}
             >
               {link.label}
-              <span
-                className="absolute -bottom-1 left-0 h-[2px] transition-all duration-300"
-                style={{
-                  background: 'linear-gradient(90deg, #B8962E, #D4B04A)',
-                  width: pathname === link.href ? '100%' : '0%',
-                }}
-              />
-              <span
-                className="absolute -bottom-1 left-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full"
-                style={{ background: 'linear-gradient(90deg, #B8962E, #D4B04A)' }}
-              />
+              {pathname === link.href && (
+                <span
+                  className="absolute -bottom-1 left-0 w-full h-[2px]"
+                  style={{ background: '#B8962E' }}
+                />
+              )}
             </Link>
           ))}
-          <Link
-            href="/contato"
-            className="ml-4 text-sm font-semibold text-white px-5 py-2.5 rounded-lg transition-all duration-300 hover:scale-[1.02]"
-            style={{
-              border: '1.5px solid rgba(184,150,46,0.5)',
-              background: 'transparent',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(184,150,46,0.15)';
-              e.currentTarget.style.borderColor = 'rgba(184,150,46,0.8)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.borderColor = 'rgba(184,150,46,0.5)';
-            }}
-          >
-            Solicitar Análise Jurídica
+          <Link href="/contato" className="btn-wine-sm ml-4">
+            Solicitar Análise
           </Link>
         </nav>
 
@@ -145,43 +127,40 @@ export default function Header() {
           mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       >
-        {/* Backdrop */}
         <div
-          className="absolute inset-0 bg-black/40"
+          className="absolute inset-0 bg-black/50"
           onClick={() => setMobileMenuOpen(false)}
         />
-        {/* Drawer Panel */}
         <div
           className={`absolute top-0 right-0 w-[85%] max-w-sm h-full transition-transform duration-500 ease-out ${
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           style={{
-            background: 'rgba(10,22,40,0.95)',
-            backdropFilter: 'blur(32px) saturate(200%)',
-            WebkitBackdropFilter: 'blur(32px) saturate(200%)',
+            background: 'rgba(12,18,32,0.97)',
+            backdropFilter: 'blur(32px)',
+            WebkitBackdropFilter: 'blur(32px)',
             borderLeft: '1px solid rgba(255,255,255,0.08)',
           }}
         >
           <div className="flex flex-col justify-center h-full px-10">
             <div className="mb-12">
-              <span className="font-playfair text-2xl font-bold" style={{ color: '#B8962E' }}>
+              <span className="text-2xl font-bold" style={{ color: '#B8962E' }}>
                 GLA
               </span>
-              <span className="text-white/60 text-xs font-medium tracking-widest uppercase ml-2">
+              <span className="text-white/50 text-xs font-medium tracking-widest uppercase ml-2">
                 Advogados
               </span>
             </div>
 
             <nav className="flex flex-col gap-6">
-              {navLinks.map((link, i) => (
+              {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-white text-2xl font-playfair font-medium hover:text-gold transition-colors duration-300"
+                  className="text-2xl font-bold transition-colors duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                   style={{
-                    animationDelay: `${i * 50}ms`,
-                    color: pathname === link.href ? '#B8962E' : undefined,
+                    color: pathname === link.href ? '#B8962E' : '#FFFFFF',
                   }}
                 >
                   {link.label}
@@ -192,14 +171,13 @@ export default function Header() {
             <div className="mt-12 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
               <Link
                 href="/contato"
-                className="btn-primary w-full text-center"
+                className="btn-wine w-full text-center justify-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Solicitar Análise Jurídica
               </Link>
             </div>
 
-            {/* Contact info in drawer */}
             <div className="mt-10 space-y-3">
               <p className="text-white/30 text-sm">(11) 3000-5000</p>
               <p className="text-white/30 text-sm">contato@glaadvogados.com.br</p>
