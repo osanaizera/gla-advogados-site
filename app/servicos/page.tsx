@@ -31,7 +31,7 @@ const services = [
       'Procedimentos administrativos',
       'Acompanhamento de fiscalizações',
     ],
-    img: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80',
+    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
     imgAlt: 'Defesa Processual',
     cta: 'Solicitar Defesa →',
   },
@@ -78,7 +78,7 @@ export default function ServicosPage() {
         style={{ minHeight: '50vh' }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=85"
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=85"
           alt="Tribunal de Justiça"
           fill
           className="object-cover"
