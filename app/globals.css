@@ -1,41 +1,89 @@
 @import "tailwindcss";
 
+@theme {
+  --color-gla-blue: #1A2B5E;
+  --color-gla-blue-light: #2B3F8C;
+  --color-gla-red: #CC2936;
+  --color-gla-red-light: #E63946;
+  --color-gla-white: #FFFFFF;
+  --color-gla-gray-50: #F4F6F9;
+  --color-gla-gray-100: #E8EBF2;
+  --color-gla-gray-600: #4A5568;
+  --color-gla-gray-900: #1C1C1C;
+}
+
 :root {
   --foreground-rgb: 28, 28, 28;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+  background: #ffffff;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Georgia, 'Times New Roman', serif;
 }
 
-.section-container {
+.btn-primary {
+  display: inline-block;
+  background-color: #CC2936;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #E63946;
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: #1A2B5E;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  border: 2px solid #1A2B5E;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: #1A2B5E;
+  color: #ffffff;
+}
+
+.section-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s;
+}
+
+.section-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.container-section {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
 }
 
 @media (min-width: 768px) {
-  .section-container {
-    padding: 3rem 1.5rem;
+  .container-section {
+    padding: 4rem 1.5rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .section-container {
-    padding: 3rem 2rem;
-  }
-}
-
-.page-title {
-  font-size: clamp(1.875rem, 4vw, 3rem);
+.heading-primary {
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
   font-weight: 700;
   font-family: Georgia, serif;
   color: #1A2B5E;
