@@ -1,229 +1,343 @@
-import Link from 'next/link'
+import Link from 'next/link';
+import Hero from './components/Hero';
+import ScrollReveal from './components/ScrollReveal';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-gla-blue text-white py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">
-              Proteção jurídica especializada para a gestão estratégica do capital humano
-            </h1>
-            <div className="h-1 w-40 bg-gla-red mb-8"></div>
-            <p className="text-xl md:text-2xl mb-10">
-              Assessoria e defesa trabalhista com foco exclusivo em organizações com estruturas organizacionais complexas e operações em expansão.
-            </p>
-            <Link href="/contato" className="btn-primary text-lg px-8 py-3">
-              Solicitar Análise Jurídica
-            </Link>
+      <Hero 
+        title="Soluções jurídicas sofisticadas para ambientes empresariais complexos"
+        subtitle="Consultoria trabalhista especializada para empresas que buscam mitigar riscos e otimizar resultados em cenários de alta complexidade."
+        ctaText="Agende uma Consultoria"
+        ctaLink="/contato"
+      />
+
+      {/* Pilares Section */}
+      <section className="section-premium bg-off-white">
+        <div className="container-premium mx-auto">
+          <ScrollReveal>
+            <div className="text-center mb-20">
+              <h2 className="heading-lg text-navy mb-4">Pilares da nossa atuação</h2>
+              <p className="text-text-secondary text-xl max-w-3xl mx-auto">
+                Nossa abordagem combina rigor técnico e estratégia jurídica para entregar resultados consistentes para nossos clientes.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {/* Card 01 */}
+            <ScrollReveal delay={200}>
+              <div className="glass premium-card p-10 h-full overflow-hidden relative">
+                <span className="absolute -right-6 top-0 font-playfair text-[120px] opacity-5 font-bold">01</span>
+                <div className="w-16 h-16 rounded-full bg-gold flex items-center justify-center mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-8 h-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L12 4.971 5.25 5.49Z" />
+                  </svg>
+                </div>
+                <h3 className="text-navy heading-sm mb-4 relative z-10">Análise Jurídica Precisa</h3>
+                <p className="text-text-secondary">
+                  Avaliamos cada caso com extremo rigor técnico, mapeando riscos e identificando as melhores estratégias jurídicas para o contexto específico da sua empresa.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Card 02 */}
+            <ScrollReveal delay={400}>
+              <div className="glass premium-card p-10 h-full overflow-hidden relative">
+                <span className="absolute -right-6 top-0 font-playfair text-[120px] opacity-5 font-bold">02</span>
+                <div className="w-16 h-16 rounded-full bg-gold flex items-center justify-center mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-8 h-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V13.5Zm0 2.25h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V18Zm2.498-6.75h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V13.5Zm0 2.25h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V18Zm2.504-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5Zm0 2.25h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V18Zm2.498-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5ZM8.25 6h7.5v2.25h-7.5V6ZM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0 0 12 2.25Z" />
+                  </svg>
+                </div>
+                <h3 className="text-navy heading-sm mb-4 relative z-10">Prevenção Estratégica</h3>
+                <p className="text-text-secondary">
+                  Desenvolvemos protocolos e políticas internas que minimizam o risco de litígios trabalhistas e fortalecem a posição jurídica da sua organização.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Card 03 */}
+            <ScrollReveal delay={600}>
+              <div className="glass premium-card p-10 h-full overflow-hidden relative">
+                <span className="absolute -right-6 top-0 font-playfair text-[120px] opacity-5 font-bold">03</span>
+                <div className="w-16 h-16 rounded-full bg-gold flex items-center justify-center mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-8 h-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605" />
+                  </svg>
+                </div>
+                <h3 className="text-navy heading-sm mb-4 relative z-10">Representação Eficiente</h3>
+                <p className="text-text-secondary">
+                  Defendemos seus interesses com excelência técnica e estratégia personalizada, garantindo os melhores resultados em processos administrativos e judiciais.
+                </p>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Pilares de Atuação */}
-      <section className="bg-white py-16">
-        <div className="container-section">
-          <div className="text-center mb-16">
-            <h2 className="heading-primary mb-3">Pilares de Atuação</h2>
-            <p className="text-lg text-gla-gray-600 max-w-3xl mx-auto">
-              Nossa abordagem multidisciplinar oferece proteção abrangente para a gestão estratégica do capital humano em sua organização.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="section-card">
-              <div className="h-16 w-16 bg-gla-blue rounded-full flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-8 h-8">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-serif font-semibold mb-3">Consultoria Preventiva</h3>
-              <p className="text-gla-gray-600 mb-4">
-                Estratégias proativas de compliance trabalhista para mitigar riscos antes que se materializem em litígios, preservando o patrimônio organizacional.
+      {/* Por que GLA Section */}
+      <section className="section-premium bg-navy text-white">
+        <div className="container-premium mx-auto">
+          <ScrollReveal>
+            <div className="text-center mb-20">
+              <h2 className="heading-lg text-white mb-4">Por que escolher a GLA Advogados</h2>
+              <p className="text-gray-300 text-xl max-w-3xl mx-auto">
+                Combinamos expertise jurídica e visão de negócios para entregar soluções que agregam valor real à sua organização.
               </p>
-              <Link href="/servicos#consultoria" className="text-gla-blue font-semibold hover:text-gla-blue-light inline-flex items-center">
-                Saiba mais
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 ml-2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+            {/* Item 1 */}
+            <ScrollReveal delay={200}>
+              <div className="flex">
+                <div className="mr-6">
+                  <span className="text-gold text-4xl font-playfair font-bold">01</span>
+                </div>
+                <div>
+                  <h3 className="heading-sm text-white mb-2">Expertise Setorial</h3>
+                  <div className="h-0.5 w-12 bg-wine mb-6"></div>
+                  <p className="text-gray-300 leading-relaxed">
+                    Nossa equipe possui profundo conhecimento das particularidades dos diversos segmentos econômicos, permitindo abordagens jurídicas precisamente alinhadas às necessidades específicas do seu setor.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Item 2 */}
+            <ScrollReveal delay={300}>
+              <div className="flex">
+                <div className="mr-6">
+                  <span className="text-gold text-4xl font-playfair font-bold">02</span>
+                </div>
+                <div>
+                  <h3 className="heading-sm text-white mb-2">Advocacia Preventiva</h3>
+                  <div className="h-0.5 w-12 bg-wine mb-6"></div>
+                  <p className="text-gray-300 leading-relaxed">
+                    Criamos e implementamos protocolos jurídicos preventivos que minimizam riscos e evitam contingências, gerando economia de recursos e proteção ao patrimônio empresarial.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Item 3 */}
+            <ScrollReveal delay={400}>
+              <div className="flex">
+                <div className="mr-6">
+                  <span className="text-gold text-4xl font-playfair font-bold">03</span>
+                </div>
+                <div>
+                  <h3 className="heading-sm text-white mb-2">Tecnologia Jurídica</h3>
+                  <div className="h-0.5 w-12 bg-wine mb-6"></div>
+                  <p className="text-gray-300 leading-relaxed">
+                    Utilizamos ferramentas tecnológicas avançadas para gestão de processos, análise preditiva e acompanhamento em tempo real, garantindo eficiência e controle total das demandas jurídicas.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Item 4 */}
+            <ScrollReveal delay={500}>
+              <div className="flex">
+                <div className="mr-6">
+                  <span className="text-gold text-4xl font-playfair font-bold">04</span>
+                </div>
+                <div>
+                  <h3 className="heading-sm text-white mb-2">Resultados Comprovados</h3>
+                  <div className="h-0.5 w-12 bg-wine mb-6"></div>
+                  <p className="text-gray-300 leading-relaxed">
+                    Nosso histórico de sucesso é respaldado por um portfólio de casos emblemáticos e clientes satisfeitos, com redução significativa de passivos trabalhistas e otimização de recursos.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Sócios Section */}
+      <section className="section-premium bg-white">
+        <div className="container-premium mx-auto">
+          <ScrollReveal>
+            <div className="text-center mb-20">
+              <h2 className="heading-lg text-navy mb-4">Nossos sócios fundadores</h2>
+              <p className="text-text-secondary text-xl max-w-3xl mx-auto">
+                Uma equipe com experiência consolidada nas mais diversas áreas do direito trabalhista empresarial.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* Sócio 1 */}
+            <ScrollReveal delay={200}>
+              <div className="premium-card flex flex-col md:flex-row gap-8 p-8">
+                <div className="md:w-1/3">
+                  <div className="rounded-xl overflow-hidden">
+                    <Image
+                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80"
+                      alt="Wagner Oliveira"
+                      width={400}
+                      height={500}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+                <div className="md:w-2/3">
+                  <h3 className="text-navy heading-sm mb-1">Wagner Oliveira</h3>
+                  <p className="text-wine italic mb-4">Sócio-fundador</p>
+                  <p className="text-text-secondary mb-6">
+                    Advogado com mais de 20 anos de experiência em direito trabalhista empresarial. Especialista em negociações sindicais e gestão de crises. Pós-graduado pela FGV e professor convidado em diversas instituições de ensino.
+                  </p>
+                  <Link href="/sobre" className="text-navy font-medium hover:text-wine transition-colors">
+                    Saiba mais
+                  </Link>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Sócio 2 */}
+            <ScrollReveal delay={400}>
+              <div className="premium-card flex flex-col md:flex-row gap-8 p-8">
+                <div className="md:w-1/3">
+                  <div className="rounded-xl overflow-hidden">
+                    <Image
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80"
+                      alt="Larissa Mendes"
+                      width={400}
+                      height={500}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+                <div className="md:w-2/3">
+                  <h3 className="text-navy heading-sm mb-1">Larissa Mendes</h3>
+                  <p className="text-wine italic mb-4">Sócia-fundadora</p>
+                  <p className="text-text-secondary mb-6">
+                    Especialista em consultoria preventiva e compliance trabalhista. Formada pela USP com mestrado em Direito do Trabalho. Autora de diversos artigos científicos e palestrante em congressos nacionais e internacionais.
+                  </p>
+                  <Link href="/sobre" className="text-navy font-medium hover:text-wine transition-colors">
+                    Saiba mais
+                  </Link>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Imprensa Section */}
+      <section className="section-premium bg-off-white">
+        <div className="container-premium mx-auto">
+          <ScrollReveal>
+            <div className="text-center mb-20">
+              <h2 className="heading-lg text-navy mb-4">Na mídia</h2>
+              <p className="text-text-secondary text-xl max-w-3xl mx-auto">
+                Nossa expertise reconhecida pelos principais veículos de comunicação do país.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 gap-8">
+            {/* Item 1 */}
+            <ScrollReveal delay={200}>
+              <div className="media-card p-6 bg-white premium-card">
+                <div className="flex items-start gap-6">
+                  <div className="text-navy">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="heading-sm text-navy mb-2">Reforma trabalhista: especialistas analisam impactos após 5 anos</h3>
+                    <p className="text-text-secondary mb-4">
+                      Nossos sócios foram convidados a analisar os efeitos da reforma trabalhista de 2017 no cenário atual. Wagner Oliveira destacou pontos importantes sobre segurança jurídica e novos desafios.
+                    </p>
+                    <Link href="/imprensa" className="text-wine font-medium hover:text-navy-light transition-colors">
+                      Ler matéria completa
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Item 2 */}
+            <ScrollReveal delay={300}>
+              <div className="media-card p-6 bg-white premium-card">
+                <div className="flex items-start gap-6">
+                  <div className="text-navy">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 11.25v1.5m3-1.5v1.5m-1.5-15-1.5 5.25h-4.5L9 1.5M21 16.5h-2.25m-4.5-15L13.5 6H9L6 1.5h10.5Z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="heading-sm text-navy mb-2">GLA Advogados lança programa de compliance trabalhista para empresas</h3>
+                    <p className="text-text-secondary mb-4">
+                      Nosso escritório desenvolveu metodologia exclusiva para implementação de programas de compliance trabalhista, reduzindo riscos jurídicos e otimizando a gestão de recursos humanos.
+                    </p>
+                    <Link href="/imprensa" className="text-wine font-medium hover:text-navy-light transition-colors">
+                      Ler matéria completa
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Item 3 */}
+            <ScrollReveal delay={400}>
+              <div className="media-card p-6 bg-white premium-card">
+                <div className="flex items-start gap-6">
+                  <div className="text-navy">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="heading-sm text-navy mb-2">Home office permanente: implicações jurídicas do novo modelo de trabalho</h3>
+                    <p className="text-text-secondary mb-4">
+                      Larissa Mendes foi entrevistada sobre os aspectos jurídicos do trabalho remoto permanente e compartilhou insights sobre os principais pontos de atenção para empresas que adotam este modelo.
+                    </p>
+                    <Link href="/imprensa" className="text-wine font-medium hover:text-navy-light transition-colors">
+                      Ler matéria completa
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Final Section */}
+      <section 
+        className="relative overflow-hidden py-24 md:py-32"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Overlay */}
+        <div 
+          className="absolute inset-0 bg-navy"
+          style={{ opacity: 0.9 }}
+        ></div>
+        
+        <div className="container-premium mx-auto relative z-10">
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="heading-lg text-white mb-6">Transforme a gestão jurídica trabalhista da sua empresa</h2>
+              <p className="text-gray-200 text-xl mb-12">
+                Entre em contato para uma análise personalizada das necessidades jurídicas da sua organização.
+              </p>
+              <Link href="/contato" className="btn-secondary text-lg px-8 py-4">
+                Agendar uma consulta
               </Link>
             </div>
-
-            <div className="section-card">
-              <div className="h-16 w-16 bg-gla-blue rounded-full flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-8 h-8">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-serif font-semibold mb-3">Defesa em Processos</h3>
-              <p className="text-gla-gray-600 mb-4">
-                Representação jurídica estratégica em litígios trabalhistas, com abordagem técnica e foco na proteção patrimonial para empresas de médio e grande porte.
-              </p>
-              <Link href="/servicos#defesa" className="text-gla-blue font-semibold hover:text-gla-blue-light inline-flex items-center">
-                Saiba mais
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 ml-2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </Link>
-            </div>
-
-            <div className="section-card">
-              <div className="h-16 w-16 bg-gla-blue rounded-full flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-8 h-8">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-serif font-semibold mb-3">Gestão de Passivo</h3>
-              <p className="text-gla-gray-600 mb-4">
-                Análise, mapeamento e gestão estratégica do passivo trabalhista para organizações com operações de escala, visando a redução gradativa e sustentável de contingências.
-              </p>
-              <Link href="/servicos#gestao" className="text-gla-blue font-semibold hover:text-gla-blue-light inline-flex items-center">
-                Saiba mais
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 ml-2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Por que GLA */}
-      <section className="bg-gla-gray-50 py-16">
-        <div className="container-section">
-          <div className="text-center mb-16">
-            <h2 className="heading-primary mb-3">Por Que Escolher a GLA Advogados</h2>
-            <p className="text-lg text-gla-gray-600 max-w-3xl mx-auto">
-              Soluções jurídicas personalizadas para empresas que valorizam a segurança jurídica na gestão de seus recursos humanos.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <div className="text-gla-blue mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-serif font-semibold mb-2">Especialização Exclusiva</h3>
-              <p className="text-gla-gray-600">
-                Foco específico em direito trabalhista empresarial para organizações com quadros de colaboradores numerosos.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <div className="text-gla-blue mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-serif font-semibold mb-2">Gestão Estratégica de Risco</h3>
-              <p className="text-gla-gray-600">
-                Metodologia própria para identificação, mitigação e gerenciamento contínuo de riscos trabalhistas corporativos.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <div className="text-gla-blue mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-serif font-semibold mb-2">Equipe Dedicada</h3>
-              <p className="text-gla-gray-600">
-                Atendimento personalizado por advogados especializados em cada segmento empresarial, com conhecimento das particularidades setoriais.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <div className="text-gla-blue mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-serif font-semibold mb-2">Tecnologia e Inovação</h3>
-              <p className="text-gla-gray-600">
-                Soluções digitais para monitoramento de processos, análise de jurisprudência e gestão de compliance em tempo real.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mídia Section */}
-      <section className="bg-white py-16">
-        <div className="container-section">
-          <div className="text-center mb-16">
-            <h2 className="heading-primary mb-3">Presença na Mídia</h2>
-            <p className="text-lg text-gla-gray-600 max-w-3xl mx-auto">
-              O Dr. Wagner Gusmão é frequentemente convidado para comentar sobre questões trabalhistas em veículos especializados, consolidando a posição da GLA Advogados como referência no setor.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gla-gray-50 p-6 rounded-lg">
-              <div className="text-gla-blue mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-serif font-semibold mb-2">Jornal Econômico Brasil</h3>
-              <p className="text-gla-gray-600 mb-4">
-                "Impactos da reforma trabalhista nas organizações de grande porte" - Artigo de Wagner Gusmão.
-              </p>
-              <p className="text-sm text-gla-gray-600">Julho 2023</p>
-            </div>
-
-            <div className="bg-gla-gray-50 p-6 rounded-lg">
-              <div className="text-gla-blue mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-serif font-semibold mb-2">Canal Corporativo</h3>
-              <p className="text-gla-gray-600 mb-4">
-                Entrevista sobre "Compliance trabalhista como diferencial competitivo para empresas do setor industrial".
-              </p>
-              <p className="text-sm text-gla-gray-600">Outubro 2023</p>
-            </div>
-
-            <div className="bg-gla-gray-50 p-6 rounded-lg">
-              <div className="text-gla-blue mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
-                  <path strokeLinecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-serif font-semibold mb-2">Podcast Direito & Negócios</h3>
-              <p className="text-gla-gray-600 mb-4">
-                Participação especial discutindo "Estratégias jurídicas para a redução de passivos trabalhistas em organizações complexas".
-              </p>
-              <p className="text-sm text-gla-gray-600">Janeiro 2024</p>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/imprensa" className="btn-secondary">
-              Ver Mais Destaques na Mídia
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-gla-blue text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-            Proteja sua organização com especialistas em direito trabalhista empresarial
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Entre em contato com nosso departamento jurídico para uma análise personalizada das necessidades específicas da sua empresa.
-          </p>
-          <Link href="/contato" className="btn-primary text-lg px-8 py-3">
-            Solicitar Análise Jurídica
-          </Link>
+          </ScrollReveal>
         </div>
       </section>
     </>
-  )
+  );
 }

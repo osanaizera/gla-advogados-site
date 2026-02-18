@@ -1,304 +1,411 @@
-import Link from 'next/link'
+import Hero from '../components/Hero';
+import ScrollReveal from '../components/ScrollReveal';
+import Link from 'next/link';
+import Image from 'next/image';
 
-export default function Imprensa() {
+export default function ImprensaPage() {
+  const newsItems = [
+    {
+      id: 1,
+      title: 'Reforma trabalhista: especialistas analisam impactos após 5 anos',
+      excerpt: 'Nossos sócios foram convidados a analisar os efeitos da reforma trabalhista de 2017 no cenário atual. Wagner Oliveira destacou pontos importantes sobre segurança jurídica e novos desafios.',
+      date: '15 de Janeiro, 2023',
+      source: 'Valor Econômico',
+      category: 'Artigo',
+      link: '#'
+    },
+    {
+      id: 2,
+      title: 'GLA Advogados lança programa de compliance trabalhista para empresas',
+      excerpt: 'Nosso escritório desenvolveu metodologia exclusiva para implementação de programas de compliance trabalhista, reduzindo riscos jurídicos e otimizando a gestão de recursos humanos.',
+      date: '22 de Março, 2023',
+      source: 'Portal Jurídico',
+      category: 'Notícia',
+      link: '#'
+    },
+    {
+      id: 3,
+      title: 'Home office permanente: implicações jurídicas do novo modelo de trabalho',
+      excerpt: 'Larissa Mendes foi entrevistada sobre os aspectos jurídicos do trabalho remoto permanente e compartilhou insights sobre os principais pontos de atenção para empresas que adotam este modelo.',
+      date: '05 de Maio, 2023',
+      source: 'Exame',
+      category: 'Entrevista',
+      link: '#'
+    },
+    {
+      id: 4,
+      title: 'ESG e direito trabalhista: o impacto nas relações de trabalho',
+      excerpt: 'Wagner Oliveira participou de webinar sobre como as práticas ESG estão transformando o direito trabalhista e criando novos desafios e oportunidades para departamentos jurídicos.',
+      date: '18 de Junho, 2023',
+      source: 'Webinar GLA',
+      category: 'Evento',
+      link: '#'
+    },
+    {
+      id: 5,
+      title: 'Inteligência artificial e automação: desafios legais para o futuro do trabalho',
+      excerpt: 'Larissa Mendes publicou artigo sobre as implicações jurídicas da implementação de sistemas de IA e automação nos ambientes corporativos e os desafios regulatórios emergentes.',
+      date: '09 de Agosto, 2023',
+      source: 'Revista Jurídica Empresarial',
+      category: 'Artigo',
+      link: '#'
+    },
+    {
+      id: 6,
+      title: 'GLA Advogados amplia atuação com novo núcleo de direito digital',
+      excerpt: 'Escritório inaugurou departamento especializado em questões trabalhistas relacionadas à tecnologia e transformação digital, liderado pela nova sócia Ana Carolina Peixoto.',
+      date: '23 de Outubro, 2023',
+      source: 'Conjur',
+      category: 'Notícia',
+      link: '#'
+    }
+  ];
+
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-gla-blue text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-              GLA Advogados na Mídia
-            </h1>
-            <div className="h-1 w-40 bg-gla-red mb-8"></div>
-            <p className="text-xl md:text-2xl">
-              Nossa contribuição ao debate jurídico trabalhista nos principais veículos especializados.
-            </p>
+      <Hero 
+        title="GLA na mídia"
+        subtitle="Acompanhe nossa participação nos principais veículos de comunicação, eventos e publicações especializadas."
+        height="medium"
+        showBadge={false}
+      />
+
+      {/* Imprensa Section */}
+      <section className="section-premium bg-white">
+        <div className="container-premium mx-auto">
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center mb-20">
+              <h2 className="heading-lg text-navy mb-4">Notícias e Publicações</h2>
+              <p className="text-text-secondary text-xl">
+                Nossa expertise em direito trabalhista empresarial reconhecida pelos principais veículos de comunicação e publicações especializadas do país.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {newsItems.map((item, index) => (
+              <ScrollReveal key={item.id} delay={index * 100}>
+                <div className="media-card p-8 premium-card bg-white h-full">
+                  <div className="flex items-start gap-2 mb-4">
+                    <span className="text-sm px-3 py-1 bg-wine/10 text-wine rounded-full font-medium">
+                      {item.category}
+                    </span>
+                    <span className="text-sm px-3 py-1 bg-navy/10 text-navy rounded-full font-medium">
+                      {item.source}
+                    </span>
+                  </div>
+                  
+                  <h3 className="heading-sm text-navy mb-3">{item.title}</h3>
+                  
+                  <p className="text-text-secondary mb-6">
+                    {item.excerpt}
+                  </p>
+                  
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-text-secondary">{item.date}</span>
+                    <Link href={item.link} className="text-wine font-medium hover:text-navy transition-colors">
+                      Ler matéria completa
+                    </Link>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Intro Section */}
-      <section className="bg-white py-12">
-        <div className="container-section">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-xl text-gla-gray-600 mb-8">
-              O sócio fundador Wagner Gusmão é referência em direito trabalhista empresarial, compartilhando regularmente sua expertise em publicações especializadas, entrevistas e eventos do setor jurídico.
-            </p>
+      {/* Publications Section */}
+      <section className="section-premium bg-off-white">
+        <div className="container-premium mx-auto">
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center mb-20">
+              <h2 className="heading-lg text-navy mb-4">Artigos Científicos</h2>
+              <p className="text-text-secondary text-xl">
+                Conheça as contribuições acadêmicas e técnicas dos nossos sócios para o desenvolvimento do direito trabalhista no Brasil.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {/* Publication 1 */}
+            <ScrollReveal delay={100}>
+              <div className="glass premium-card p-8 h-full flex flex-col">
+                <div className="bg-navy/5 p-4 rounded-xl mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-navy mx-auto">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                  </svg>
+                </div>
+                <h3 className="text-navy heading-sm mb-3 text-center">A eficácia dos programas de compliance trabalhista na redução do passivo judicial</h3>
+                <p className="text-text-secondary mb-6 text-center flex-grow">
+                  Artigo publicado na Revista de Direito do Trabalho, analisando a efetividade dos programas de compliance como ferramenta preventiva.
+                </p>
+                <div className="flex justify-between items-center mt-auto">
+                  <span className="text-sm text-text-secondary">Wagner Oliveira</span>
+                  <Link href="#" className="text-wine font-medium hover:text-navy transition-colors">
+                    Baixar PDF
+                  </Link>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Publication 2 */}
+            <ScrollReveal delay={200}>
+              <div className="glass premium-card p-8 h-full flex flex-col">
+                <div className="bg-navy/5 p-4 rounded-xl mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-navy mx-auto">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                  </svg>
+                </div>
+                <h3 className="text-navy heading-sm mb-3 text-center">Desafios jurídicos do trabalho remoto: análise após a pandemia</h3>
+                <p className="text-text-secondary mb-6 text-center flex-grow">
+                  Estudo sobre os impactos jurídicos do trabalho remoto e as novas questões legais suscitadas pela adoção massiva desta modalidade pós-pandemia.
+                </p>
+                <div className="flex justify-between items-center mt-auto">
+                  <span className="text-sm text-text-secondary">Larissa Mendes</span>
+                  <Link href="#" className="text-wine font-medium hover:text-navy transition-colors">
+                    Baixar PDF
+                  </Link>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Publication 3 */}
+            <ScrollReveal delay={300}>
+              <div className="glass premium-card p-8 h-full flex flex-col">
+                <div className="bg-navy/5 p-4 rounded-xl mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-navy mx-auto">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                  </svg>
+                </div>
+                <h3 className="text-navy heading-sm mb-3 text-center">Inteligência artificial e relações de trabalho: implicações jurídicas</h3>
+                <p className="text-text-secondary mb-6 text-center flex-grow">
+                  Pesquisa sobre os impactos da IA nas relações trabalhistas e os desafios para a regulamentação deste novo cenário tecnológico.
+                </p>
+                <div className="flex justify-between items-center mt-auto">
+                  <span className="text-sm text-text-secondary">Wagner e Larissa</span>
+                  <Link href="#" className="text-wine font-medium hover:text-navy transition-colors">
+                    Baixar PDF
+                  </Link>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Artigos e Entrevistas */}
-      <section className="bg-gla-gray-50 py-16">
-        <div className="container-section">
-          <h2 className="heading-primary mb-12 text-center">Artigos e Entrevistas</h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Artigo 1 */}
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <div className="h-48 bg-gla-blue p-6 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-24 h-24 opacity-25">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                </svg>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <p className="text-sm bg-gla-blue/10 text-gla-blue px-3 py-1 rounded-full">Artigo</p>
-                  <p className="text-sm text-gla-gray-600 ml-auto">Janeiro 2024</p>
-                </div>
-                <h3 className="text-xl font-serif font-semibold text-gla-blue mb-3">
-                  Impactos da Reforma Trabalhista nas Organizações de Grande Porte
-                </h3>
-                <p className="text-gla-gray-600 mb-4">
-                  Análise aprofundada sobre como as mudanças legislativas afetaram especificamente empresas com estruturas organizacionais complexas e quadros de colaboradores numerosos.
-                </p>
-                <div className="flex items-center text-sm text-gla-gray-600">
-                  <span className="font-medium">Publicado em:</span>
-                  <span className="ml-2">Revista Jurídica Empresarial</span>
-                </div>
-              </div>
+      {/* Events Section */}
+      <section className="section-premium bg-white">
+        <div className="container-premium mx-auto">
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center mb-20">
+              <h2 className="heading-lg text-navy mb-4">Eventos e Palestras</h2>
+              <p className="text-text-secondary text-xl">
+                Acompanhe os próximos eventos, webinars e palestras dos nossos especialistas.
+              </p>
             </div>
+          </ScrollReveal>
 
-            {/* Artigo 2 */}
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <div className="h-48 bg-gla-blue p-6 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-24 h-24 opacity-25">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
-                </svg>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <p className="text-sm bg-gla-blue/10 text-gla-blue px-3 py-1 rounded-full">Entrevista</p>
-                  <p className="text-sm text-gla-gray-600 ml-auto">Outubro 2023</p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            {/* Event 1 */}
+            <ScrollReveal delay={100}>
+              <div className="premium-card overflow-hidden flex flex-col h-full">
+                <div className="relative h-48 bg-navy">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <span className="text-4xl font-bold text-white">25</span>
+                      <span className="block text-white/80">Março</span>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-serif font-semibold text-gla-blue mb-3">
-                  Compliance Trabalhista como Diferencial Competitivo
-                </h3>
-                <p className="text-gla-gray-600 mb-4">
-                  Entrevista exclusiva sobre como programas de conformidade trabalhista bem estruturados podem representar vantagem estratégica para empresas do setor industrial.
-                </p>
-                <div className="flex items-center text-sm text-gla-gray-600">
-                  <span className="font-medium">Veiculado em:</span>
-                  <span className="ml-2">Canal Corporativo</span>
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="mb-2">
+                    <span className="text-sm px-3 py-1 bg-wine/10 text-wine rounded-full font-medium">
+                      Webinar
+                    </span>
+                  </div>
+                  <h3 className="heading-sm text-navy mb-3">Reforma Trabalhista 2.0: O que esperar das novas propostas legislativas</h3>
+                  <p className="text-text-secondary mb-6 flex-grow">
+                    Webinar com Wagner Oliveira sobre as novas propostas de alteração da legislação trabalhista e seus possíveis impactos para empresas.
+                  </p>
+                  <div className="mt-auto">
+                    <Link href="#" className="btn-primary inline-block">
+                      Inscreva-se
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
 
-            {/* Artigo 3 */}
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <div className="h-48 bg-gla-blue p-6 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-24 h-24 opacity-25">
-                  <path strokeLinecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                </svg>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <p className="text-sm bg-gla-blue/10 text-gla-blue px-3 py-1 rounded-full">Podcast</p>
-                  <p className="text-sm text-gla-gray-600 ml-auto">Janeiro 2024</p>
+            {/* Event 2 */}
+            <ScrollReveal delay={200}>
+              <div className="premium-card overflow-hidden flex flex-col h-full">
+                <div className="relative h-48 bg-navy">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <span className="text-4xl font-bold text-white">12</span>
+                      <span className="block text-white/80">Abril</span>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-serif font-semibold text-gla-blue mb-3">
-                  Estratégias para Redução de Passivos Trabalhistas
-                </h3>
-                <p className="text-gla-gray-600 mb-4">
-                  Participação especial discutindo abordagens jurídicas e operacionais para mitigação de contingências trabalhistas em organizações complexas.
-                </p>
-                <div className="flex items-center text-sm text-gla-gray-600">
-                  <span className="font-medium">Programa:</span>
-                  <span className="ml-2">Podcast Direito & Negócios</span>
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="mb-2">
+                    <span className="text-sm px-3 py-1 bg-wine/10 text-wine rounded-full font-medium">
+                      Presencial
+                    </span>
+                  </div>
+                  <h3 className="heading-sm text-navy mb-3">Workshop: Compliance Trabalhista na Prática</h3>
+                  <p className="text-text-secondary mb-6 flex-grow">
+                    Workshop presencial conduzido por Larissa Mendes sobre implementação de programas de compliance trabalhista em empresas de médio e grande porte.
+                  </p>
+                  <div className="mt-auto">
+                    <Link href="#" className="btn-primary inline-block">
+                      Inscreva-se
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
 
-            {/* Artigo 4 */}
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <div className="h-48 bg-gla-blue p-6 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-24 h-24 opacity-25">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <p className="text-sm bg-gla-blue/10 text-gla-blue px-3 py-1 rounded-full">Webinar</p>
-                  <p className="text-sm text-gla-gray-600 ml-auto">Novembro 2023</p>
+            {/* Event 3 */}
+            <ScrollReveal delay={300}>
+              <div className="premium-card overflow-hidden flex flex-col h-full">
+                <div className="relative h-48 bg-navy">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <span className="text-4xl font-bold text-white">08</span>
+                      <span className="block text-white/80">Maio</span>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-serif font-semibold text-gla-blue mb-3">
-                  Due Diligence Trabalhista em Operações de M&A
-                </h3>
-                <p className="text-gla-gray-600 mb-4">
-                  Apresentação sobre a importância da análise trabalhista em processos de fusão e aquisição, com foco na identificação de contingências e passivos ocultos.
-                </p>
-                <div className="flex items-center text-sm text-gla-gray-600">
-                  <span className="font-medium">Promovido por:</span>
-                  <span className="ml-2">Instituto Brasileiro de Direito Empresarial</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Artigo 5 */}
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <div className="h-48 bg-gla-blue p-6 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-24 h-24 opacity-25">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                </svg>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <p className="text-sm bg-gla-blue/10 text-gla-blue px-3 py-1 rounded-full">Artigo</p>
-                  <p className="text-sm text-gla-gray-600 ml-auto">Agosto 2023</p>
-                </div>
-                <h3 className="text-xl font-serif font-semibold text-gla-blue mb-3">
-                  Teletrabalho e Segurança Jurídica para Empresas
-                </h3>
-                <p className="text-gla-gray-600 mb-4">
-                  Análise das implicações legais e melhores práticas para empresas que adotam modelos de trabalho remoto ou híbrido em suas operações.
-                </p>
-                <div className="flex items-center text-sm text-gla-gray-600">
-                  <span className="font-medium">Publicado em:</span>
-                  <span className="ml-2">Jornal Econômico Brasil</span>
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="mb-2">
+                    <span className="text-sm px-3 py-1 bg-wine/10 text-wine rounded-full font-medium">
+                      Congresso
+                    </span>
+                  </div>
+                  <h3 className="heading-sm text-navy mb-3">3º Congresso de Direito Trabalhista Empresarial</h3>
+                  <p className="text-text-secondary mb-6 flex-grow">
+                    Evento anual organizado pela GLA Advogados reunindo especialistas nacionais e internacionais para discutir tendências e desafios do direito trabalhista.
+                  </p>
+                  <div className="mt-auto">
+                    <Link href="#" className="btn-primary inline-block">
+                      Inscreva-se
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Artigo 6 */}
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <div className="h-48 bg-gla-blue p-6 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-24 h-24 opacity-25">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
-                </svg>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <p className="text-sm bg-gla-blue/10 text-gla-blue px-3 py-1 rounded-full">Entrevista</p>
-                  <p className="text-sm text-gla-gray-600 ml-auto">Dezembro 2023</p>
-                </div>
-                <h3 className="text-xl font-serif font-semibold text-gla-blue mb-3">
-                  Perspectivas para o Direito Trabalhista Empresarial em 2024
-                </h3>
-                <p className="text-gla-gray-600 mb-4">
-                  Análise das tendências jurídicas, principais temas em discussão nos tribunais e recomendações estratégicas para empresas com operações de escala.
-                </p>
-                <div className="flex items-center text-sm text-gla-gray-600">
-                  <span className="font-medium">Programa:</span>
-                  <span className="ml-2">Rádio Jurídica Brasil</span>
-                </div>
-              </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Eventos e Palestras */}
-      <section className="bg-white py-16">
-        <div className="container-section">
-          <h2 className="heading-primary mb-12 text-center">Eventos e Palestras</h2>
+      {/* Media Contact Section */}
+      <section className="section-premium bg-off-white">
+        <div className="container-premium mx-auto">
+          <div className="glass premium-card p-10 lg:p-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <ScrollReveal>
+                <div>
+                  <h2 className="heading-lg text-navy mb-4">Contato para Imprensa</h2>
+                  <span className="gold-line"></span>
+                  <p className="text-text-secondary text-lg mb-8">
+                    Se você é jornalista ou trabalha em um veículo de comunicação e deseja entrar em contato com nossos especialistas para entrevistas, artigos ou comentários sobre temas jurídicos, utilize os canais abaixo.
+                  </p>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-start">
+                      <div className="bg-gold/10 p-4 rounded-full mr-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gold">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-navy font-semibold text-xl mb-2">Email para imprensa</h3>
+                        <p className="text-text-secondary">imprensa@glaadvogados.com.br</p>
+                      </div>
+                    </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Evento 1 */}
-            <div className="bg-gla-gray-50 p-6 rounded-lg">
-              <div className="flex items-center mb-4">
-                <p className="text-sm bg-gla-blue text-white px-3 py-1 rounded-full">Congresso</p>
-              </div>
-              <h3 className="text-xl font-serif font-semibold text-gla-blue mb-2">
-                Congresso Brasileiro de Direito do Trabalho
-              </h3>
-              <p className="text-gla-gray-600 mb-4">
-                Palestra: "Contingenciamento estratégico de passivos trabalhistas em organizações com operações de escala"
-              </p>
-              <div className="flex items-center text-sm text-gla-gray-600 mb-4">
-                <span className="font-medium">Local:</span>
-                <span className="ml-2">São Paulo, SP</span>
-                <span className="mx-2">•</span>
-                <span>Maio 2023</span>
-              </div>
-              <p className="text-gla-gray-600">
-                Wagner Gusmão compartilhou metodologias desenvolvidas pela GLA Advogados para identificação, mensuração e redução estratégica de passivos trabalhistas em empresas com estruturas organizacionais complexas.
-              </p>
-            </div>
+                    <div className="flex items-start">
+                      <div className="bg-gold/10 p-4 rounded-full mr-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gold">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-navy font-semibold text-xl mb-2">Telefone para imprensa</h3>
+                        <p className="text-text-secondary">(11) 3000-5001</p>
+                      </div>
+                    </div>
 
-            {/* Evento 2 */}
-            <div className="bg-gla-gray-50 p-6 rounded-lg">
-              <div className="flex items-center mb-4">
-                <p className="text-sm bg-gla-blue text-white px-3 py-1 rounded-full">Fórum</p>
-              </div>
-              <h3 className="text-xl font-serif font-semibold text-gla-blue mb-2">
-                Fórum Jurídico do Setor Automotivo
-              </h3>
-              <p className="text-gla-gray-600 mb-4">
-                Painel: "Desafios trabalhistas específicos da indústria automotiva e estratégias de mitigação"
-              </p>
-              <div className="flex items-center text-sm text-gla-gray-600 mb-4">
-                <span className="font-medium">Local:</span>
-                <span className="ml-2">Belo Horizonte, MG</span>
-                <span className="mx-2">•</span>
-                <span>Setembro 2023</span>
-              </div>
-              <p className="text-gla-gray-600">
-                Participação em painel de especialistas debatendo questões específicas do setor automotivo, como terceirização, automação e gestão de turnos de trabalho sob a perspectiva do direito trabalhista empresarial.
-              </p>
-            </div>
+                    <div className="flex items-start">
+                      <div className="bg-gold/10 p-4 rounded-full mr-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gold">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-navy font-semibold text-xl mb-2">Assessoria de Imprensa</h3>
+                        <p className="text-text-secondary">Mariana Santos</p>
+                        <p className="text-text-secondary">Coordenadora de Comunicação</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
 
-            {/* Evento 3 */}
-            <div className="bg-gla-gray-50 p-6 rounded-lg">
-              <div className="flex items-center mb-4">
-                <p className="text-sm bg-gla-blue text-white px-3 py-1 rounded-full">Seminário</p>
-              </div>
-              <h3 className="text-xl font-serif font-semibold text-gla-blue mb-2">
-                Seminário de Compliance Corporativo
-              </h3>
-              <p className="text-gla-gray-600 mb-4">
-                Workshop: "Implementação de programas de compliance trabalhista em instituições financeiras"
-              </p>
-              <div className="flex items-center text-sm text-gla-gray-600 mb-4">
-                <span className="font-medium">Local:</span>
-                <span className="ml-2">Rio de Janeiro, RJ</span>
-                <span className="mx-2">•</span>
-                <span>Novembro 2023</span>
-              </div>
-              <p className="text-gla-gray-600">
-                Workshop conduzido pela sócia Larissa de Oliveira Lima, focado nas particularidades do setor financeiro e estratégias específicas para conformidade trabalhista em ambientes regulados.
-              </p>
-            </div>
-
-            {/* Evento 4 */}
-            <div className="bg-gla-gray-50 p-6 rounded-lg">
-              <div className="flex items-center mb-4">
-                <p className="text-sm bg-gla-blue text-white px-3 py-1 rounded-full">Conferência</p>
-              </div>
-              <h3 className="text-xl font-serif font-semibold text-gla-blue mb-2">
-                Conferência Anual de Direito Empresarial
-              </h3>
-              <p className="text-gla-gray-600 mb-4">
-                Palestra: "A interface entre ESG e gestão trabalhista: oportunidades e riscos jurídicos"
-              </p>
-              <div className="flex items-center text-sm text-gla-gray-600 mb-4">
-                <span className="font-medium">Local:</span>
-                <span className="ml-2">Brasília, DF</span>
-                <span className="mx-2">•</span>
-                <span>Fevereiro 2024</span>
-              </div>
-              <p className="text-gla-gray-600">
-                Apresentação sobre como critérios ESG impactam a gestão trabalhista e como empresas podem integrar práticas sustentáveis às suas políticas de recursos humanos com segurança jurídica.
-              </p>
+              <ScrollReveal delay={300}>
+                <div className="premium-card p-4 rounded-xl overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80"
+                    alt="Time GLA Advogados"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gla-blue text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-            Conheça nossa abordagem especializada para seu setor
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Entre em contato para agendar uma reunião com nosso departamento jurídico e discutir soluções personalizadas para sua organização.
-          </p>
-          <Link href="/contato" className="btn-primary text-lg px-8 py-3">
-            Solicitar Análise Jurídica
-          </Link>
+      {/* CTA Final Section */}
+      <section 
+        className="relative overflow-hidden py-24 md:py-32"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Overlay */}
+        <div 
+          className="absolute inset-0 bg-navy"
+          style={{ opacity: 0.9 }}
+        ></div>
+        
+        <div className="container-premium mx-auto relative z-10">
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="heading-lg text-white mb-6">Inscreva-se em nossa newsletter</h2>
+              <p className="text-gray-200 text-xl mb-12">
+                Receba nossos artigos, análises e notícias sobre o mundo jurídico trabalhista diretamente em seu email.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                <input 
+                  type="email" 
+                  placeholder="Seu melhor email" 
+                  className="flex-grow px-6 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold"
+                />
+                <button className="btn-secondary whitespace-nowrap">
+                  Inscrever-se
+                </button>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </>
-  )
+  );
 }
