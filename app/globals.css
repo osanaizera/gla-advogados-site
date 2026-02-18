@@ -8,19 +8,19 @@
   --color-wine-light: #9B1D44;
   --color-gold: #B8962E;
   --color-gold-light: #D4B04A;
-  --color-muted: #6B7280;
-  --color-off-white: #F7F8FC;
+  --color-muted: #5C6B84;
+  --color-off-white: #FAFAFA;
   --color-border-subtle: #E5E7EB;
-  --color-text-secondary: #6B7280;
+  --color-text-secondary: #5C6B84;
 }
 
 /* ==========================================
-   BASE
+   BASE — Light theme (Valerón style)
    ========================================== */
 
 body {
-  background-color: #0C1220;
-  color: #FFFFFF;
+  background-color: #FAFAFA;
+  color: #0C1220;
   font-family: 'Inter', -apple-system, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,49 +28,6 @@ body {
 
 html {
   scroll-behavior: smooth;
-}
-
-/* ==========================================
-   BENTO CARDS
-   ========================================== */
-
-.bento-card {
-  background: #FFFFFF;
-  border-radius: 20px;
-  padding: 32px;
-  color: #0C1220;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.bento-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-.bento-card-wine {
-  background: #7B1535;
-  border-radius: 20px;
-  padding: 32px;
-  color: #FFFFFF;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.bento-card-wine:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(123, 21, 53, 0.4);
-}
-
-.bento-card-dark {
-  background: #151D2E;
-  border-radius: 20px;
-  padding: 32px;
-  color: #FFFFFF;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.bento-card-dark:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 /* ==========================================
@@ -84,11 +41,13 @@ html {
   background: #7B1535;
   color: #fff;
   font-weight: 600;
-  padding: 14px 28px;
+  padding: 16px 32px;
   border-radius: 12px;
   transition: all 0.3s ease;
   text-decoration: none;
   font-size: 15px;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-wine:hover {
@@ -109,6 +68,8 @@ html {
   transition: all 0.3s ease;
   text-decoration: none;
   font-size: 14px;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-wine-sm:hover {
@@ -117,13 +78,33 @@ html {
   box-shadow: 0 8px 24px rgba(123, 21, 53, 0.35);
 }
 
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0C1220;
+  font-weight: 500;
+  padding: 16px 32px;
+  border-radius: 12px;
+  border: 1.5px solid #E5E7EB;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 15px;
+  background: transparent;
+}
+
+.btn-outline-dark:hover {
+  background: rgba(12, 18, 32, 0.04);
+  border-color: #0C1220;
+}
+
 .btn-outline-light {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   color: #fff;
   font-weight: 500;
-  padding: 14px 28px;
+  padding: 16px 32px;
   border-radius: 12px;
   border: 1.5px solid rgba(255, 255, 255, 0.25);
   transition: all 0.3s ease;
@@ -137,72 +118,34 @@ html {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-.btn-gold {
+.btn-white {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, #B8962E 0%, #D4B04A 100%);
-  color: #FFFFFF;
-  font-weight: 700;
-  font-size: 0.9375rem;
-  padding: 1rem 2.5rem;
+  gap: 8px;
+  background: #FFFFFF;
+  color: #0C1220;
+  font-weight: 600;
+  padding: 16px 32px;
   border-radius: 12px;
-  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s ease;
   text-decoration: none;
+  font-size: 15px;
   border: none;
-  letter-spacing: 0.02em;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
-.btn-gold:hover {
+.btn-white:hover {
+  background: #F0F0F0;
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(184, 150, 46, 0.35);
-}
-
-/* ==========================================
-   PILL/BADGE
-   ========================================== */
-
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border-radius: 100px;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-.pill-wine {
-  background: rgba(123, 21, 53, 0.15);
-  color: #B8962E;
-  border: 1px solid rgba(123, 21, 53, 0.25);
-}
-
-/* ==========================================
-   PHOTO CARDS
-   ========================================== */
-
-.photo-card {
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-}
-
-.photo-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* ==========================================
    CONTAINER
    ========================================== */
 
-.container-bento {
-  max-width: 1280px;
+.container-main {
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
@@ -210,35 +153,89 @@ html {
 }
 
 @media (min-width: 768px) {
-  .container-bento {
-    padding-left: 3rem;
-    padding-right: 3rem;
+  .container-main {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
 /* ==========================================
-   SECTION SPACING
+   SECTION SPACING — generous whitespace
    ========================================== */
 
-.section-gap {
+.section-light {
   padding: 80px 0;
+  background-color: #FAFAFA;
+}
+
+.section-white {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.section-dark {
+  padding: 80px 0;
+  background-color: #0C1220;
+  color: #FFFFFF;
 }
 
 @media (min-width: 768px) {
-  .section-gap {
-    padding: 100px 0;
+  .section-light,
+  .section-white,
+  .section-dark {
+    padding: 120px 0;
   }
 }
 
 /* ==========================================
-   FORM CONTROLS — Minimal dark style
+   LABEL STYLE — Ref 3 italic underline
+   ========================================== */
+
+.label-section {
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7B1535;
+  font-style: italic;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(123, 21, 53, 0.3);
+}
+
+/* ==========================================
+   TEXT MASK — The signature element (Valerón Ref 4)
+   ========================================== */
+
+.text-mask {
+  font-size: 18vw;
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.03em;
+  background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (min-width: 768px) {
+  .text-mask {
+    font-size: 15vw;
+  }
+}
+
+/* ==========================================
+   FORM CONTROLS — Minimal border-bottom style (Apple/Valerón)
    ========================================== */
 
 .form-field {
   width: 100%;
   padding: 14px 0;
   border: none;
-  border-bottom: 1.5px solid rgba(12, 18, 32, 0.15);
+  border-bottom: 1.5px solid #E5E7EB;
   background-color: transparent;
   color: #0C1220;
   font-size: 1rem;
@@ -252,7 +249,7 @@ html {
 }
 
 .form-field::placeholder {
-  color: #6B7280;
+  color: #9CA3AF;
 }
 
 /* ==========================================
@@ -262,7 +259,7 @@ html {
 .fade-in {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .fade-in.visible {
@@ -280,16 +277,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0C1220;
+  background: #FAFAFA;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(12, 18, 32, 0.15);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(12, 18, 32, 0.3);
 }
 
 /* ==========================================
@@ -297,18 +294,32 @@ html {
    ========================================== */
 
 ::selection {
-  background: rgba(123, 21, 53, 0.3);
-  color: #FFFFFF;
+  background: rgba(123, 21, 53, 0.15);
+  color: #0C1220;
 }
 
 /* ==========================================
-   LABEL STYLE
+   SERVICE ITEM — Ref 3 style numbered + separator
    ========================================== */
 
-.label-tag {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #B8962E;
+.service-item {
+  padding: 48px 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.service-item:first-child {
+  border-top: 1px solid #E5E7EB;
+}
+
+/* ==========================================
+   DIFFERENTIAL ITEM — Valerón style numbered + lines
+   ========================================== */
+
+.diff-item {
+  padding: 24px 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.diff-item:first-child {
+  border-top: 1px solid #E5E7EB;
 }

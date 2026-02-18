@@ -44,21 +44,24 @@ export default function Header() {
       style={{
         backdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
-        backgroundColor: scrolled ? 'rgba(12,18,32,0.85)' : 'transparent',
-        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
+        backgroundColor: scrolled ? 'rgba(250,250,250,0.85)' : 'transparent',
+        borderBottom: scrolled ? '1px solid rgba(12,18,32,0.06)' : '1px solid transparent',
         padding: scrolled ? '0.75rem 0' : '1.25rem 0',
       }}
     >
-      <div className="container-bento flex justify-between items-center">
+      <div className="container-main flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-baseline gap-1.5 group">
           <span
-            className="text-2xl font-bold tracking-tight transition-colors duration-300"
-            style={{ color: '#B8962E', fontFamily: 'Inter, sans-serif' }}
+            className="text-2xl font-extrabold tracking-tight transition-colors duration-300"
+            style={{ color: '#0C1220' }}
           >
             GLA
           </span>
-          <span className="text-white/70 text-sm font-medium tracking-widest uppercase group-hover:text-white/90 transition-opacity duration-300">
+          <span
+            className="text-sm font-light tracking-widest uppercase transition-opacity duration-300"
+            style={{ color: '#5C6B84' }}
+          >
             Advogados
           </span>
         </Link>
@@ -71,47 +74,50 @@ export default function Header() {
               href={link.href}
               className="text-sm font-medium relative transition-colors duration-300"
               style={{
-                color: pathname === link.href ? '#FFFFFF' : 'rgba(255,255,255,0.6)',
+                color: pathname === link.href ? '#0C1220' : '#5C6B84',
               }}
             >
               {link.label}
               {pathname === link.href && (
                 <span
                   className="absolute -bottom-1 left-0 w-full h-[2px]"
-                  style={{ background: '#B8962E' }}
+                  style={{ background: '#7B1535' }}
                 />
               )}
             </Link>
           ))}
           <Link href="/contato" className="btn-wine-sm ml-4">
-            Solicitar Análise
+            Solicitar Consulta →
           </Link>
         </nav>
 
         {/* Mobile Hamburger */}
         <button
-          className="lg:hidden text-white z-[60] relative w-8 h-8 flex items-center justify-center"
+          className="lg:hidden z-[60] relative w-8 h-8 flex items-center justify-center"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Menu"
         >
           <div className="relative w-6 h-5">
             <span
-              className="absolute left-0 w-6 h-[2px] bg-white transition-all duration-300"
+              className="absolute left-0 w-6 h-[2px] transition-all duration-300"
               style={{
+                background: mobileMenuOpen ? '#fff' : '#0C1220',
                 top: mobileMenuOpen ? '50%' : '0',
                 transform: mobileMenuOpen ? 'rotate(45deg) translateY(-50%)' : 'none',
               }}
             />
             <span
-              className="absolute left-0 top-1/2 w-6 h-[2px] bg-white transition-all duration-300"
+              className="absolute left-0 top-1/2 w-6 h-[2px] transition-all duration-300"
               style={{
+                background: mobileMenuOpen ? '#fff' : '#0C1220',
                 transform: 'translateY(-50%)',
                 opacity: mobileMenuOpen ? 0 : 1,
               }}
             />
             <span
-              className="absolute left-0 w-6 h-[2px] bg-white transition-all duration-300"
+              className="absolute left-0 w-6 h-[2px] transition-all duration-300"
               style={{
+                background: mobileMenuOpen ? '#fff' : '#0C1220',
                 bottom: mobileMenuOpen ? 'auto' : '0',
                 top: mobileMenuOpen ? '50%' : 'auto',
                 transform: mobileMenuOpen ? 'rotate(-45deg) translateY(-50%)' : 'none',
@@ -144,10 +150,8 @@ export default function Header() {
         >
           <div className="flex flex-col justify-center h-full px-10">
             <div className="mb-12">
-              <span className="text-2xl font-bold" style={{ color: '#B8962E' }}>
-                GLA
-              </span>
-              <span className="text-white/50 text-xs font-medium tracking-widest uppercase ml-2">
+              <span className="text-2xl font-extrabold text-white">GLA</span>
+              <span className="text-white/40 text-xs font-light tracking-widest uppercase ml-2">
                 Advogados
               </span>
             </div>
@@ -174,7 +178,7 @@ export default function Header() {
                 className="btn-wine w-full text-center justify-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Solicitar Análise Jurídica
+                Solicitar Consulta →
               </Link>
             </div>
 
