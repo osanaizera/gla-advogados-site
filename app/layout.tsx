@@ -1,6 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Playfair_Display, Source_Serif_Pro } from 'next/font/google'
+import { Playfair_Display, Source_Serif_4 } from 'next/font/google'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
@@ -12,8 +12,8 @@ const playfair = Playfair_Display({
   variable: '--font-playfair',
 })
 
-// Fonte para corpo de texto: Source Serif Pro (legível e formal)
-const sourceSerif = Source_Serif_Pro({
+// Fonte para corpo de texto: Source Serif 4 (legível e formal)
+const sourceSerif = Source_Serif_4({
   subsets: ['latin'],
   display: 'swap',
   weight: ['400', '500', '600'],
