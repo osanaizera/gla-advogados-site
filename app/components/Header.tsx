@@ -110,7 +110,7 @@ export default function Header() {
             </Link>
           ))}
           <Link href="/contato" className="btn-red-sm" style={{ marginLeft: '8px' }}>
-            Consulta
+            Análise Jurídica
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
@@ -217,7 +217,7 @@ export default function Header() {
                 style={{ background: 'rgba(255,255,255,0.1)' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Solicitar Consulta
+                Solicitar Análise Jurídica
                 <span className="btn-arrow">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7" />

@@ -6,62 +6,62 @@ const services = [
   {
     num: '01',
     title: 'Consultoria Trabalhista Preventiva',
-    desc: 'Nossa consultoria preventiva é focada em identificar e neutralizar potenciais riscos trabalhistas antes que se transformem em problemas concretos. Desenvolvemos protocolos, políticas e procedimentos de compliance adaptados à realidade da sua empresa.',
+    desc: 'Identificamos e neutralizamos riscos trabalhistas antes que se tornem processos. Desenvolvemos programas de compliance, revisamos contratos e treinamos gestores para que suas decisões de RH estejam juridicamente blindadas. O resultado: menos processos, menor provisão contábil e um quadro de colaboradores mais seguro.',
     items: [
-      'Avaliação de contratos e políticas',
-      'Compliance trabalhista',
-      'Auditorias preventivas',
-      'Treinamentos para gestores',
-      'Revisão de procedimentos internos',
-      'Assessoria em negociações sindicais',
+      'Programas de compliance trabalhista → adequação à legislação vigente e NR-1',
+      'Auditoria de contratos e políticas internas → identificação de gaps antes da fiscalização',
+      'Treinamentos para gestores e RH → redução de passivos originados por decisões operacionais',
+      'Adequação a cotas PCD e aprendiz → conformidade sem impacto na operação',
+      'Revisão de procedimentos de admissão e demissão → proteção contra reclamatórias comuns',
+      'Assessoria em negociações sindicais → acordos que protegem a empresa e mantêm a produtividade',
     ],
     img: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80',
     imgAlt: 'Consultoria Preventiva',
-    cta: 'Solicitar Consultoria',
+    cta: 'Solicitar Análise Preventiva',
   },
   {
     num: '02',
     title: 'Defesa em Processos Trabalhistas',
-    desc: 'Quando um litígio é inevitável, nossa equipe de contencioso atua com rigor técnico e estratégia personalizada para garantir a melhor defesa dos interesses da sua empresa em todas as instâncias — do primeiro grau ao TST.',
+    desc: 'Quando o litígio é inevitável, cada detalhe da tese importa. Nossa equipe de contencioso atua com estratégia personalizada em todas as instâncias — do primeiro grau ao TST — com foco em redução de condenações e construção de jurisprudência favorável. Acompanhamento em tempo real e relatórios gerenciais para sua diretoria.',
     items: [
-      'Defesa em processos individuais',
-      'Defesa em ações coletivas',
-      'Recursos nos tribunais superiores',
-      'Negociação de acordos',
-      'Procedimentos administrativos',
-      'Acompanhamento de fiscalizações',
+      'Defesa em reclamatórias individuais → teses customizadas por tipo de pedido e segmento',
+      'Defesa em ações coletivas e ACPs → estratégia coordenada com a operação da empresa',
+      'Recursos estratégicos até o TST → busca de precedentes e teses de impacto sistêmico',
+      'Negociação de acordos → análise custo-benefício com projeção de risco real',
+      'Defesa em procedimentos do MPT → atuação preventiva em inquéritos e TACs',
+      'Acompanhamento de fiscalizações → preparação e presença em auditorias do MTE',
     ],
     img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80',
     imgAlt: 'Defesa Processual',
-    cta: 'Solicitar Defesa',
+    cta: 'Solicitar Análise do Contencioso',
   },
   {
     num: '03',
     title: 'Gestão de Passivo Trabalhista',
-    desc: 'Estratégias personalizadas para gestão eficiente do passivo trabalhista utilizando ferramentas de análise de dados e inteligência jurídica para otimizar resultados e reduzir custos de forma consistente.',
+    desc: 'Transformamos seu passivo trabalhista de incógnita contábil em variável controlada. Utilizamos análise de dados e inteligência jurídica para diagnosticar contingências, projetar cenários e implementar estratégias de redução que impactam diretamente o balanço da sua empresa. Ideal para organizações com 50+ processos ativos.',
     items: [
-      'Diagnóstico de contingências',
-      'Análise preditiva de riscos',
-      'Planos de redução de passivo',
-      'Dashboard de controle processual',
-      'Relatórios gerenciais',
-      'Estratégias de encerramento',
+      'Diagnóstico completo de contingências → classificação por risco (provável, possível, remoto)',
+      'Análise preditiva com base em jurisprudência → projeções de resultado por vara e região',
+      'Planos de redução de passivo → estratégias de acordo, encerramento e prevenção',
+      'Dashboard de controle processual → visibilidade em tempo real para jurídico e diretoria',
+      'Relatórios gerenciais periódicos → dados prontos para auditoria e conselho de administração',
+      'Estratégias de encerramento prioritário → foco nos processos de maior impacto financeiro',
     ],
     img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
     imgAlt: 'Gestão de Passivo',
-    cta: 'Solicitar Gestão',
+    cta: 'Solicitar Diagnóstico de Passivo',
   },
   {
     num: '04',
     title: 'Due Diligence Trabalhista',
-    desc: 'Análises minuciosas para identificar contingências trabalhistas em operações de fusões e aquisições, proporcionando segurança jurídica e clareza para tomada de decisões em transações corporativas.',
+    desc: 'Em operações de M&A, o passivo trabalhista é frequentemente a maior contingência não mapeada. Fazemos o levantamento completo — processos ativos, riscos de compliance, passivos ocultos em contratos e práticas — com quantificação precisa para que sua decisão de investimento esteja fundamentada em dados reais.',
     items: [
-      'Avaliação de processos trabalhistas',
-      'Identificação de passivos ocultos',
-      'Análise de documentos e contratos',
-      'Avaliação de procedimentos internos',
-      'Quantificação de riscos',
-      'Recomendações estratégicas',
+      'Levantamento de processos trabalhistas ativos → status, risco e projeção de resultado',
+      'Identificação de passivos ocultos → práticas não conformes que ainda não geraram litígio',
+      'Análise de contratos e políticas → gaps de compliance com potencial de reclamatória futura',
+      'Avaliação de procedimentos internos → aderência à legislação vigente e normas regulamentadoras',
+      'Quantificação precisa de contingências → números para a mesa de negociação do deal',
+      'Relatório executivo com recomendações → documento pronto para investidores e advisors',
     ],
     img: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80',
     imgAlt: 'Due Diligence',
@@ -100,7 +100,7 @@ export default function ServicosPage() {
             color: '#1A1714',
             maxWidth: '640px',
           }}>
-            Proteção jurídica sob medida para{' '}
+            Quatro frentes para reduzir o risco trabalhista da{' '}
             <em style={{ fontWeight: 400, fontStyle: 'italic' }}>sua empresa</em>
           </h1>
           <div className="line-reveal mt-8" style={{ animationDelay: '0.3s' }} />
@@ -202,11 +202,11 @@ export default function ServicosPage() {
                 color: '#FFFFFF',
                 marginBottom: '20px',
               }}>
-                Precisando de soluções{' '}
-                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>personalizadas?</em>
+                Cada processo trabalhista custa mais do que{' '}
+                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>a condenação.</em>
               </h2>
               <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.45)', marginBottom: '40px', fontWeight: 400 }}>
-                Solicite uma análise personalizada das necessidades jurídicas da sua organização.
+                Solicite uma análise jurídica e saiba exatamente onde estão os riscos trabalhistas da sua operação.
               </p>
               <Link href="/contato" className="btn-outline-white">
                 Solicitar Análise Jurídica

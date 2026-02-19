@@ -17,7 +17,7 @@ export default function Footer() {
               />
             </div>
             <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '14px', lineHeight: 1.7, maxWidth: '260px', fontWeight: 400 }}>
-              Especialistas em Direito Trabalhista Empresarial. Protegendo o patrimônio de empresas com estratégia e excelência desde 2010.
+              Assessoria jurídica trabalhista exclusiva para empresas. Compliance preventivo, defesa processual e gestão de passivo. Desde 2010.
             </p>
           </div>
 

@@ -214,10 +214,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                   Precisa de orientação jurídica especializada?
                 </h3>
                 <p style={{ fontSize: '15px', lineHeight: 1.6, color: '#78716C', marginBottom: '24px' }}>
-                  Nossa equipe está pronta para oferecer soluções personalizadas para os desafios trabalhistas da sua empresa.
+                  Solicite uma análise do cenário jurídico trabalhista da sua organização.
                 </p>
                 <Link href="/contato" className="btn-red">
-                  Solicitar Consulta
+                  Solicitar Análise Jurídica
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>

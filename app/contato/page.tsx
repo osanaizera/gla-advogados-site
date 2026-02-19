@@ -73,7 +73,8 @@ export default function ContatoPage() {
           </h1>
           <div className="line-reveal mt-8" style={{ animationDelay: '0.3s' }} />
           <p style={{ marginTop: '24px', fontSize: '1.1rem', lineHeight: 1.6, color: '#78716C', maxWidth: '480px', fontWeight: 400 }}>
-            Estamos à disposição para entender as necessidades jurídicas específicas da sua empresa.
+            Preencha o formulário abaixo com os dados da sua empresa. Um de nossos sócios
+            retorna em até 24 horas úteis com uma avaliação preliminar do seu cenário trabalhista.
           </p>
         </div>
       </section>
@@ -87,10 +88,10 @@ export default function ContatoPage() {
               <ScrollReveal>
                 <div style={{ maxWidth: '640px' }}>
                   <h2 style={{ fontSize: '20px', fontWeight: 300, color: '#1A1714', letterSpacing: '-0.02em', marginBottom: '4px' }}>
-                    Solicitar Análise Jurídica
+                    Dados da empresa
                   </h2>
                   <p style={{ fontSize: '14px', color: '#78716C', marginBottom: '56px', fontWeight: 400 }}>
-                    Preencha os dados abaixo e retornaremos em até 24h úteis.
+                    Todas as informações são tratadas com sigilo.
                   </p>
 
                   {formSubmitted ? (
@@ -100,8 +101,8 @@ export default function ContatoPage() {
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                       </div>
-                      <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#1A1714', marginBottom: '8px' }}>Solicitação recebida!</h3>
-                      <p style={{ fontSize: '14px', color: '#78716C', fontWeight: 400 }}>Nossa equipe entrará em contato em breve.</p>
+                      <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#1A1714', marginBottom: '8px' }}>Solicitação recebida</h3>
+                      <p style={{ fontSize: '14px', color: '#78716C', fontWeight: 400 }}>Sua solicitação foi registrada. Um de nossos sócios entrará em contato em até 24 horas úteis para uma conversa inicial sobre o cenário trabalhista da sua empresa.</p>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-12">
@@ -121,7 +122,7 @@ export default function ContatoPage() {
                         <option value="2000+">Acima de 2.000 colaboradores</option>
                       </select>
 
-                      <textarea name="mensagem" rows={4} value={formData.mensagem} onChange={handleChange} placeholder="Descreva sua necessidade jurídica" required className="form-field" style={{ resize: 'none' }} />
+                      <textarea name="mensagem" rows={4} value={formData.mensagem} onChange={handleChange} placeholder="Conte brevemente o cenário trabalhista atual da sua empresa (volume de processos, principais preocupações, demanda específica)" required className="form-field" style={{ resize: 'none' }} />
 
                       {formError && (
                         <div style={{ 
@@ -160,7 +161,7 @@ export default function ContatoPage() {
             <div className="lg:col-span-1">
               <ScrollReveal delay={100}>
                 <div style={{ border: '1px solid #E7E5E4', borderRadius: '20px', padding: '40px', marginBottom: '28px' }}>
-                  <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#1A1714', marginBottom: '32px' }}>Dados de Contato</h3>
+                  <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#1A1714', marginBottom: '32px' }}>Fale diretamente com o escritório</h3>
 
                   <div className="space-y-8">
                     <div>
@@ -199,6 +200,42 @@ export default function ContatoPage() {
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Localização GLA Advogados"
                   />
+                </div>
+              </ScrollReveal>
+
+              {/* O que esperar */}
+              <ScrollReveal delay={300}>
+                <div style={{ border: '1px solid #E7E5E4', borderRadius: '20px', padding: '40px', marginTop: '28px' }}>
+                  <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#1A1714', marginBottom: '32px' }}>O que acontece depois?</h3>
+                  <div className="space-y-8">
+                    <div>
+                      <div className="flex items-center gap-3 mb-2">
+                        <span style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(192,39,45,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 600, color: '#C0272D', flexShrink: 0 }}>1</span>
+                        <p style={{ fontSize: '14px', fontWeight: 600, color: '#1A1714' }}>Retorno em até 24h úteis</p>
+                      </div>
+                      <p style={{ fontSize: '13px', lineHeight: 1.6, color: '#78716C', fontWeight: 400, paddingLeft: '36px' }}>
+                        Um dos sócios da GLA analisa sua solicitação e entra em contato por telefone ou email.
+                      </p>
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-3 mb-2">
+                        <span style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(192,39,45,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 600, color: '#C0272D', flexShrink: 0 }}>2</span>
+                        <p style={{ fontSize: '14px', fontWeight: 600, color: '#1A1714' }}>Conversa inicial sem compromisso</p>
+                      </div>
+                      <p style={{ fontSize: '13px', lineHeight: 1.6, color: '#78716C', fontWeight: 400, paddingLeft: '36px' }}>
+                        Uma reunião de 30 minutos para entender o cenário trabalhista da sua empresa e identificar prioridades.
+                      </p>
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-3 mb-2">
+                        <span style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(192,39,45,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 600, color: '#C0272D', flexShrink: 0 }}>3</span>
+                        <p style={{ fontSize: '14px', fontWeight: 600, color: '#1A1714' }}>Proposta sob medida</p>
+                      </div>
+                      <p style={{ fontSize: '13px', lineHeight: 1.6, color: '#78716C', fontWeight: 400, paddingLeft: '36px' }}>
+                        Apresentamos um escopo de trabalho e condições comerciais alinhados às necessidades identificadas.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </ScrollReveal>
             </div>

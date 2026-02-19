@@ -66,13 +66,13 @@ export default function Home() {
               marginBottom: '0',
             }}>
               <span className="kinetic-word" style={{ animationDelay: '0.15s' }}>
-                Onde a precisão
+                Cada decisão trabalhista
               </span>
               <span className="kinetic-word" style={{ animationDelay: '0.35s' }}>
-                jurídica encontra a
+                custa dinheiro. Nós garantimos
               </span>
               <span className="kinetic-word" style={{ animationDelay: '0.55s', fontWeight: 400, fontStyle: 'italic' }}>
-                visão estratégica
+                que custem menos.
               </span>
             </h1>
 
@@ -96,14 +96,13 @@ export default function Home() {
                 fontWeight: 400,
               }}
             >
-              Protegemos o patrimônio de empresas como a sua há mais de 15 anos.
-              Do compliance à defesa em litígios complexos.
+              Assessoria jurídica trabalhista para empresas com 100 a 5.000+ colaboradores. Do compliance preventivo à defesa em litígios complexos — com 95% de taxa de sucesso.
             </p>
 
             {/* CTAs — Casa Flora style */}
             <div className="hero-fade flex flex-wrap items-center justify-center gap-4 mt-12" style={{ animationDelay: '1.25s' }}>
               <Link href="/contato" className="btn-flora">
-                Solicitar Análise
+                Solicitar Análise Jurídica
                 <span className="btn-arrow">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -125,7 +124,7 @@ export default function Home() {
                 { value: '95%', label: 'Taxa de sucesso' },
                 { value: '500+', label: 'Empresas assessoradas' },
                 { value: '15+', label: 'Anos de atuação' },
-                { value: '4', label: 'Setores especializados' },
+                { value: '5+', label: 'Estados de atuação' },
               ].map((metric) => (
                 <div key={metric.label} className="text-center">
                   <span style={{
@@ -183,7 +182,7 @@ export default function Home() {
             {/* Text: 3 of 5 cols */}
             <div className="lg:col-span-3">
               <ScrollReveal>
-                <span className="label-section mb-8" style={{ display: 'flex' }}>Sobre nós</span>
+                <span className="label-section mb-8" style={{ display: 'flex' }}>Quem somos</span>
                 <h2 style={{
                   fontSize: 'clamp(1.75rem, 3.5vw, 3rem)',
                   fontWeight: 300,
@@ -193,9 +192,8 @@ export default function Home() {
                   marginBottom: '28px',
                   maxWidth: '520px',
                 }}>
-                  Redefinimos o que significa{' '}
-                  <em style={{ fontWeight: 400, fontStyle: 'italic' }}>proteger</em>{' '}
-                  empresas
+                  A gestão do seu passivo trabalhista{' '}
+                  <em style={{ fontWeight: 400, fontStyle: 'italic' }}>não pode ser reativa</em>
                 </h2>
                 <p style={{
                   fontSize: '1.1rem',
@@ -205,18 +203,15 @@ export default function Home() {
                   marginBottom: '40px',
                   fontWeight: 400,
                 }}>
-                  Fundada por Wagner Gusmão e Larissa de Oliveira Lima, a GLA Advogados nasceu
-                  da necessidade de um escritório que compreendesse profundamente os desafios de
-                  compliance trabalhista das organizações. Combinamos rigor técnico com visão
-                  estratégica de negócios para proteger o que você construiu.
+                  A GLA Advogados nasceu da experiência in-house. Antes de fundar o escritório, Wagner Gusmão atuou como gerente jurídico corporativo — e entendeu que empresas com quadros de 100 a 5.000 colaboradores precisam de assessoria que pense como departamento jurídico, não como escritório externo. Há mais de 15 anos, combinamos essa visão interna com a especialização exclusiva em Direito Trabalhista Empresarial.
                 </p>
 
                 {/* Bullet points */}
                 <div className="space-y-4">
                   {[
                     'Atuação em 5+ estados brasileiros',
-                    'Mais de 500 empresas atendidas',
-                    'Referência para indústrias e grandes corporações',
+                    'Mais de 500 empresas dos setores automotivo, financeiro, serviços e construção',
+                    'Presença constante na mídia como referência em legislação trabalhista',
                   ].map((point) => (
                     <div key={point} className="flex items-center gap-4">
                       <span style={{
@@ -261,7 +256,7 @@ export default function Home() {
         <div className="container-gla relative z-10">
           <ScrollReveal>
             <div className="text-center mb-16" style={{ maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto' }}>
-              <span className="label-section mb-8 justify-center" style={{ display: 'flex' }}>Nossos Serviços</span>
+              <span className="label-section mb-8 justify-center" style={{ display: 'flex' }}>Áreas de atuação</span>
               <h2 style={{
                 fontSize: 'clamp(1.75rem, 3.5vw, 3rem)',
                 fontWeight: 300,
@@ -269,8 +264,8 @@ export default function Home() {
                 letterSpacing: '-0.025em',
                 color: '#1A1714',
               }}>
-                Proteção jurídica{' '}
-                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>sob medida</em>
+                Quatro frentes para reduzir{' '}
+                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>seu risco trabalhista</em>
               </h2>
             </div>
           </ScrollReveal>
@@ -281,25 +276,25 @@ export default function Home() {
               {
                 num: '01',
                 title: 'Consultoria Preventiva',
-                desc: 'Estratégias de compliance que neutralizam riscos antes que se tornem litígios.',
+                desc: 'Auditorias de compliance, revisão de contratos e treinamentos para gestores. Reduzimos o volume de novos processos antes que eles existam.',
                 img: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80',
               },
               {
                 num: '02',
                 title: 'Defesa em Processos',
-                desc: 'Rigor técnico e estratégia em todas as instâncias — do primeiro grau ao TST.',
+                desc: 'Defesa estratégica em ações individuais e coletivas, do primeiro grau ao TST. Cada caso tem tese personalizada e acompanhamento em tempo real.',
                 img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80',
               },
               {
                 num: '03',
-                title: 'Gestão de Passivo',
-                desc: 'Inteligência jurídica e análise preditiva para otimizar resultados e reduzir custos.',
+                title: 'Gestão de Passivo Trabalhista',
+                desc: 'Diagnóstico completo de contingências, análise preditiva e dashboard de controle. Você toma decisões com dados, não com intuição.',
                 img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
               },
               {
                 num: '04',
                 title: 'Due Diligence Trabalhista',
-                desc: 'Análises minuciosas para operações de M&A com quantificação precisa de contingências.',
+                desc: 'Mapeamento e quantificação de passivos ocultos em operações de M&A. Segurança jurídica para decisões que envolvem milhões.',
                 img: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80',
               },
             ].map((service, i) => (
@@ -347,8 +342,8 @@ export default function Home() {
               color: '#1A1714',
               marginBottom: '20px',
             }}>
-              Não somos apenas{' '}
-              <span className="text-outline">advogados.</span>
+              Não somos um{' '}
+              <span className="text-outline">escritório externo.</span>
             </h2>
             <p style={{
               fontSize: '1.15rem',
@@ -358,7 +353,7 @@ export default function Home() {
               marginBottom: '64px',
               fontWeight: 400,
             }}>
-              Somos o departamento jurídico que sua empresa precisa — sem o custo fixo.
+              Funcionamos como o departamento jurídico trabalhista que sua empresa precisa — com a independência técnica que um departamento interno não tem.
             </p>
           </ScrollReveal>
 
@@ -366,23 +361,23 @@ export default function Home() {
             {[
               {
                 num: '01',
-                title: 'Comunicação direta',
-                desc: 'Sem juridiquês desnecessário. Relatórios claros e linguagem objetiva para a sua diretoria tomar decisões rápidas.',
+                title: 'Relatórios para a diretoria',
+                desc: 'Sem juridiquês. Cada parecer é escrito para que CEOs, CFOs e diretores de RH tomem decisões em minutos — não em reuniões de duas horas.',
               },
               {
                 num: '02',
-                title: 'Disponibilidade total',
-                desc: 'Atendimento presencial ou remoto, adaptado à rotina da sua empresa. Respostas em até 4 horas úteis.',
+                title: 'Resposta em até 4 horas úteis',
+                desc: 'Atendimento presencial ou remoto, adaptado à rotina operacional da sua empresa. Urgências trabalhistas não esperam — nós também não.',
               },
               {
                 num: '03',
-                title: 'Acompanhamento detalhado',
-                desc: 'Dashboard em tempo real e reports periódicos sobre cada processo. Você sabe exatamente onde está.',
+                title: 'Visibilidade total do passivo',
+                desc: 'Dashboard em tempo real e reports periódicos sobre cada processo e contingência. Sua diretoria sabe exatamente onde está e quanto custa.',
               },
               {
                 num: '04',
                 title: 'Mentalidade preventiva',
-                desc: 'Investimos em evitar litígios. Reduzimos seu passivo trabalhista antes que ele se forme — poupando tempo e dinheiro.',
+                desc: 'Investimos em evitar litígios. Empresas que trabalham conosco há 5+ anos reduziram o volume de novas ações em até 40%.',
               },
             ].map((item, i) => (
               <ScrollReveal key={item.num} delay={i * 80}>
@@ -441,8 +436,8 @@ export default function Home() {
               color: '#1A1714',
               marginBottom: '64px',
             }}>
-              Quem protege{' '}
-              <em style={{ fontWeight: 400, fontStyle: 'italic' }}>sua empresa</em>
+              Quem cuida do seu{' '}
+              <em style={{ fontWeight: 400, fontStyle: 'italic' }}>passivo trabalhista</em>
             </h2>
           </ScrollReveal>
 
@@ -455,17 +450,17 @@ export default function Home() {
               },
               {
                 name: 'Larissa de Oliveira Lima',
-                role: 'Sócia',
+                role: 'Sócia — Compliance',
                 img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80',
               },
               {
                 name: 'Marcella Marinho',
-                role: 'Advogada',
+                role: 'Advogada — Contencioso',
                 img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80',
               },
               {
                 name: 'Giselle',
-                role: 'Advogada',
+                role: 'Advogada — Due Diligence',
                 img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
               },
             ].map((member, i) => (
@@ -515,8 +510,8 @@ export default function Home() {
                 color: '#FFFFFF',
                 marginBottom: '24px',
               }}>
-                Sua empresa merece proteção jurídica à altura do seu{' '}
-                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>crescimento.</em>
+                Sua empresa cresce. Seu passivo trabalhista{' '}
+                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>não precisa crescer junto.</em>
               </h2>
 
               <p style={{
@@ -529,7 +524,7 @@ export default function Home() {
                 marginBottom: '48px',
                 fontWeight: 400,
               }}>
-                Solicite uma análise personalizada das necessidades jurídicas da sua organização.
+                Solicite uma análise do cenário jurídico trabalhista da sua organização. Retornamos em até 24 horas úteis.
               </p>
 
               {/* Contact info */}
@@ -553,7 +548,7 @@ export default function Home() {
               </div>
 
               <Link href="/contato" className="btn-outline-white">
-                Solicitar Análise
+                Solicitar Análise Jurídica
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>

@@ -33,8 +33,8 @@ export default function SobrePage() {
             color: '#1A1714',
             maxWidth: '640px',
           }}>
-            Uma trajetória construída com{' '}
-            <em style={{ fontWeight: 400, fontStyle: 'italic' }}>resultados</em>
+            Nascemos dentro de empresas.{' '}
+            <em style={{ fontWeight: 400, fontStyle: 'italic' }}>Voltamos para protegê-las.</em>
           </h1>
           <div className="line-reveal mt-8" style={{ animationDelay: '0.3s' }} />
         </div>
@@ -64,23 +64,23 @@ export default function SobrePage() {
                   color: '#1A1714',
                   marginBottom: '28px',
                 }}>
-                  15+ anos redefinindo a advocacia{' '}
-                  <em style={{ fontWeight: 400, fontStyle: 'italic' }}>empresarial</em>
+                  15 anos entre o departamento jurídico{' '}
+                  <em style={{ fontWeight: 400, fontStyle: 'italic' }}>e o tribunal</em>
                 </h2>
                 <div className="space-y-6" style={{ maxWidth: '520px' }}>
                   <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#78716C', fontWeight: 400 }}>
-                    Fundada por Wagner Gusmão e Larissa de Oliveira Lima, a GLA Advogados nasceu da
-                    necessidade de um escritório que entendesse profundamente os desafios de compliance
-                    trabalhista das organizações no Rio de Janeiro e em todo o Brasil.
+                    A GLA Advogados foi fundada por Wagner Gusmão e Larissa de Oliveira Lima com uma premissa
+                    simples: empresas precisam de advogados trabalhistas que pensem como gestores.
                   </p>
                   <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#78716C', fontWeight: 400 }}>
-                    Com mais de 15 anos de atuação exclusiva em Direito Trabalhista Empresarial,
-                    consolidamos nossa posição como referência na defesa de empresas, atendendo
-                    combinando rigor técnico com visão de negócios.
+                    Antes de abrir o escritório, Wagner atuou como gerente jurídico corporativo em empresas
+                    de grande porte. Essa experiência in-house moldou o DNA da GLA: entendemos prazos de
+                    diretoria, pressão de auditoria e o impacto real do passivo trabalhista no balanço.
                   </p>
                   <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#78716C', fontWeight: 400 }}>
-                    Cada estratégia é desenhada para proteger o patrimônio da empresa e otimizar a
-                    gestão do quadro de colaboradores, sempre com transparência e resultados mensuráveis.
+                    Hoje, assessoramos mais de 500 empresas dos setores automotivo, financeiro, de serviços
+                    e construção civil em 5+ estados brasileiros. Com 95% de taxa de sucesso em litígios,
+                    somos referência em compliance trabalhista preventivo e defesa de alta complexidade.
                   </p>
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function SobrePage() {
         <div className="container-gla relative z-10">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <span className="label-section mb-8 justify-center" style={{ display: 'flex' }}>Valores</span>
+              <span className="label-section mb-8 justify-center" style={{ display: 'flex' }}>Como trabalhamos</span>
               <h2 style={{
                 fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
                 fontWeight: 300,
@@ -115,8 +115,8 @@ export default function SobrePage() {
                 letterSpacing: '-0.025em',
                 color: '#1A1714',
               }}>
-                Princípios que nos{' '}
-                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>guiam</em>
+                Três compromissos com cada{' '}
+                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>cliente</em>
               </h2>
             </div>
           </ScrollReveal>
@@ -125,18 +125,18 @@ export default function SobrePage() {
             {[
               {
                 num: '01',
-                title: 'Excelência Técnica',
-                desc: 'Buscamos a excelência em cada ação — da análise de compliance à representação em tribunais superiores.',
+                title: 'Rigor técnico com visão de negócio',
+                desc: 'Cada tese é construída com dois critérios: robustez jurídica e impacto financeiro. Não ganhamos apenas processos — protegemos o resultado da sua operação.',
               },
               {
                 num: '02',
-                title: 'Parceria Estratégica',
-                desc: 'Construímos relações de longo prazo baseadas em comunicação clara e resultados concretos.',
+                title: 'Transparência radical',
+                desc: 'Você acompanha cada processo em tempo real, com relatórios claros e projeções de risco atualizadas. Sem surpresas na provisão contábil.',
               },
               {
                 num: '03',
-                title: 'Ética e Transparência',
-                desc: 'Atuamos com integridade, mantendo os mais altos padrões éticos e deontológicos da advocacia.',
+                title: 'Relacionamento de longo prazo',
+                desc: 'Nosso cliente médio está conosco há 7 anos. Não somos acionados por demanda — fazemos parte da estratégia jurídica permanente da empresa.',
               },
             ].map((valor, i) => (
               <ScrollReveal key={i} delay={i * 100}>
@@ -195,12 +195,15 @@ export default function SobrePage() {
                 <p style={{ fontSize: '14px', fontWeight: 500, color: '#C0272D', marginBottom: '28px' }}>Sócio Fundador</p>
                 <div className="space-y-5">
                   <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#78716C', fontWeight: 400 }}>
-                    Especialista em Direito do Trabalho com mais de 20 anos de experiência na
-                    defesa de empresas de médio e grande porte em processos de alta complexidade.
+                    Especialista em Direito do Trabalho com mais de 20 anos de atuação na defesa de empresas
+                    com quadros de 100 a 5.000+ colaboradores. Antes de fundar a GLA, foi gerente jurídico
+                    corporativo — experiência que trouxe para o escritório a visão de quem senta do lado
+                    do cliente na mesa de decisão.
                   </p>
                   <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#78716C', fontWeight: 400 }}>
-                    Antes de fundar a GLA, atuou como gerente jurídico em empresas de grande porte.
-                    Presença constante na mídia como referência em legislação trabalhista e gestão de risco.
+                    Referência na mídia em temas como reforma trabalhista, NR-1 e saúde mental no trabalho,
+                    e cotas PCD. Citado frequentemente por Valor Econômico, Exame e Conjur como fonte
+                    especializada em gestão de risco trabalhista corporativo.
                   </p>
                 </div>
               </div>
@@ -214,15 +217,18 @@ export default function SobrePage() {
                 <h3 style={{ fontSize: '28px', fontWeight: 300, color: '#1A1714', letterSpacing: '-0.025em', marginBottom: '4px' }}>
                   Larissa de Oliveira Lima
                 </h3>
-                <p style={{ fontSize: '14px', fontWeight: 500, color: '#C0272D', marginBottom: '28px' }}>Sócia</p>
+                <p style={{ fontSize: '14px', fontWeight: 500, color: '#C0272D', marginBottom: '28px' }}>Sócia — Compliance</p>
                 <div className="space-y-5">
                   <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#78716C', fontWeight: 400 }}>
-                    Especialista em consultoria trabalhista preventiva e compliance para grandes organizações.
-                    Desenvolveu metodologia própria para implementação de protocolos de conformidade.
+                    Especialista em consultoria trabalhista preventiva e compliance para empresas de médio
+                    e grande porte. Desenvolveu metodologia própria para implementação de programas de
+                    conformidade trabalhista que reduziram o volume de novas ações em clientes dos setores
+                    financeiro e de serviços.
                   </p>
                   <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#78716C', fontWeight: 400 }}>
-                    Atua como palestrante em congressos nacionais sobre direito trabalhista empresarial
-                    e gestão estratégica do departamento jurídico.
+                    Palestrante em congressos nacionais sobre compliance trabalhista, com foco em adequação
+                    à NR-1, gestão de riscos psicossociais e políticas de inclusão PCD. Atua na linha de
+                    frente entre o jurídico e o RH estratégico.
                   </p>
                 </div>
               </div>
@@ -255,10 +261,11 @@ export default function SobrePage() {
               <h3 style={{ fontSize: '22px', fontWeight: 300, color: '#1A1714', letterSpacing: '-0.02em', marginBottom: '4px' }}>
                 Marcella Marinho
               </h3>
-              <p style={{ fontSize: '14px', fontWeight: 500, color: '#C0272D', marginBottom: '14px' }}>Advogada</p>
+              <p style={{ fontSize: '14px', fontWeight: 500, color: '#C0272D', marginBottom: '14px' }}>Advogada — Contencioso</p>
               <p style={{ fontSize: '15px', lineHeight: 1.7, color: '#78716C', fontWeight: 400 }}>
-                Especialista em defesa processual trabalhista, com atuação em todas as instâncias judiciais.
-                Responsável por estratégias de litígio de alta complexidade.
+                Responsável pelo contencioso trabalhista de alta complexidade. Atua em todas as instâncias
+                — do primeiro grau ao TST — com foco em ações coletivas, processos de grande valor e
+                recursos estratégicos. Especialista em defesa de empresas dos setores automotivo e de construção.
               </p>
             </ScrollReveal>
 
@@ -276,10 +283,11 @@ export default function SobrePage() {
               <h3 style={{ fontSize: '22px', fontWeight: 300, color: '#1A1714', letterSpacing: '-0.02em', marginBottom: '4px' }}>
                 Giselle
               </h3>
-              <p style={{ fontSize: '14px', fontWeight: 500, color: '#C0272D', marginBottom: '14px' }}>Advogada</p>
+              <p style={{ fontSize: '14px', fontWeight: 500, color: '#C0272D', marginBottom: '14px' }}>Advogada — Due Diligence</p>
               <p style={{ fontSize: '15px', lineHeight: 1.7, color: '#78716C', fontWeight: 400 }}>
-                Atua em due diligence trabalhista e gestão de passivo, com foco na identificação
-                de contingências e quantificação de riscos para operações corporativas.
+                Atua em due diligence trabalhista e gestão de passivo. Especialista em mapeamento de
+                contingências, quantificação de riscos para operações de M&A e elaboração de relatórios
+                de exposição para conselhos de administração e investidores.
               </p>
             </ScrollReveal>
           </div>
@@ -299,11 +307,11 @@ export default function SobrePage() {
                 color: '#FFFFFF',
                 marginBottom: '20px',
               }}>
-                Conheça pessoalmente{' '}
-                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>nossa equipe</em>
+                O passivo trabalhista da sua empresa merece{' '}
+                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>atenção especializada</em>
               </h2>
               <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.45)', marginBottom: '40px', fontWeight: 400 }}>
-                Agende uma visita ao nosso escritório no Centro do Rio de Janeiro.
+                Solicite uma análise do cenário jurídico trabalhista da sua organização.
               </p>
               <Link href="/contato" className="btn-outline-white">
                 Solicitar Análise Jurídica

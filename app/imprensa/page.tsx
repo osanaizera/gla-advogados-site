@@ -4,50 +4,50 @@ import Link from 'next/link';
 const newsItems = [
   {
     id: 1,
-    title: 'Reforma trabalhista: especialistas analisam impactos na gestão de passivo das empresas',
-    excerpt: 'Wagner Gusmão foi convidado a analisar os efeitos da reforma trabalhista no cenário corporativo, destacando pontos sobre segurança jurídica e gestão de risco.',
-    date: '15 Jan 2024',
+    title: 'NR-1 e saúde mental no trabalho: o que muda para empresas com 100+ colaboradores',
+    excerpt: 'Wagner Gusmão analisa os impactos da atualização da NR-1 nas obrigações de compliance trabalhista e os riscos de inação para empresas de médio e grande porte.',
+    date: '10 Jan 2026',
     source: 'Valor Econômico',
     category: 'Artigo',
   },
   {
     id: 2,
-    title: 'GLA Advogados lança programa de compliance trabalhista para empresas de grande porte',
-    excerpt: 'O escritório desenvolveu metodologia exclusiva para programas de compliance trabalhista, reduzindo riscos jurídicos e otimizando a gestão do quadro de colaboradores.',
-    date: '22 Mar 2024',
-    source: 'Portal Jurídico',
-    category: 'Notícia',
-  },
-  {
-    id: 3,
-    title: 'Home office permanente: implicações jurídicas no quadro de colaboradores',
-    excerpt: 'Larissa de Oliveira Lima compartilhou insights sobre os aspectos jurídicos do trabalho remoto permanente e os principais pontos de atenção.',
-    date: '05 Mai 2024',
+    title: 'Cotas PCD: por que empresas ainda erram — e como corrigir antes da fiscalização',
+    excerpt: 'Larissa de Oliveira Lima explica os erros mais comuns no cumprimento de cotas PCD e apresenta a metodologia preventiva desenvolvida pela GLA Advogados.',
+    date: '28 Nov 2025',
     source: 'Exame',
     category: 'Entrevista',
   },
   {
+    id: 3,
+    title: 'Reforma trabalhista: 8 anos depois, o passivo que ninguém previu',
+    excerpt: 'Wagner Gusmão avalia os efeitos de longo prazo da reforma trabalhista na gestão de passivo de empresas dos setores automotivo e financeiro.',
+    date: '15 Set 2025',
+    source: 'Conjur',
+    category: 'Análise',
+  },
+  {
     id: 4,
-    title: 'ESG e passivo trabalhista: o impacto nas relações de trabalho corporativas',
-    excerpt: 'Wagner Gusmão participou de webinar sobre como as práticas ESG estão transformando o direito trabalhista e criando novos desafios para departamentos jurídicos.',
-    date: '18 Jun 2024',
+    title: 'Gestão de passivo trabalhista para empresas em expansão: estratégias para 2026',
+    excerpt: 'Webinar exclusivo com a equipe GLA sobre como empresas em crescimento podem escalar operações sem multiplicar riscos trabalhistas.',
+    date: '05 Ago 2025',
     source: 'Webinar GLA',
     category: 'Evento',
   },
   {
     id: 5,
-    title: 'Inteligência artificial e automação: desafios legais para o futuro do trabalho',
-    excerpt: 'Larissa de Oliveira Lima publicou artigo sobre as implicações jurídicas da IA nos ambientes corporativos e os desafios para compliance.',
-    date: '09 Ago 2024',
-    source: 'Revista Jurídica',
+    title: 'Compliance trabalhista e ESG: a convergência que o conselho precisa entender',
+    excerpt: 'Larissa de Oliveira Lima analisa como as exigências ESG estão transformando o compliance trabalhista em tema de governança corporativa.',
+    date: '20 Jun 2025',
+    source: 'JOTA',
     category: 'Artigo',
   },
   {
     id: 6,
-    title: 'GLA Advogados amplia atuação com novo núcleo de direito digital do trabalho',
-    excerpt: 'Escritório inaugurou departamento especializado em questões trabalhistas relacionadas à transformação digital e modelos híbridos.',
-    date: '23 Out 2024',
-    source: 'Conjur',
+    title: 'Trabalho remoto e controle de jornada: os riscos invisíveis do modelo híbrido',
+    excerpt: 'GLA Advogados identifica os principais passivos trabalhistas gerados pelo modelo híbrido e recomenda práticas preventivas para empresas com operações distribuídas.',
+    date: '12 Abr 2025',
+    source: 'Folha de S.Paulo',
     category: 'Notícia',
   },
 ];
@@ -67,12 +67,13 @@ export default function ImprensaPage() {
             color: '#1A1714',
             maxWidth: '480px',
           }}>
-            GLA na{' '}
-            <em style={{ fontWeight: 400, fontStyle: 'italic' }}>mídia</em>
+            Análises que pautam{' '}
+            <em style={{ fontWeight: 400, fontStyle: 'italic' }}>o mercado</em>
           </h1>
           <div className="line-reveal mt-8" style={{ animationDelay: '0.3s' }} />
           <p style={{ marginTop: '24px', fontSize: '1.1rem', lineHeight: 1.6, color: '#78716C', maxWidth: '480px', fontWeight: 400 }}>
-            Acompanhe nossa participação nos principais veículos de comunicação.
+            Wagner Gusmão e a equipe GLA são fonte frequente dos principais veículos jurídicos
+            e de negócios do Brasil em temas de compliance trabalhista e gestão de risco.
           </p>
         </div>
       </section>
@@ -120,9 +121,9 @@ export default function ImprensaPage() {
 
                   <div className="flex justify-between items-center" style={{ paddingTop: '18px', borderTop: '1px solid #E7E5E4' }}>
                     <span style={{ fontSize: '12px', fontWeight: 500, color: '#78716C' }}>{item.date}</span>
-                    <Link href="#" className="inline-flex items-center gap-1.5 transition-all duration-500 hover:gap-2.5" style={{ fontSize: '13px', fontWeight: 600, color: '#C0272D' }}>
-                      Ler matéria →
-                    </Link>
+                    <span style={{ fontSize: '13px', fontWeight: 600, color: '#C0272D' }}>
+                      Em breve
+                    </span>
                   </div>
                 </div>
               </ScrollReveal>
@@ -145,7 +146,7 @@ export default function ImprensaPage() {
               marginBottom: '56px',
             }}>
               Onde somos{' '}
-              <em style={{ fontWeight: 400, fontStyle: 'italic' }}>citados</em>
+              <em style={{ fontWeight: 400, fontStyle: 'italic' }}>referência</em>
             </h2>
           </ScrollReveal>
 
@@ -201,15 +202,15 @@ export default function ImprensaPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: 'A eficácia dos programas de compliance trabalhista na redução do passivo judicial',
+                title: 'Programas de compliance trabalhista e redução do passivo judicial: estudo de eficácia em empresas de 100 a 2.000 colaboradores',
                 author: 'Wagner Gusmão',
               },
               {
-                title: 'Desafios jurídicos do trabalho remoto: análise do impacto no quadro de colaboradores',
+                title: 'Teletrabalho pós-pandemia: análise das contingências trabalhistas e recomendações de compliance para o modelo híbrido',
                 author: 'Larissa de Oliveira Lima',
               },
               {
-                title: 'Inteligência artificial e relações de trabalho: implicações para gestão de risco',
+                title: 'Inteligência artificial e relações de trabalho: implicações jurídicas e regulatórias para empresas em transformação digital',
                 author: 'Wagner Gusmão e Larissa de O. Lima',
               },
             ].map((pub, i) => (
@@ -237,9 +238,9 @@ export default function ImprensaPage() {
                   </h3>
                   <div className="flex justify-between items-center" style={{ paddingTop: '18px', borderTop: '1px solid #E7E5E4' }}>
                     <span style={{ fontSize: '12px', fontWeight: 500, color: '#78716C' }}>{pub.author}</span>
-                    <Link href="#" style={{ fontSize: '13px', fontWeight: 600, color: '#C0272D' }}>
-                      Baixar PDF
-                    </Link>
+                    <span style={{ fontSize: '13px', fontWeight: 600, color: '#C0272D' }}>
+                      Em breve
+                    </span>
                   </div>
                 </div>
               </ScrollReveal>
@@ -261,11 +262,12 @@ export default function ImprensaPage() {
                 color: '#FFFFFF',
                 marginBottom: '18px',
               }}>
-                Inscreva-se em nossa{' '}
-                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>newsletter</em>
+                Análises de risco trabalhista{' '}
+                <em style={{ fontWeight: 400, fontStyle: 'italic' }}>na sua caixa de entrada</em>
               </h2>
               <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.4)', marginBottom: '36px', fontWeight: 400 }}>
-                Receba artigos e análises sobre gestão de risco jurídico trabalhista.
+                Receba mensalmente análises sobre compliance trabalhista, jurisprudência relevante
+                e tendências regulatórias que impactam empresas com 100+ colaboradores.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <input
