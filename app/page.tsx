@@ -66,7 +66,7 @@ export default async function Home() {
           <div style={{ maxWidth: '900px' }}>
             {/* Eyebrow with red line above */}
             <div
-              className="hero-fade flex flex-col items-center gap-3 mb-12"
+              className="hero-fade flex flex-col items-center gap-2 mb-6"
               style={{ animationDelay: '0s' }}
             >
               <span style={{
@@ -88,7 +88,7 @@ export default async function Home() {
 
             {/* H1 — Casa Flora: font-weight 300, clamp, centered */}
             <h1 style={{
-              fontSize: 'clamp(3rem, 7vw, 5.5rem)',
+              fontSize: 'clamp(2.2rem, 5.5vw, 4.5rem)',
               lineHeight: 1.08,
               letterSpacing: '-0.025em',
               fontWeight: 300,
@@ -107,7 +107,7 @@ export default async function Home() {
             </h1>
 
             {/* Red line — centered */}
-            <div className="hero-fade flex justify-center mt-10" style={{ animationDelay: '0.85s' }}>
+            <div className="hero-fade flex justify-center mt-6" style={{ animationDelay: '0.85s' }}>
               <div className="line-reveal-center" style={{ animationDelay: '0.85s' }} />
             </div>
 
@@ -116,13 +116,13 @@ export default async function Home() {
               className="hero-fade"
               style={{
                 animationDelay: '1.05s',
-                fontSize: '1.15rem',
-                lineHeight: 1.55,
+                fontSize: 'clamp(0.95rem, 1.5vw, 1.15rem)',
+                lineHeight: 1.5,
                 color: '#78716C',
-                maxWidth: '580px',
+                maxWidth: '560px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
-                marginTop: '32px',
+                marginTop: '20px',
                 fontWeight: 400,
               }}
             >
@@ -130,7 +130,7 @@ export default async function Home() {
             </p>
 
             {/* CTAs — Casa Flora style */}
-            <div className="hero-fade flex flex-wrap items-center justify-center gap-4 mt-12" style={{ animationDelay: '1.25s' }}>
+            <div className="hero-fade flex flex-wrap items-center justify-center gap-4 mt-8" style={{ animationDelay: '1.25s' }}>
               <Link href="/contato" className="btn-flora">
                 Solicitar Análise Jurídica
                 <span className="btn-arrow">
