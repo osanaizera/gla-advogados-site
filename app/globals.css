@@ -3,9 +3,9 @@
 @theme {
   --color-gla-red: #C0272D;
   --color-gla-red-hover: #9B1E24;
-  --color-gla-black: #1A1714;
+  --color-gla-black: #0F0D0B; /* Escurecido levemente */
   --color-gla-offwhite: #FFFFFF;
-  --color-gla-muted: #78716C;
+  --color-gla-muted: #656055; /* Ajustado para mais contraste */
   --color-gla-border: #E7E5E4;
 }
 
@@ -19,10 +19,10 @@ html {
 
 body {
   background-color: #FFFFFF;
-  color: #1A1714;
-  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  color: #0F0D0B;
+  font-family: var(--font-source-serif), Georgia, serif;
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -30,7 +30,20 @@ body {
 
 ::selection {
   background: rgba(192, 39, 45, 0.12);
-  color: #1A1714;
+  color: #0F0D0B;
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), Georgia, serif;
+  line-height: 1.2;
+  color: #0F0D0B;
+}
+
+/* Emphasis */
+em {
+  font-style: italic;
+  font-weight: 500; /* Mais peso para ênfases */
 }
 
 /* ==========================================
@@ -193,10 +206,10 @@ body {
 }
 
 /* ==========================================
-   BUTTONS — Casa Flora style
+   BUTTONS — Versão GLA
    ========================================== */
 
-/* Primary CTA — dark glass Casa Flora */
+/* Primary CTA — dark corporate */
 .btn-flora {
   display: inline-flex;
   align-items: center;
@@ -205,13 +218,14 @@ body {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: #fff;
-  font-weight: 500;
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-weight: 600;
   padding: 18px 36px;
-  border-radius: 16px;
+  border-radius: 12px; /* Reduzido para aspecto mais corporativo */
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
   font-size: 15px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   border: none;
   cursor: pointer;
 }
@@ -236,23 +250,24 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: #1A1714;
-  font-weight: 500;
+  color: #0F0D0B;
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-weight: 600;
   padding: 18px 36px;
-  border-radius: 16px;
-  border: 1.5px solid rgba(26, 23, 20, 0.15);
+  border-radius: 12px; /* Reduzido para aspecto mais corporativo */
+  border: 1.5px solid rgba(15, 13, 11, 0.25);
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
   font-size: 15px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   background: transparent;
   cursor: pointer;
 }
 
 .btn-outline:hover {
-  background: #1A1714;
+  background: #0F0D0B;
   color: #fff;
-  border-color: #1A1714;
+  border-color: #0F0D0B;
   transform: translateY(-2px);
 }
 
@@ -262,21 +277,22 @@ body {
   align-items: center;
   gap: 10px;
   color: #FFFFFF;
-  font-weight: 500;
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-weight: 600;
   padding: 18px 36px;
-  border-radius: 16px;
+  border-radius: 12px;
   border: 1.5px solid rgba(255, 255, 255, 0.25);
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
   font-size: 15px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   background: transparent;
   cursor: pointer;
 }
 
 .btn-outline-white:hover {
   background: #FFFFFF;
-  color: #1A1714;
+  color: #0F0D0B;
   border-color: #FFFFFF;
   transform: translateY(-2px);
 }
@@ -286,23 +302,24 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(10, 10, 10, 0.9);
+  background: #C0272D;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: #fff;
-  font-weight: 500;
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-weight: 600;
   padding: 16px 32px;
-  border-radius: 16px;
+  border-radius: 12px;
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
   font-size: 15px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   border: none;
   cursor: pointer;
 }
 
 .btn-red:hover {
-  background: rgba(10, 10, 10, 1);
+  background: #9B1E24;
   transform: translateY(-2px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
@@ -311,13 +328,14 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(10, 10, 10, 0.9);
+  background: #C0272D;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: #fff;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: var(--font-source-serif), Georgia, serif;
   padding: 10px 22px;
-  border-radius: 12px;
+  border-radius: 8px;
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
   font-size: 14px;
@@ -326,25 +344,26 @@ body {
 }
 
 .btn-red-sm:hover {
-  background: rgba(10, 10, 10, 1);
+  background: #9B1E24;
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 /* ==========================================
-   GLASSMORPHISM — Casa Flora
+   GLASSMORPHISM — Corporate refined
    ========================================== */
 
 .glass {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 }
 
 .glass-header {
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
@@ -357,9 +376,10 @@ body {
 .label-section {
   font-size: 12px;
   font-weight: 600;
+  font-family: var(--font-source-serif), Georgia, serif;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #78716C;
+  color: #656055;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -375,12 +395,12 @@ body {
 }
 
 /* ==========================================
-   SERVICE CARD — Casa Flora photo bg
+   SERVICE CARD — Photo bg with corporate edge
    ========================================== */
 
 .service-card-flora {
   position: relative;
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
   min-height: 420px;
   cursor: pointer;
@@ -407,7 +427,7 @@ body {
 .service-card-flora__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0.08) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
   z-index: 1;
 }
 
@@ -423,14 +443,16 @@ body {
 }
 
 .service-card-flora__number {
+  font-family: var(--font-source-serif), Georgia, serif;
   font-size: 13px;
-  font-weight: 400;
-  opacity: 0.5;
+  font-weight: 600;
+  opacity: 0.6;
   margin-bottom: 10px;
   letter-spacing: 0.05em;
 }
 
 .service-card-flora__title {
+  font-family: var(--font-playfair), Georgia, serif;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 10px;
@@ -439,8 +461,10 @@ body {
 }
 
 .service-card-flora__desc {
+  font-family: var(--font-source-serif), Georgia, serif;
   font-size: 0.9rem;
-  opacity: 0.75;
+  font-weight: 400;
+  opacity: 0.9;
   line-height: 1.6;
   max-width: 320px;
 }
@@ -451,7 +475,8 @@ body {
   gap: 8px;
   margin-top: 20px;
   font-size: 14px;
-  font-weight: 500;
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-weight: 600;
   color: white;
   opacity: 0.8;
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -466,7 +491,7 @@ body {
 .service-card {
   background: #FFFFFF;
   border: 1px solid #E7E5E4;
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 48px 40px;
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
@@ -480,6 +505,7 @@ body {
 }
 
 .service-card .card-number {
+  font-family: var(--font-playfair), Georgia, serif;
   transition: opacity 0.5s ease;
   opacity: 0.04;
 }
@@ -525,11 +551,12 @@ body {
 }
 
 /* ==========================================
-   OUTLINE TEXT — Casa Flora signature
+   OUTLINE TEXT — Corporate signature
    ========================================== */
 
 .text-outline {
-  -webkit-text-stroke: 1.5px #1A1714;
+  font-family: var(--font-playfair), Georgia, serif;
+  -webkit-text-stroke: 1.5px #0F0D0B;
   -webkit-text-fill-color: transparent;
 }
 
@@ -543,11 +570,11 @@ body {
   border: none;
   border-bottom: 1.5px solid #E7E5E4;
   background-color: transparent;
-  color: #1A1714;
+  color: #0F0D0B;
   font-size: 1rem;
+  font-family: var(--font-source-serif), Georgia, serif;
   outline: none;
   transition: border-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  font-family: 'Inter', sans-serif;
 }
 
 .form-field:focus {
@@ -555,7 +582,7 @@ body {
 }
 
 .form-field::placeholder {
-  color: #78716C;
+  color: #656055;
 }
 
 /* ==========================================
@@ -572,12 +599,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 /* ==========================================
@@ -585,26 +612,29 @@ body {
    ========================================== */
 
 .blog-content h2 {
+  font-family: var(--font-playfair), Georgia, serif;
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #1A1714;
+  color: #0F0D0B;
   letter-spacing: -0.02em;
 }
 
 .blog-content h3 {
+  font-family: var(--font-playfair), Georgia, serif;
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 1.8rem;
   margin-bottom: 0.8rem;
-  color: #1A1714;
+  color: #0F0D0B;
   letter-spacing: -0.01em;
 }
 
 .blog-content p {
   margin-bottom: 1.5rem;
-  color: #1A1714;
+  color: #0F0D0B;
+  font-family: var(--font-source-serif), Georgia, serif;
 }
 
 .blog-content ul, .blog-content ol {
@@ -622,11 +652,13 @@ body {
 }
 
 .blog-content blockquote {
-  border-left: 4px solid #C0272D;
-  padding-left: 1rem;
+  font-family: var(--font-playfair), Georgia, serif;
   font-style: italic;
-  margin: 1.5rem 0;
-  color: #78716C;
+  font-weight: 500;
+  border-left: 4px solid #C0272D;
+  padding-left: 1.25rem;
+  margin: 1.75rem 0;
+  color: #656055;
 }
 
 .blog-content img {

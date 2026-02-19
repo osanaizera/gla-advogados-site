@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#1A1714' }}>
+    <footer style={{ backgroundColor: '#0F0D0B' }}>
       <div className="container-gla" style={{ paddingTop: '100px', paddingBottom: '60px' }}>
         {/* 4-column grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-10 mb-20">
@@ -12,18 +12,40 @@ export default function Footer() {
               <span style={{ fontWeight: 900, fontSize: '28px', color: '#C0272D', letterSpacing: '-0.03em', lineHeight: 1 }}>GLa</span>
               <span style={{ color: '#C0272D', fontSize: '34px', fontWeight: 100, lineHeight: 1, opacity: 0.5 }}>|</span>
               <span
-                style={{ fontSize: '9.5px', lineHeight: 1.4, fontWeight: 500, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.03em' }}
+                style={{ 
+                  fontSize: '9.5px', 
+                  lineHeight: 1.4, 
+                  fontWeight: 600,
+                  fontFamily: 'var(--font-source-serif), Georgia, serif',
+                  color: 'rgba(255,255,255,0.7)',
+                  letterSpacing: '0.03em' 
+                }}
                 dangerouslySetInnerHTML={{ __html: 'gusmão<br/>& lima<br/>advogados' }}
               />
             </div>
-            <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '14px', lineHeight: 1.7, maxWidth: '260px', fontWeight: 400 }}>
+            <p style={{ 
+              color: 'rgba(255,255,255,0.4)', 
+              fontSize: '14px', 
+              lineHeight: 1.7, 
+              maxWidth: '260px', 
+              fontWeight: 500,
+              fontFamily: 'var(--font-source-serif), Georgia, serif',
+            }}>
               Assessoria jurídica trabalhista exclusiva para empresas. Compliance preventivo, defesa processual e gestão de passivo. Desde 2010.
             </p>
           </div>
 
           {/* Col 2: Serviços */}
           <div>
-            <h4 style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 500, fontSize: '12px', letterSpacing: '0.15em', textTransform: 'uppercase' as const, marginBottom: '32px' }}>
+            <h4 style={{ 
+              color: 'rgba(255,255,255,0.7)', 
+              fontWeight: 600, 
+              fontSize: '12px', 
+              letterSpacing: '0.15em', 
+              textTransform: 'uppercase' as const, 
+              marginBottom: '32px',
+              fontFamily: 'var(--font-source-serif), Georgia, serif',
+            }}>
               Serviços
             </h4>
             <ul className="space-y-5">
@@ -37,9 +59,10 @@ export default function Footer() {
                   <Link
                     href="/servicos"
                     style={{
-                      color: 'rgba(255,255,255,0.3)',
+                      color: 'rgba(255,255,255,0.4)',
                       fontSize: '14px',
-                      fontWeight: 400,
+                      fontWeight: 500,
+                      fontFamily: 'var(--font-source-serif), Georgia, serif',
                       transition: 'color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                     }}
                   >
@@ -52,7 +75,15 @@ export default function Footer() {
 
           {/* Col 3: Institucional */}
           <div>
-            <h4 style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 500, fontSize: '12px', letterSpacing: '0.15em', textTransform: 'uppercase' as const, marginBottom: '32px' }}>
+            <h4 style={{ 
+              color: 'rgba(255,255,255,0.7)', 
+              fontWeight: 600, 
+              fontSize: '12px', 
+              letterSpacing: '0.15em', 
+              textTransform: 'uppercase' as const, 
+              marginBottom: '32px',
+              fontFamily: 'var(--font-source-serif), Georgia, serif',
+            }}>
               Institucional
             </h4>
             <ul className="space-y-5">
@@ -66,9 +97,10 @@ export default function Footer() {
                   <Link
                     href={item.href}
                     style={{
-                      color: 'rgba(255,255,255,0.3)',
+                      color: 'rgba(255,255,255,0.4)',
                       fontSize: '14px',
-                      fontWeight: 400,
+                      fontWeight: 500,
+                      fontFamily: 'var(--font-source-serif), Georgia, serif',
                       transition: 'color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                     }}
                   >
@@ -81,26 +113,69 @@ export default function Footer() {
 
           {/* Col 4: Contato */}
           <div>
-            <h4 style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 500, fontSize: '12px', letterSpacing: '0.15em', textTransform: 'uppercase' as const, marginBottom: '32px' }}>
+            <h4 style={{ 
+              color: 'rgba(255,255,255,0.7)', 
+              fontWeight: 600, 
+              fontSize: '12px', 
+              letterSpacing: '0.15em', 
+              textTransform: 'uppercase' as const, 
+              marginBottom: '32px',
+              fontFamily: 'var(--font-source-serif), Georgia, serif',
+            }}>
               Contato
             </h4>
             <ul className="space-y-5">
-              <li style={{ color: 'rgba(255,255,255,0.3)', fontSize: '14px', lineHeight: 1.6, fontWeight: 400 }}>
+              <li style={{ 
+                color: 'rgba(255,255,255,0.4)', 
+                fontSize: '14px', 
+                lineHeight: 1.6, 
+                fontWeight: 500,
+                fontFamily: 'var(--font-source-serif), Georgia, serif',
+              }}>
                 Av. Franklin Roosevelt, 84 - GR 301<br />
                 Centro, Rio de Janeiro - 20021-120
               </li>
               <li>
-                <a href="tel:+552138835652" style={{ color: 'rgba(255,255,255,0.3)', fontSize: '14px', fontWeight: 400, transition: 'color 0.5s ease' }}>
+                <a 
+                  href="tel:+552138835652" 
+                  style={{ 
+                    color: 'rgba(255,255,255,0.4)', 
+                    fontSize: '14px', 
+                    fontWeight: 500,
+                    fontFamily: 'var(--font-source-serif), Georgia, serif',
+                    transition: 'color 0.5s ease' 
+                  }}
+                >
                   (21) 3883-5652
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/5521994053121" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.3)', fontSize: '14px', fontWeight: 400, transition: 'color 0.5s ease' }}>
+                <a 
+                  href="https://wa.me/5521994053121" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ 
+                    color: 'rgba(255,255,255,0.4)', 
+                    fontSize: '14px', 
+                    fontWeight: 500,
+                    fontFamily: 'var(--font-source-serif), Georgia, serif',
+                    transition: 'color 0.5s ease' 
+                  }}
+                >
                   WhatsApp: (21) 99405-3121
                 </a>
               </li>
               <li>
-                <a href="mailto:wagner.gusmao@glaadvogados.com.br" style={{ color: 'rgba(255,255,255,0.3)', fontSize: '14px', fontWeight: 400, transition: 'color 0.5s ease' }}>
+                <a 
+                  href="mailto:wagner.gusmao@glaadvogados.com.br" 
+                  style={{ 
+                    color: 'rgba(255,255,255,0.4)', 
+                    fontSize: '14px', 
+                    fontWeight: 500,
+                    fontFamily: 'var(--font-source-serif), Georgia, serif',
+                    transition: 'color 0.5s ease' 
+                  }}
+                >
                   wagner.gusmao@glaadvogados.com.br
                 </a>
               </li>
@@ -111,12 +186,22 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           className="flex flex-col md:flex-row justify-between items-center gap-4"
-          style={{ paddingTop: '36px', borderTop: '1px solid rgba(255,255,255,0.06)' }}
+          style={{ paddingTop: '36px', borderTop: '1px solid rgba(255,255,255,0.1)' }}
         >
-          <p style={{ color: 'rgba(255,255,255,0.15)', fontSize: '13px', fontWeight: 400 }}>
+          <p style={{ 
+            color: 'rgba(255,255,255,0.25)', 
+            fontSize: '13px', 
+            fontWeight: 500,
+            fontFamily: 'var(--font-source-serif), Georgia, serif',
+          }}>
             © 2026 GLA | gusmão &amp; lima advogados. Todos os direitos reservados.
           </p>
-          <p style={{ color: 'rgba(255,255,255,0.15)', fontSize: '13px', fontWeight: 400 }}>
+          <p style={{ 
+            color: 'rgba(255,255,255,0.25)', 
+            fontSize: '13px', 
+            fontWeight: 500,
+            fontFamily: 'var(--font-source-serif), Georgia, serif',
+          }}>
             OAB/RJ
           </p>
         </div>
