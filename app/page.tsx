@@ -36,11 +36,11 @@ export default async function Home() {
   return (
     <>
       {/* =====================================================
-          SECTION 1 — CINEMATIC HERO (Ajustada para fit viewport)
+          SECTION 1 — HERO (100svh — tudo cabe na tela)
           ===================================================== */}
       <section
-        className="noise relative flex flex-col items-center justify-center"
-        style={{ height: '100vh', maxHeight: '1000px', minHeight: '600px', overflow: 'hidden' }}
+        className="noise relative flex flex-col"
+        style={{ height: '100svh', minHeight: '580px' }}
       >
         {/* Background photo */}
         <div
@@ -50,7 +50,6 @@ export default async function Home() {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed',
           }}
         />
         {/* White overlay */}
@@ -61,12 +60,12 @@ export default async function Home() {
           }}
         />
 
-        {/* Hero content — CENTRALIZADO E RESPONSIVO */}
-        <div className="relative z-10 w-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8" style={{ paddingTop: '0', paddingBottom: '120px' }}>
+        {/* Hero content — flex-1 empurra métricas para baixo */}
+        <div className="relative z-10 w-full flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8" style={{ paddingTop: '80px' }}>
           <div style={{ maxWidth: '900px' }}>
             {/* Eyebrow with red line above */}
             <div
-              className="hero-fade flex flex-col items-center gap-3 mb-8 md:mb-12"
+              className="hero-fade flex flex-col items-center gap-2 mb-6 md:mb-8"
               style={{ animationDelay: '0s' }}
             >
               <span style={{
@@ -76,7 +75,7 @@ export default async function Home() {
                 display: 'block',
               }} />
               <span style={{
-                fontSize: '12px',
+                fontSize: '11px',
                 fontWeight: 600,
                 textTransform: 'uppercase' as const,
                 letterSpacing: '0.2em',
@@ -86,10 +85,10 @@ export default async function Home() {
               </span>
             </div>
 
-            {/* H1 — Atualizado com nova tipografia */}
+            {/* H1 — Playfair Display, mais compacto */}
             <h1 style={{
-              fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-              lineHeight: 1.1,
+              fontSize: 'clamp(2rem, 5vw, 4.2rem)',
+              lineHeight: 1.12,
               letterSpacing: '-0.025em',
               fontWeight: 600,
               fontFamily: 'var(--font-playfair), Georgia, serif',
@@ -108,7 +107,7 @@ export default async function Home() {
             </h1>
 
             {/* Red line — centered */}
-            <div className="hero-fade flex justify-center mt-8" style={{ animationDelay: '0.85s' }}>
+            <div className="hero-fade flex justify-center mt-6" style={{ animationDelay: '0.85s' }}>
               <div className="line-reveal-center" style={{ animationDelay: '0.85s' }} />
             </div>
 
@@ -117,13 +116,13 @@ export default async function Home() {
               className="hero-fade"
               style={{
                 animationDelay: '1.05s',
-                fontSize: '1.15rem',
+                fontSize: 'clamp(0.95rem, 1.5vw, 1.15rem)',
                 lineHeight: 1.5,
                 color: '#656055',
-                maxWidth: '580px',
+                maxWidth: '560px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
-                marginTop: '28px',
+                marginTop: '20px',
                 fontWeight: 500,
                 fontFamily: 'var(--font-source-serif), Georgia, serif',
               }}
@@ -131,8 +130,8 @@ export default async function Home() {
               Assessoria jurídica trabalhista para empresas com 100 a 5.000+ colaboradores. Do compliance preventivo à defesa em litígios complexos — com 95% de taxa de sucesso.
             </p>
 
-            {/* CTAs — Atualizados */}
-            <div className="hero-fade flex flex-wrap items-center justify-center gap-4 mt-10" style={{ animationDelay: '1.25s' }}>
+            {/* CTAs */}
+            <div className="hero-fade flex flex-wrap items-center justify-center gap-3 mt-8" style={{ animationDelay: '1.25s' }}>
               <Link href="/contato" className="btn-flora">
                 Solicitar Análise Jurídica
                 <span className="btn-arrow">
@@ -148,10 +147,10 @@ export default async function Home() {
           </div>
         </div>
 
-        {/* Floating glass metrics */}
-        <div className="absolute -bottom-12 sm:bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 z-10 w-full px-4 sm:px-6" style={{ maxWidth: '900px' }}>
-          <div className="hero-fade glass" style={{ animationDelay: '1.5s', padding: '24px 20px sm:28px sm:36px' }}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {/* Glass metrics — dentro do fluxo, colado no bottom */}
+        <div className="relative z-10 w-full px-4 sm:px-6 pb-6 md:pb-10 flex justify-center">
+          <div className="hero-fade glass w-full" style={{ animationDelay: '1.5s', padding: '22px 24px', maxWidth: '900px' }}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {[
                 { value: '95%', label: 'Taxa de sucesso' },
                 { value: '500+', label: 'Empresas assessoradas' },
@@ -161,7 +160,7 @@ export default async function Home() {
                 <div key={metric.label} className="text-center">
                   <span style={{
                     display: 'block',
-                    fontSize: 'clamp(24px, 4vw, 36px)',
+                    fontSize: 'clamp(22px, 3.5vw, 34px)',
                     fontWeight: 600,
                     fontFamily: 'var(--font-playfair), Georgia, serif',
                     letterSpacing: '-0.03em',
@@ -171,11 +170,11 @@ export default async function Home() {
                     {metric.value}
                   </span>
                   <span style={{
-                    fontSize: '12px',
+                    fontSize: '11px',
                     fontWeight: 500,
                     fontFamily: 'var(--font-source-serif), Georgia, serif',
                     color: '#656055',
-                    marginTop: '8px',
+                    marginTop: '6px',
                     display: 'block',
                     letterSpacing: '0.05em',
                     textTransform: 'uppercase' as const,
@@ -192,7 +191,7 @@ export default async function Home() {
       {/* =====================================================
           SECTION 2 — ABOUT
           ===================================================== */}
-      <section className="noise" style={{ background: '#FFFFFF', padding: '120px 0 100px', marginTop: '60px' }}>
+      <section className="noise" style={{ background: '#FFFFFF', padding: '100px 0' }}>
         <div className="container-gla relative z-10">
           {/* Decorative oversized number */}
           <span
