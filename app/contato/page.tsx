@@ -16,27 +16,48 @@ export default function ContatoPage() {
 
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formError, setFormError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+    setFormError('');
+    
+    try {
+      const response = await fetch('https://sdcms-web.vercel.app/api/lead-magnets/q51vJz7N5JcU/capture', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ fields: formData })
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok && data.ok) {
+        setFormSubmitted(true);
+        setFormData({ nome: '', email: '', empresa: '', cargo: '', colaboradores: '', mensagem: '' });
+        setTimeout(() => setFormSubmitted(false), 5000);
+      } else {
+        throw new Error(data.message || 'Erro ao enviar formulário');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setFormError('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente ou entre em contato por telefone.');
+    } finally {
       setIsSubmitting(false);
-      setFormSubmitted(true);
-      setFormData({ nome: '', email: '', empresa: '', cargo: '', colaboradores: '', mensagem: '' });
-      setTimeout(() => setFormSubmitted(false), 5000);
-    }, 1500);
+    }
   };
 
   return (
     <>
       {/* ===== HERO INTERNO ===== */}
-      <section className="noise" style={{ background: '#FAFAFA', minHeight: '40vh', display: 'flex', alignItems: 'flex-end' }}>
+      <section className="noise" style={{ background: '#F8F8F8', minHeight: '40vh', display: 'flex', alignItems: 'flex-end' }}>
         <div className="container-gla relative z-10" style={{ paddingBottom: '72px', paddingTop: '200px' }}>
           <span className="label-section mb-8" style={{ display: 'flex' }}>Contato</span>
           <h1 style={{
@@ -102,6 +123,19 @@ export default function ContatoPage() {
 
                       <textarea name="mensagem" rows={4} value={formData.mensagem} onChange={handleChange} placeholder="Descreva sua necessidade jurídica" required className="form-field" style={{ resize: 'none' }} />
 
+                      {formError && (
+                        <div style={{ 
+                          padding: '12px', 
+                          borderRadius: '8px', 
+                          background: 'rgba(220, 38, 38, 0.08)', 
+                          color: '#dc2626', 
+                          marginBottom: '20px',
+                          fontSize: '14px'
+                        }}>
+                          {formError}
+                        </div>
+                      )}
+                      
                       <button
                         type="submit"
                         className={`btn-flora w-full justify-center ${isSubmitting ? 'opacity-70 cursor-wait' : ''}`}

@@ -35,6 +35,7 @@ export default function Header() {
     { href: '/sobre', label: 'Sobre' },
     { href: '/servicos', label: 'Serviços' },
     { href: '/imprensa', label: 'Imprensa' },
+    { href: '/blog', label: 'Blog' },
     { href: '/contato', label: 'Contato' },
   ];
 

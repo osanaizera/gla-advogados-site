@@ -20,7 +20,7 @@ export default function SobrePage() {
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(250,250,249,0.9) 0%, rgba(250,250,249,0.7) 50%, rgba(250,250,249,0.95) 100%)',
+            background: 'linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.95) 100%)',
           }}
         />
         <div className="container-gla relative z-10" style={{ paddingBottom: '72px', paddingTop: '200px' }}>
@@ -103,7 +103,7 @@ export default function SobrePage() {
       </section>
 
       {/* ===== VALORES ===== */}
-      <section className="noise" style={{ background: '#FAFAFA', padding: '120px 0' }}>
+      <section className="noise" style={{ background: '#F8F8F8', padding: '120px 0' }}>
         <div className="container-gla relative z-10">
           <ScrollReveal>
             <div className="text-center mb-16">

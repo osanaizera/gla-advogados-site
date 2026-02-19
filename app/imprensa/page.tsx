@@ -56,7 +56,7 @@ export default function ImprensaPage() {
   return (
     <>
       {/* ===== HERO INTERNO ===== */}
-      <section className="noise" style={{ background: '#FAFAFA', minHeight: '40vh', display: 'flex', alignItems: 'flex-end' }}>
+      <section className="noise" style={{ background: '#F8F8F8', minHeight: '40vh', display: 'flex', alignItems: 'flex-end' }}>
         <div className="container-gla relative z-10" style={{ paddingBottom: '72px', paddingTop: '200px' }}>
           <span className="label-section mb-8" style={{ display: 'flex' }}>Imprensa</span>
           <h1 style={{

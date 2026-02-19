@@ -23,11 +23,11 @@ export default function Home() {
             backgroundAttachment: 'fixed',
           }}
         />
-        {/* White overlay — warm, not dark */}
+        {/* White overlay */}
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(250,250,249,0.88) 0%, rgba(250,250,249,0.95) 100%)',
+            background: 'linear-gradient(to bottom, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.95) 100%)',
           }}
         />
 
