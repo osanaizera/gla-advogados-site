@@ -37,7 +37,7 @@ async function getBlogPost(slug: string): Promise<BlogPost | null> {
       headers: {
         'x-api-key': process.env.CMS_API_KEY || '',
       },
-      next: { revalidate: 3600 }, // Revalidate every hour
+      next: { revalidate: 3600 },
     });
     
     if (!res.ok) {
@@ -53,8 +53,9 @@ async function getBlogPost(slug: string): Promise<BlogPost | null> {
 }
 
 // Generate metadata for the page
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = await getBlogPost(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getBlogPost(slug);
   
   if (!post) {
     return {
@@ -73,8 +74,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await getBlogPost(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getBlogPost(slug);
   
   if (!post) {
     return (
@@ -230,73 +232,3 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     </>
   );
 }
-
-// Add CSS for the blog content
-export const blogContentStyles = `
-.blog-content h2 {
-  font-size: 1.8rem;
-  font-weight: 500;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: #1A1714;
-  letter-spacing: -0.02em;
-}
-
-.blog-content h3 {
-  font-size: 1.4rem;
-  font-weight: 500;
-  margin-top: 1.8rem;
-  margin-bottom: 0.8rem;
-  color: #1A1714;
-  letter-spacing: -0.01em;
-}
-
-.blog-content p {
-  margin-bottom: 1.5rem;
-  color: #1A1714;
-}
-
-.blog-content ul, .blog-content ol {
-  margin-bottom: 1.5rem;
-  padding-left: 1.5rem;
-}
-
-.blog-content li {
-  margin-bottom: 0.5rem;
-}
-
-.blog-content a {
-  color: #C0272D;
-  text-decoration: underline;
-}
-
-.blog-content blockquote {
-  border-left: 4px solid #C0272D;
-  padding-left: 1rem;
-  font-style: italic;
-  margin: 1.5rem 0;
-  color: #78716C;
-}
-
-.blog-content img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 2rem 0;
-}
-
-.blog-content pre {
-  background: #F8F8F8;
-  padding: 1rem;
-  border-radius: 8px;
-  overflow-x: auto;
-  margin: 1.5rem 0;
-}
-
-.blog-content code {
-  background: #F8F8F8;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-}
-`;

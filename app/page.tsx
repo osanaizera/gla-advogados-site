@@ -1,8 +1,38 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import ScrollReveal from './components/ScrollReveal';
+import { formatDate } from './utils/formatters';
 
-export default function Home() {
+interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  seoImage: string;
+  publishedAt: string;
+  tags: string[];
+  authorName: string;
+}
+
+async function getLatestPosts(): Promise<BlogPost[]> {
+  try {
+    const res = await fetch(
+      `${process.env.CMS_BASE_URL}/api/public/content?type=BLOG&limit=3`,
+      {
+        headers: { 'x-api-key': process.env.CMS_API_KEY || '' },
+        next: { revalidate: 3600 },
+      }
+    );
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.data as BlogPost[];
+  } catch {
+    return [];
+  }
+}
+
+export default async function Home() {
+  const latestPosts = await getLatestPosts();
   return (
     <>
       {/* =====================================================
@@ -496,7 +526,113 @@ export default function Home() {
       </section>
 
       {/* =====================================================
-          SECTION 6 — CTA (dark)
+          SECTION 6 — BLOG / NOTÍCIAS
+          ===================================================== */}
+      {latestPosts.length > 0 && (
+        <section className="noise" style={{ background: '#FFFFFF', padding: '120px 0' }}>
+          <div className="container-gla relative z-10">
+            <ScrollReveal>
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+                <div>
+                  <span className="label-section mb-8" style={{ display: 'flex' }}>Blog</span>
+                  <h2 style={{
+                    fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
+                    fontWeight: 300,
+                    lineHeight: 1.08,
+                    letterSpacing: '-0.025em',
+                    color: '#1A1714',
+                  }}>
+                    Análises e{' '}
+                    <em style={{ fontWeight: 400, fontStyle: 'italic' }}>tendências</em>
+                  </h2>
+                </div>
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center gap-2 transition-all duration-500 hover:gap-3"
+                  style={{ fontSize: '14px', fontWeight: 600, color: '#C0272D', flexShrink: 0 }}
+                >
+                  Ver todos os artigos
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {latestPosts.map((post, i) => (
+                <ScrollReveal key={post.id} delay={i * 80}>
+                  <Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
+                    <div
+                      className="h-full flex flex-col"
+                      style={{
+                        border: '1px solid #E7E5E4',
+                        borderRadius: '20px',
+                        overflow: 'hidden',
+                        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                      }}
+                    >
+                      <div style={{ height: '200px', position: 'relative' }}>
+                        <Image
+                          src={post.seoImage || 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1212'}
+                          alt={post.title}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                        />
+                      </div>
+                      <div className="flex flex-col flex-grow p-7">
+                        <div className="flex items-center gap-3 mb-4">
+                          <span style={{ fontSize: '12px', color: '#78716C' }}>
+                            {formatDate(post.publishedAt)}
+                          </span>
+                          {post.tags && post.tags.length > 0 && (
+                            <span style={{
+                              fontSize: '11px',
+                              padding: '2px 8px',
+                              borderRadius: '10px',
+                              background: 'rgba(192,39,45,0.08)',
+                              color: '#C0272D',
+                              fontWeight: 500,
+                            }}>
+                              {post.tags[0]}
+                            </span>
+                          )}
+                        </div>
+                        <h3 style={{
+                          fontSize: '17px',
+                          fontWeight: 600,
+                          lineHeight: 1.3,
+                          color: '#1A1714',
+                          letterSpacing: '-0.01em',
+                          marginBottom: '10px',
+                        }}>
+                          {post.title}
+                        </h3>
+                        <p style={{
+                          fontSize: '14px',
+                          lineHeight: 1.6,
+                          color: '#78716C',
+                          flex: 1,
+                        }}>
+                          {post.excerpt && post.excerpt.length > 120 ? post.excerpt.slice(0, 120) + '...' : post.excerpt}
+                        </p>
+                        {post.authorName && (
+                          <p style={{ fontSize: '13px', color: '#78716C', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E7E5E4' }}>
+                            Por <span style={{ color: '#1A1714', fontWeight: 500 }}>{post.authorName}</span>
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* =====================================================
+          SECTION 7 — CTA (dark)
           ===================================================== */}
       <section className="noise noise-dark" style={{ background: '#1A1714', padding: '120px 0' }}>
         <div className="container-gla relative z-10">
