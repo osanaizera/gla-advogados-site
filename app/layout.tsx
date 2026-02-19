@@ -1,23 +1,13 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Playfair_Display, Source_Serif_4 } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
-// Fonte para títulos: Playfair Display (serif elegante e autoritativo)
-const playfair = Playfair_Display({
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['500', '600', '700'],
-  variable: '--font-playfair',
-})
-
-// Fonte para corpo de texto: Source Serif 4 (legível e formal)
-const sourceSerif = Source_Serif_4({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['400', '500', '600'],
-  variable: '--font-source-serif',
+  variable: '--font-inter',
 })
 
 export const metadata: Metadata = {
@@ -32,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={`${playfair.variable} ${sourceSerif.variable}`}>
-      <body className={`${sourceSerif.className} min-h-screen flex flex-col antialiased`} style={{ background: '#FFFFFF', color: '#0F0D0B' }}>
+    <html lang="pt-BR" className={inter.variable}>
+      <body className={`${inter.className} min-h-screen flex flex-col antialiased`} style={{ background: '#FFFFFF', color: '#1A1714' }}>
         <Header />
         <main className="flex-grow">
           {children}

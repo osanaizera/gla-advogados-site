@@ -45,9 +45,9 @@ export default function Header() {
       style={{
         backdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
-        backgroundColor: scrolled ? 'rgba(255,255,255,0.9)' : 'transparent',
-        borderBottom: scrolled ? '1px solid rgba(0,0,0,0.06)' : '1px solid transparent',
-        padding: scrolled ? '0.75rem 0' : '1.25rem 0',
+        backgroundColor: scrolled ? 'rgba(255,255,255,0.82)' : 'transparent',
+        borderBottom: scrolled ? '1px solid rgba(0,0,0,0.04)' : '1px solid transparent',
+        padding: scrolled ? '0.625rem 0' : '1.25rem 0',
         transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
       }}
     >
@@ -76,9 +76,8 @@ export default function Header() {
             style={{
               fontSize: '10.5px',
               lineHeight: 1.4,
-              fontWeight: 600,
-              fontFamily: 'var(--font-source-serif), Georgia, serif',
-              color: '#0F0D0B',
+              fontWeight: 500,
+              color: '#1A1714',
               textTransform: 'lowercase' as const,
               letterSpacing: '0.03em',
             }}
@@ -95,10 +94,9 @@ export default function Header() {
               className="relative"
               style={{
                 fontSize: '13px',
-                fontFamily: 'var(--font-source-serif), Georgia, serif',
-                fontWeight: 600,
+                fontWeight: 500,
                 letterSpacing: '0.01em',
-                color: pathname === link.href ? '#0F0D0B' : '#656055',
+                color: pathname === link.href ? '#1A1714' : '#78716C',
                 transition: 'color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
               }}
             >
@@ -129,7 +127,7 @@ export default function Header() {
             <span
               className="absolute left-0 w-6 h-[1.5px]"
               style={{
-                background: mobileMenuOpen ? '#FFFFFF' : '#0F0D0B',
+                background: mobileMenuOpen ? '#FFFFFF' : '#1A1714',
                 top: mobileMenuOpen ? '50%' : '0',
                 transform: mobileMenuOpen ? 'rotate(45deg) translateY(-50%)' : 'none',
                 transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
@@ -138,7 +136,7 @@ export default function Header() {
             <span
               className="absolute left-0 top-1/2 w-6 h-[1.5px]"
               style={{
-                background: mobileMenuOpen ? '#FFFFFF' : '#0F0D0B',
+                background: mobileMenuOpen ? '#FFFFFF' : '#1A1714',
                 transform: 'translateY(-50%)',
                 opacity: mobileMenuOpen ? 0 : 1,
                 transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
@@ -147,7 +145,7 @@ export default function Header() {
             <span
               className="absolute left-0 w-6 h-[1.5px]"
               style={{
-                background: mobileMenuOpen ? '#FFFFFF' : '#0F0D0B',
+                background: mobileMenuOpen ? '#FFFFFF' : '#1A1714',
                 bottom: mobileMenuOpen ? 'auto' : '0',
                 top: mobileMenuOpen ? '50%' : 'auto',
                 transform: mobileMenuOpen ? 'rotate(-45deg) translateY(-50%)' : 'none',
@@ -167,7 +165,7 @@ export default function Header() {
       >
         <div
           className="absolute inset-0"
-          style={{ background: 'rgba(15,13,11,0.5)' }}
+          style={{ background: 'rgba(26,23,20,0.5)' }}
           onClick={() => setMobileMenuOpen(false)}
         />
         <div
@@ -175,7 +173,7 @@ export default function Header() {
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           style={{
-            background: 'rgba(15,13,11,0.97)',
+            background: 'rgba(26,23,20,0.97)',
             backdropFilter: 'blur(32px)',
             WebkitBackdropFilter: 'blur(32px)',
             borderLeft: '1px solid rgba(255,255,255,0.06)',
@@ -188,14 +186,7 @@ export default function Header() {
               <span style={{ fontWeight: 900, fontSize: '28px', color: '#C0272D', letterSpacing: '-0.03em' }}>GLa</span>
               <span style={{ color: '#C0272D', fontSize: '34px', fontWeight: 100, opacity: 0.5 }}>|</span>
               <span
-                style={{ 
-                  fontSize: '9.5px', 
-                  lineHeight: 1.4, 
-                  fontWeight: 600, 
-                  fontFamily: 'var(--font-source-serif), Georgia, serif',
-                  color: 'rgba(255,255,255,0.7)', 
-                  letterSpacing: '0.03em' 
-                }}
+                style={{ fontSize: '9.5px', lineHeight: 1.4, fontWeight: 500, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.03em' }}
                 dangerouslySetInnerHTML={{ __html: 'gusmão<br/>& lima<br/>advogados' }}
               />
             </div>
@@ -207,10 +198,9 @@ export default function Header() {
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   style={{
-                    fontSize: '24px',
-                    fontFamily: 'var(--font-playfair), Georgia, serif',
-                    fontWeight: 500,
-                    letterSpacing: '-0.01em',
+                    fontSize: '28px',
+                    fontWeight: 300,
+                    letterSpacing: '-0.025em',
                     color: pathname === link.href ? '#C0272D' : '#FFFFFF',
                     transition: 'color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                   }}
@@ -237,22 +227,8 @@ export default function Header() {
             </div>
 
             <div className="mt-10 space-y-3">
-              <p style={{ 
-                color: 'rgba(255,255,255,0.5)', 
-                fontSize: '13px', 
-                fontWeight: 500,
-                fontFamily: 'var(--font-source-serif), Georgia, serif'
-              }}>
-                (21) 3883-5652
-              </p>
-              <p style={{ 
-                color: 'rgba(255,255,255,0.5)', 
-                fontSize: '13px', 
-                fontWeight: 500,
-                fontFamily: 'var(--font-source-serif), Georgia, serif'
-              }}>
-                wagner.gusmao@glaadvogados.com.br
-              </p>
+              <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '13px', fontWeight: 400 }}>(21) 3883-5652</p>
+              <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '13px', fontWeight: 400 }}>wagner.gusmao@glaadvogados.com.br</p>
             </div>
           </div>
         </div>
