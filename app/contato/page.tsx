@@ -34,7 +34,7 @@ export default function ContatoPage() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ fields: formData })
+        body: JSON.stringify({ data: formData })
       });
       
       const data = await response.json();
