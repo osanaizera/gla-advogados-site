@@ -127,7 +127,7 @@ export default function Header() {
             <span
               className="absolute left-0 w-6 h-[1.5px]"
               style={{
-                background: mobileMenuOpen ? '#FAFAF9' : '#1A1714',
+                background: mobileMenuOpen ? '#FFFFFF' : '#1A1714',
                 top: mobileMenuOpen ? '50%' : '0',
                 transform: mobileMenuOpen ? 'rotate(45deg) translateY(-50%)' : 'none',
                 transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
@@ -136,7 +136,7 @@ export default function Header() {
             <span
               className="absolute left-0 top-1/2 w-6 h-[1.5px]"
               style={{
-                background: mobileMenuOpen ? '#FAFAF9' : '#1A1714',
+                background: mobileMenuOpen ? '#FFFFFF' : '#1A1714',
                 transform: 'translateY(-50%)',
                 opacity: mobileMenuOpen ? 0 : 1,
                 transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
@@ -145,7 +145,7 @@ export default function Header() {
             <span
               className="absolute left-0 w-6 h-[1.5px]"
               style={{
-                background: mobileMenuOpen ? '#FAFAF9' : '#1A1714',
+                background: mobileMenuOpen ? '#FFFFFF' : '#1A1714',
                 bottom: mobileMenuOpen ? 'auto' : '0',
                 top: mobileMenuOpen ? '50%' : 'auto',
                 transform: mobileMenuOpen ? 'rotate(-45deg) translateY(-50%)' : 'none',

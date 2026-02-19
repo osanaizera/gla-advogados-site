@@ -132,7 +132,7 @@ export default function ImprensaPage() {
       </section>
 
       {/* ===== VEÍCULOS ===== */}
-      <section className="noise" style={{ background: '#FAFAFA', padding: '120px 0' }}>
+      <section className="noise" style={{ background: '#F8F8F8', padding: '120px 0' }}>
         <div className="container-gla relative z-10">
           <ScrollReveal>
             <span className="label-section mb-8" style={{ display: 'flex' }}>Aparições</span>

@@ -216,7 +216,7 @@ export default function Home() {
                   {[
                     'Atuação em 5+ estados brasileiros',
                     'Mais de 500 empresas atendidas',
-                    'Clientes como NISSAN e grandes corporações',
+                    'Referência para indústrias e grandes corporações',
                   ].map((point) => (
                     <div key={point} className="flex items-center gap-4">
                       <span style={{
@@ -257,7 +257,7 @@ export default function Home() {
       {/* =====================================================
           SECTION 3 — SERVIÇOS (Casa Flora photo cards)
           ===================================================== */}
-      <section className="noise" style={{ background: '#FAFAFA', padding: '120px 0' }}>
+      <section className="noise" style={{ background: '#F8F8F8', padding: '120px 0' }}>
         <div className="container-gla relative z-10">
           <ScrollReveal>
             <div className="text-center mb-16" style={{ maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto' }}>
@@ -429,7 +429,7 @@ export default function Home() {
       {/* =====================================================
           SECTION 5 — EQUIPE
           ===================================================== */}
-      <section className="noise" style={{ background: '#FAFAFA', padding: '120px 0' }}>
+      <section className="noise" style={{ background: '#F8F8F8', padding: '120px 0' }}>
         <div className="container-gla relative z-10">
           <ScrollReveal>
             <span className="label-section mb-8" style={{ display: 'flex' }}>Equipe</span>

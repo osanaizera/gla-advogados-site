@@ -76,7 +76,7 @@ export default function SobrePage() {
                   <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#78716C', fontWeight: 400 }}>
                     Com mais de 15 anos de atuação exclusiva em Direito Trabalhista Empresarial,
                     consolidamos nossa posição como referência na defesa de empresas, atendendo
-                    clientes como a NISSAN e combinando rigor técnico com visão de negócios.
+                    combinando rigor técnico com visão de negócios.
                   </p>
                   <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#78716C', fontWeight: 400 }}>
                     Cada estratégia é desenhada para proteger o patrimônio da empresa e otimizar a
