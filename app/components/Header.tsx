@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
@@ -53,35 +54,16 @@ export default function Header() {
     >
       <div className="container-gla flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-          <span style={{
-            fontWeight: 900,
-            fontSize: '36px',
-            color: '#C0272D',
-            letterSpacing: '-0.03em',
-            lineHeight: 1,
-          }}>
-            GLa
-          </span>
-          <span style={{
-            color: '#C0272D',
-            fontSize: '44px',
-            fontWeight: 100,
-            lineHeight: 1,
-            opacity: 0.5,
-          }}>
-            |
-          </span>
-          <span
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+          <Image
+            src="/logo-gla.jpg"
+            alt="GLA | Gusmão & Lima Advogados"
+            width={scrolled ? 140 : 160}
+            height={scrolled ? 69 : 79}
             style={{
-              fontSize: '10.5px',
-              lineHeight: 1.4,
-              fontWeight: 500,
-              color: '#1A1714',
-              textTransform: 'lowercase' as const,
-              letterSpacing: '0.03em',
+              transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
             }}
-            dangerouslySetInnerHTML={{ __html: 'gusmão<br/>& lima<br/>advogados' }}
+            priority
           />
         </Link>
 
@@ -182,12 +164,15 @@ export default function Header() {
         >
           <div className="flex flex-col justify-center h-full px-10">
             {/* Mobile Logo */}
-            <div className="mb-14 flex items-center gap-3">
-              <span style={{ fontWeight: 900, fontSize: '28px', color: '#C0272D', letterSpacing: '-0.03em' }}>GLa</span>
-              <span style={{ color: '#C0272D', fontSize: '34px', fontWeight: 100, opacity: 0.5 }}>|</span>
-              <span
-                style={{ fontSize: '9.5px', lineHeight: 1.4, fontWeight: 500, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.03em' }}
-                dangerouslySetInnerHTML={{ __html: 'gusmão<br/>& lima<br/>advogados' }}
+            <div className="mb-14">
+              <Image
+                src="/logo-gla.jpg"
+                alt="GLA | Gusmão & Lima Advogados"
+                width={140}
+                height={69}
+                style={{
+                  filter: 'brightness(0) invert(1)',
+                }}
               />
             </div>
 

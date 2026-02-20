@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -8,12 +9,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-10 mb-20">
           {/* Col 1: Logo + description */}
           <div>
-            <div className="flex items-center gap-3 mb-10">
-              <span style={{ fontWeight: 900, fontSize: '28px', color: '#C0272D', letterSpacing: '-0.03em', lineHeight: 1 }}>GLa</span>
-              <span style={{ color: '#C0272D', fontSize: '34px', fontWeight: 100, lineHeight: 1, opacity: 0.5 }}>|</span>
-              <span
-                style={{ fontSize: '9.5px', lineHeight: 1.4, fontWeight: 500, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.03em' }}
-                dangerouslySetInnerHTML={{ __html: 'gusmão<br/>& lima<br/>advogados' }}
+            <div className="mb-10">
+              <Image
+                src="/logo-gla.jpg"
+                alt="GLA | Gusmão & Lima Advogados"
+                width={120}
+                height={59}
+                style={{
+                  filter: 'brightness(0) invert(1)',
+                }}
               />
             </div>
             <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '14px', lineHeight: 1.7, maxWidth: '260px', fontWeight: 400 }}>
