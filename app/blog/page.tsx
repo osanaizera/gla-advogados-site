@@ -15,24 +15,13 @@ interface BlogPost {
   authorName: string;
 }
 
+import { getPosts } from '@/lib/cms';
+
 // Fetch blog posts
 async function getBlogPosts() {
-  const apiUrl = `${process.env.CMS_BASE_URL}/api/public/content?type=BLOG&limit=6`;
-  
   try {
-    const res = await fetch(apiUrl, {
-      headers: {
-        'x-api-key': process.env.CMS_API_KEY || '',
-      },
-      next: { tags: ['cms-posts'], revalidate: 3600 }, // ISR with tags + revalidate
-    });
-    
-    if (!res.ok) {
-      throw new Error('Failed to fetch blog posts');
-    }
-    
-    const data = await res.json();
-    return data.data as BlogPost[];
+    const result = await getPosts(6, 'BLOG');
+    return result.data as BlogPost[];
   } catch (error) {
     console.error('Error fetching blog posts:', error);
     return [];

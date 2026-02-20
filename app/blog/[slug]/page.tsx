@@ -28,24 +28,13 @@ function formatDate(dateString: string) {
   }).format(date);
 }
 
+import { getPost } from '@/lib/cms';
+
 // Fetch the blog post
 async function getBlogPost(slug: string): Promise<BlogPost | null> {
-  const apiUrl = `${process.env.CMS_BASE_URL}/api/public/content/${slug}`;
-  
   try {
-    const res = await fetch(apiUrl, {
-      headers: {
-        'x-api-key': process.env.CMS_API_KEY || '',
-      },
-      next: { revalidate: 3600 },
-    });
-    
-    if (!res.ok) {
-      return null;
-    }
-    
-    const data = await res.json();
-    return data.data as BlogPost;
+    const post = await getPost(slug);
+    return post as BlogPost;
   } catch (error) {
     console.error('Error fetching blog post:', error);
     return null;
