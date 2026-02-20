@@ -66,19 +66,14 @@ export async function POST(req: NextRequest) {
 
   const payload = parsed.data;
 
-  try {
-    // Invalidate CMS fetch cache
-    await revalidateTag("cms-posts");
+  // Invalidate CMS fetch cache
+  revalidateTag("cms-posts", { expire: 0 });
 
-    // Public pages that depend on CMS posts
-    await revalidatePath("/");
-    await revalidatePath("/blog");
-    await revalidatePath(`/blog/${payload.post.slug}`);
-    if (payload.previousSlug) await revalidatePath(`/blog/${payload.previousSlug}`);
+  // Public pages that depend on CMS posts
+  revalidatePath("/");
+  revalidatePath("/blog");
+  revalidatePath(`/blog/${payload.post.slug}`);
+  if (payload.previousSlug) revalidatePath(`/blog/${payload.previousSlug}`);
 
-    return NextResponse.json({ ok: true, event: payload.event, slug: payload.post.slug });
-  } catch (error) {
-    console.error("Revalidation error:", error);
-    return NextResponse.json({ ok: false, error: "Revalidation failed" }, { status: 500 });
-  }
+  return NextResponse.json({ ok: true, event: payload.event, slug: payload.post.slug });
 }
