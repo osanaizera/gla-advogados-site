@@ -24,7 +24,7 @@ async function getBlogPosts() {
       headers: {
         'x-api-key': process.env.CMS_API_KEY || '',
       },
-      next: { revalidate: 3600 }, // Revalidate every hour
+      next: { tags: ['cms-posts'], revalidate: 3600 }, // ISR with tags + revalidate
     });
     
     if (!res.ok) {
