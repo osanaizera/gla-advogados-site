@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import ScrollReveal from '../../components/ScrollReveal';
 
 // Define BlogPost type
@@ -188,7 +189,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   color: '#1A1714',
                 }}
               >
-                <ReactMarkdown>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
                   {post.content}
                 </ReactMarkdown>
               </div>
