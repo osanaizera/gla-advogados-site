@@ -14,6 +14,23 @@ export const metadata: Metadata = {
   title: 'GLA Advogados | Direito Trabalhista Empresarial — Rio de Janeiro',
   description: 'Escritório de advocacia especializado na defesa de empresas em processos trabalhistas, consultoria preventiva e gestão de passivo trabalhista. Mais de 15 anos protegendo o patrimônio de empresas de médio e grande porte.',
   keywords: ['advocacia trabalhista', 'direito trabalhista empresarial', 'consultoria jurídica', 'compliance trabalhista', 'Rio de Janeiro', 'defesa de empresas', 'GLA Advogados'],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  metadataBase: new URL('https://gla-adv.vercel.app'),
+  openGraph: {
+    title: 'GLA Advogados | Direito Trabalhista Empresarial',
+    description: 'Escritório de advocacia especializado em direito trabalhista empresarial no Rio de Janeiro',
+    url: 'https://gla-adv.vercel.app',
+    siteName: 'GLA Advogados',
+    locale: 'pt_BR',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
@@ -78,7 +95,7 @@ export default function RootLayout({
 
   return (
     <html lang="pt-BR" className={inter.variable}>
-      <head>
+      <body className={`${inter.className} min-h-screen flex flex-col antialiased`} style={{ background: '#FFFFFF', color: '#1A1714' }}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(legalServiceSchema) }}
@@ -91,8 +108,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-      </head>
-      <body className={`${inter.className} min-h-screen flex flex-col antialiased`} style={{ background: '#FFFFFF', color: '#1A1714' }}>
         <Header />
         <main className="flex-grow">
           {children}
