@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <div className="mb-10">
               <Image
-                src="/logo-gla.jpg"
+                src="/logo-gla.png"
                 alt="GLA | Gusmão & Lima Advogados"
                 width={120}
                 height={59}
@@ -21,7 +21,7 @@ export default function Footer() {
               />
             </div>
             <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '14px', lineHeight: 1.7, maxWidth: '260px', fontWeight: 400 }}>
-              Assessoria jurídica trabalhista exclusiva para empresas. Compliance preventivo, defesa processual e gestão de passivo. Desde 2010.
+              Advocacia trabalhista empresarial para organizações de médio e grande porte. Consultoria, contencioso estratégico e governança jurídica contínua.
             </p>
           </div>
 

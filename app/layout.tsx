@@ -1,19 +1,19 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ConsentBanner from './components/ConsentBanner'
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-sans',
 })
 
 export const metadata: Metadata = {
   title: 'GLA Advogados | Direito Trabalhista Empresarial — Rio de Janeiro',
-  description: 'Escritório de advocacia especializado na defesa de empresas em processos trabalhistas, consultoria preventiva e gestão de passivo trabalhista. Mais de 15 anos protegendo o patrimônio de empresas de médio e grande porte.',
+  description: 'Assessoria jurídica trabalhista empresarial para empresas de médio e grande porte. Consultoria executiva, contencioso estratégico e governança jurídica no Rio de Janeiro.',
   keywords: ['advocacia trabalhista', 'direito trabalhista empresarial', 'consultoria jurídica', 'compliance trabalhista', 'Rio de Janeiro', 'defesa de empresas', 'GLA Advogados'],
   robots: {
     index: true,
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://gla-adv.vercel.app'),
   openGraph: {
     title: 'GLA Advogados | Direito Trabalhista Empresarial',
-    description: 'Escritório de advocacia especializado em direito trabalhista empresarial no Rio de Janeiro',
+    description: 'Assessoria jurídica trabalhista empresarial para empresas de médio e grande porte no Rio de Janeiro.',
     url: 'https://gla-adv.vercel.app',
     siteName: 'GLA Advogados',
     locale: 'pt_BR',
@@ -44,7 +44,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LegalService",
     "name": "GLA Advogados",
-    "description": "Escritório de advocacia especializado em direito trabalhista empresarial, consultoria preventiva e gestão de passivo trabalhista. Mais de 15 anos protegendo empresas de médio e grande porte no Rio de Janeiro.",
+    "description": "Escritório de advocacia especializado em direito trabalhista empresarial, consultoria executiva, contencioso estratégico e governança jurídica para empresas no Rio de Janeiro.",
     "url": "https://gla-adv.vercel.app",
     "telephone": "+55-21-3883-5652",
     "email": "wagner.gusmao@glaadvogados.com.br",
@@ -66,7 +66,7 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "GLA Advogados",
     "url": "https://gla-adv.vercel.app",
-    "logo": "https://gla-adv.vercel.app/logo.png",
+    "logo": "https://gla-adv.vercel.app/logo-gla.png",
     "description": "Escritório de advocacia especializado em direito trabalhista empresarial no Rio de Janeiro",
     "address": {
       "@type": "PostalAddress",
@@ -95,8 +95,8 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="pt-BR" className={inter.variable}>
-      <body className={`${inter.className} min-h-screen flex flex-col antialiased`} style={{ background: '#FFFFFF', color: '#1A1714' }}>
+    <html lang="pt-BR" className={manrope.variable}>
+      <body className={`${manrope.className} min-h-screen flex flex-col antialiased`} style={{ background: '#FFFFFF', color: '#1A1714' }}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(legalServiceSchema) }}

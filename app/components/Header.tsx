@@ -56,7 +56,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           <Image
-            src="/logo-gla.jpg"
+            src="/logo-gla.png"
             alt="GLA | Gusmão & Lima Advogados"
             width={scrolled ? 140 : 160}
             height={scrolled ? 69 : 79}
@@ -92,7 +92,7 @@ export default function Header() {
             </Link>
           ))}
           <Link href="/contato" className="btn-red-sm" style={{ marginLeft: '8px' }}>
-            Análise Jurídica
+            Contato institucional
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
@@ -140,9 +140,8 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-0 z-50 lg:hidden ${
-          mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
-        }`}
+        className={`fixed inset-0 z-50 lg:hidden ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+          }`}
         style={{ transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)' }}
       >
         <div
@@ -151,9 +150,8 @@ export default function Header() {
           onClick={() => setMobileMenuOpen(false)}
         />
         <div
-          className={`absolute top-0 right-0 w-[85%] max-w-sm h-full ${
-            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
+          className={`absolute top-0 right-0 w-[85%] max-w-sm h-full ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            }`}
           style={{
             background: 'rgba(26,23,20,0.97)',
             backdropFilter: 'blur(32px)',
@@ -166,7 +164,7 @@ export default function Header() {
             {/* Mobile Logo */}
             <div className="mb-14">
               <Image
-                src="/logo-gla.jpg"
+                src="/logo-gla.png"
                 alt="GLA | Gusmão & Lima Advogados"
                 width={140}
                 height={69}
@@ -202,7 +200,7 @@ export default function Header() {
                 style={{ background: 'rgba(255,255,255,0.1)' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Solicitar Análise Jurídica
+                Falar com a GLA
                 <span className="btn-arrow">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7" />
