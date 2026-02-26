@@ -34,37 +34,37 @@ async function getLatestPosts(): Promise<BlogPost[]> {
 
 const expertiseItems = [
   {
-    title: 'Contencioso Trabalhista Estratégico',
+    title: 'Contencioso Trabalhista de Alta Complexidade',
     description:
-      'Defesa de temas críticos em ações individuais, coletivas e casos com potencial de precedente, com leitura de impacto financeiro e reputacional.',
+      'Defesa técnica rigorosa em ações individuais, coletivas e de alto impacto para empresas com grandes quadros de funcionários e operações em múltiplas regiões.',
   },
   {
-    title: 'Consultoria Executiva e Compliance',
+    title: 'Inteligência Preventiva e Compliance',
     description:
-      'Suporte jurídico contínuo para presidência, RH e lideranças em rotinas trabalhistas, reestruturações e revisão de políticas internas.',
+      'Atuação antecipada junto a RH, lideranças e diretorias para prevenir passivos, estruturar políticas internas e reduzir exposição trabalhista antes que vire litígio.',
   },
   {
     title: 'Due Diligence e Operações Societárias',
     description:
-      'Mapeamento de passivos e desenho de mitigação em aquisições, integrações e projetos de expansão com alta exposição trabalhista.',
+      'Mapeamento de riscos trabalhistas em aquisições, fusões e projetos de expansão, com planos de mitigação sob medida para operações de grande porte.',
   },
 ];
 
 const methodSteps = [
   {
-    title: 'Diagnóstico preciso',
+    title: 'Diagnóstico de riscos',
     description:
-      'Levantamento técnico e executivo do cenário trabalhista para estabelecer prioridades reais de risco.',
+      'Mapeamento completo do cenário trabalhista da operação, identificando passivos reais e potenciais em cada frente do negócio.',
   },
   {
-    title: 'Estratégia de governança',
+    title: 'Estratégia preventiva',
     description:
-      'Definição de plano jurídico conectado aos objetivos de negócio, com critérios claros para tomada de decisão.',
+      'Plano de ação jurídico desenhado para antecipar problemas, reduzir litígios e proteger a empresa antes que o risco se materialize.',
   },
   {
-    title: 'Execução com previsibilidade',
+    title: 'Execução e acompanhamento',
     description:
-      'Acompanhamento contínuo, comunicação objetiva e revisão periódica de teses e protocolos conforme evolução do contexto.',
+      'Gestão contínua do contencioso e das rotinas preventivas, com comunicação direta e revisão constante conforme a operação evolui.',
   },
 ];
 
@@ -89,6 +89,11 @@ const teamMembers = [
     img: '/equipe/larissa.jpg',
   },
   {
+    name: 'Giselle Tavares',
+    role: 'Advogada',
+    img: '/equipe/giselle.jpg',
+  },
+  {
     name: 'Marcella Marinho',
     role: 'Advogada',
     img: '/equipe/marcellaMarinho.jpg',
@@ -103,37 +108,59 @@ export default async function Home() {
       <section className="hero-premium noise">
         <div className="hero-premium__backdrop" aria-hidden="true" />
 
-        <div className="container-gla relative z-10 pt-40 pb-20 md:pt-48 md:pb-24">
-          <div className="min-h-[calc(100svh-8.5rem)] flex items-center justify-center">
-            <ScrollReveal className="w-full">
-              <div className="max-w-4xl mx-auto text-center">
+        <div className="container-gla relative z-10">
+          <div className="hero-premium__content">
+            <div className="hero-premium__text">
+              <p className="hero-eyebrow">Direito Trabalhista Empresarial</p>
+
+              <h1 className="hero-display">
+                <span className="hero-line-wrap">
+                  <span className="hero-line">Excelência jurídica na gestão</span>
+                </span>
+                <span className="hero-line-wrap">
+                  <span className="hero-line">de riscos e contencioso trabalhista</span>
+                </span>
+                <span className="hero-line-wrap">
+                  <span className="hero-line">de alta complexidade.</span>
+                </span>
+              </h1>
+
+              <p className="lead-copy max-w-2xl mt-8 hero-lead">
+                Soluções estratégicas para empresas com grandes quadros de funcionários.
+                Unimos defesa técnica rigorosa e inteligência preventiva para garantir
+                estabilidade à sua operação.
+              </p>
+
+              <div className="hero-cta-group">
+                <Link href="/contato" className="btn-red">
+                  Agendar reunião estratégica
+                </Link>
+                <a
+                  href="https://wa.me/552138835652?text=Olá%2C%20gostaria%20de%20falar%20sobre%20assessoria%20jurídica%20trabalhista."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  Falar pelo WhatsApp
+                </a>
+              </div>
+            </div>
+
+            <div className="hero-glass-wrapper">
+              <div className="hero-glass-card">
                 <Image
                   src="/logo-gla.png"
                   alt="GLA Advogados"
                   width={280}
                   height={138}
-                  className="mx-auto hero-logo"
+                  className="hero-glass-card__logo"
                   priority
                 />
-                <p className="hero-eyebrow mt-8">Direito Trabalhista Empresarial</p>
-                <h1 className="display-title max-w-3xl mx-auto mt-6">
-                  Decisões jurídicas com critério, discrição e clareza para empresas de grande porte.
-                </h1>
-                <p className="lead-copy max-w-2xl mx-auto mt-8">
-                  Atuação estratégica ao lado da liderança executiva para proteger operações,
-                  reputação e continuidade do negócio em temas trabalhistas sensíveis.
-                </p>
-
-                <div className="mt-11 flex flex-wrap items-center justify-center gap-4">
-                  <Link href="/contato" className="btn-red">
-                    Agendar reunião estratégica
-                  </Link>
-                  <Link href="/sobre" className="btn-outline">
-                    Conhecer o escritório
-                  </Link>
-                </div>
               </div>
-            </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>
@@ -144,7 +171,7 @@ export default async function Home() {
             <div className="max-w-3xl">
               <span className="label-section">Frentes de atuação</span>
               <h2 className="section-title mt-7">
-                Mandatos jurídicos alinhados à governança de negócios complexos.
+                Defesa técnica e prevenção de riscos para operações de grande porte.
               </h2>
             </div>
           </ScrollReveal>
@@ -170,11 +197,11 @@ export default async function Home() {
               <ScrollReveal>
                 <span className="label-section">Método de trabalho</span>
                 <h2 className="section-title mt-7">
-                  Jurídico trabalhista orientado por contexto, prioridade e execução disciplinada.
+                  Prevenção primeiro, contencioso com rigor quando necessário.
                 </h2>
                 <p className="section-body mt-8">
-                  Nossa atuação combina visão estratégica de negócio com profundidade técnica para
-                  oferecer respostas sólidas em temas recorrentes e extraordinários.
+                  Nossa experiência com empresas de diversos setores nos permite antecipar riscos
+                  e conduzir litígios complexos com a profundidade técnica que operações de grande porte exigem.
                 </p>
               </ScrollReveal>
             </div>
@@ -202,10 +229,10 @@ export default async function Home() {
             <div className="lg:col-span-6">
               <ScrollReveal>
                 <span className="label-section">Perfil de clientes</span>
-                <h2 className="section-title mt-7">Atuação junto a lideranças de negócios que operam em escala.</h2>
+                <h2 className="section-title mt-7">Empresas com grandes quadros de funcionários e operações complexas.</h2>
                 <p className="section-body mt-8">
-                  A GLA representa empresas com alta intensidade de relações de trabalho e demandas
-                  que exigem segurança jurídica contínua em múltiplas frentes operacionais.
+                  Atendemos organizações de diversos setores que precisam de segurança jurídica
+                  contínua, gestão de passivos em escala e uma equipe que entende a realidade de quem opera com milhares de colaboradores.
                 </p>
                 <div className="mt-9 flex flex-wrap gap-3">
                   {sectors.map((sector) => (
@@ -240,14 +267,14 @@ export default async function Home() {
           <ScrollReveal>
             <div className="max-w-3xl">
               <span className="label-section">Equipe</span>
-              <h2 className="section-title mt-7">Liderança acessível e envolvida nos temas críticos de cada cliente.</h2>
+              <h2 className="section-title mt-7">Advogados experientes com acesso direto e envolvimento real nos casos.</h2>
               <p className="section-body mt-8">
-                Trabalho próximo, comunicação objetiva e participação ativa da equipe sênior na condução dos casos.
+                Comunicação objetiva, proximidade com o cliente e participação ativa de toda a equipe na condução das demandas.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
             {teamMembers.map((member, index) => (
               <ScrollReveal key={member.name} delay={index * 80}>
                 <article className="team-card">
@@ -332,11 +359,11 @@ export default async function Home() {
             <div className="max-w-3xl">
               <span className="label-section label-section--dark">Contato institucional</span>
               <h2 className="section-title mt-7" style={{ color: '#FFFFFF' }}>
-                Conversas objetivas para decisões jurídicas relevantes.
+                Sua operação precisa de segurança jurídica trabalhista?
               </h2>
               <p className="section-body mt-8" style={{ color: 'rgba(255,255,255,0.66)' }}>
-                Se sua organização precisa rever estratégia trabalhista, estruturar governança ou conduzir um caso sensível,
-                fale com a equipe da GLA.
+                Se sua empresa enfrenta passivos relevantes, precisa de estratégia preventiva ou busca um escritório
+                que entenda operações de grande porte, fale com a GLA.
               </p>
             </div>
 
