@@ -115,17 +115,17 @@ export default async function Home() {
 
               <h1 className="hero-display">
                 <span className="hero-line-wrap">
-                  <span className="hero-line">Excelência jurídica na gestão</span>
+                  <span className="hero-line"><strong>Excelência jurídica</strong> na gestão</span>
                 </span>
                 <span className="hero-line-wrap">
-                  <span className="hero-line">de riscos e contencioso trabalhista</span>
+                  <span className="hero-line">de riscos e <em>contencioso trabalhista</em></span>
                 </span>
                 <span className="hero-line-wrap">
                   <span className="hero-line">de alta complexidade.</span>
                 </span>
               </h1>
 
-              <p className="lead-copy max-w-2xl mt-8 hero-lead">
+              <p className="lead-copy mx-auto max-w-2xl mt-8 hero-lead">
                 Soluções estratégicas para empresas com grandes quadros de funcionários.
                 Unimos defesa técnica rigorosa e inteligência preventiva para garantir
                 estabilidade à sua operação.
@@ -146,19 +146,6 @@ export default async function Home() {
                   </svg>
                   Falar pelo WhatsApp
                 </a>
-              </div>
-            </div>
-
-            <div className="hero-glass-wrapper">
-              <div className="hero-glass-card">
-                <Image
-                  src="/logo-gla.png"
-                  alt="GLA Advogados"
-                  width={280}
-                  height={138}
-                  className="hero-glass-card__logo"
-                  priority
-                />
               </div>
             </div>
           </div>
