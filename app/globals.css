@@ -741,22 +741,71 @@ body {
     flex-direction: column;
     padding-top: 8.5rem;
     padding-bottom: 3.5rem;
-    gap: 3rem;
+    gap: 2.5rem;
   }
 
   .hero-glass-wrapper {
     order: -1;
     animation-name: none;
+    align-self: center;
   }
 
   .hero-glass-card {
-    width: 130px;
-    aspect-ratio: 1 / 1;
-    border-radius: 22px;
+    width: 120px;
+    aspect-ratio: 3 / 4;
+    border-radius: 20px;
+    background: linear-gradient(
+      165deg,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.35) 40%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.06),
+      0 1px 0 rgba(255, 255, 255, 0.8) inset,
+      inset 0 -1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  /* Shine / light streak on mobile glass card */
+  .hero-glass-card::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -20%;
+    width: 60%;
+    height: 160%;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.55) 45%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 55%
+    );
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Subtle glow behind card on mobile */
+  .hero-glass-card::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: 28px;
+    background: radial-gradient(
+      ellipse at 50% 40%,
+      rgba(192, 39, 45, 0.06) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: -1;
   }
 
   .hero-glass-card__logo {
     width: 55%;
+    position: relative;
+    z-index: 2;
   }
 
   .hero-premium__text {

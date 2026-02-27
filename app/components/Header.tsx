@@ -44,10 +44,10 @@ export default function Header() {
     <header
       className="fixed top-0 left-0 right-0 z-50"
       style={{
-        backdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
-        WebkitBackdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
-        backgroundColor: scrolled ? 'rgba(255,255,255,0.82)' : 'transparent',
-        borderBottom: scrolled ? '1px solid rgba(0,0,0,0.04)' : '1px solid transparent',
+        backdropFilter: scrolled && !mobileMenuOpen ? 'blur(20px) saturate(180%)' : 'none',
+        WebkitBackdropFilter: scrolled && !mobileMenuOpen ? 'blur(20px) saturate(180%)' : 'none',
+        backgroundColor: mobileMenuOpen ? 'transparent' : scrolled ? 'rgba(255,255,255,0.82)' : 'transparent',
+        borderBottom: scrolled && !mobileMenuOpen ? '1px solid rgba(0,0,0,0.04)' : '1px solid transparent',
         padding: scrolled ? '0.625rem 0' : '1.25rem 0',
         transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
       }}
@@ -101,7 +101,7 @@ export default function Header() {
 
         {/* Mobile Hamburger */}
         <button
-          className="lg:hidden z-[60] relative w-8 h-8 flex items-center justify-center"
+          className="lg:hidden z-[60] relative w-10 h-10 flex items-center justify-center -mr-1"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Menu"
         >
@@ -140,17 +140,17 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-0 z-50 lg:hidden ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+        className={`fixed inset-0 z-[55] lg:hidden ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
           }`}
-        style={{ transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)' }}
+        style={{ transition: 'opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0.4s' }}
       >
         <div
           className="absolute inset-0"
-          style={{ background: 'rgba(26,23,20,0.5)' }}
+          style={{ background: 'rgba(26,23,20,0.6)' }}
           onClick={() => setMobileMenuOpen(false)}
         />
         <div
-          className={`absolute top-0 right-0 w-[85%] max-w-sm h-full ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`absolute top-0 right-0 w-[85%] max-w-sm h-full overflow-y-auto ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
           style={{
             background: 'rgba(26,23,20,0.97)',
@@ -160,7 +160,7 @@ export default function Header() {
             transition: 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           }}
         >
-          <div className="flex flex-col justify-center h-full px-10">
+          <div className="flex flex-col justify-center min-h-full px-10 py-24">
             {/* Mobile Logo */}
             <div className="mb-14">
               <Image
