@@ -115,10 +115,13 @@ export default async function Home() {
 
               <h1 className="hero-display">
                 <span className="hero-line-wrap">
-                  <span className="hero-line"><strong>Excelência jurídica</strong> na gestão</span>
+                  <span className="hero-line"><strong>Excelência jurídica</strong></span>
                 </span>
                 <span className="hero-line-wrap">
-                  <span className="hero-line">de riscos e <em>contencioso trabalhista</em></span>
+                  <span className="hero-line">na gestão de riscos e</span>
+                </span>
+                <span className="hero-line-wrap">
+                  <span className="hero-line"><em>contencioso trabalhista</em></span>
                 </span>
                 <span className="hero-line-wrap">
                   <span className="hero-line">de alta complexidade.</span>
